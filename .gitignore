@@ -1,0 +1,13 @@
+*.swp
+.DS_Store
+/.cache
+/node_modules
+/dist
+/__pycache__
+.vscode/
+agent/__pycache__
+agent/.DS_Store
+backend/dist
+backend/node_modules
+ui/dist
+ui/node_modules

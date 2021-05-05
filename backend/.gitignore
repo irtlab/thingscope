@@ -1,0 +1,12 @@
+/dist
+/node_modules
+/public/static
+/public/fonts
+/public/images
+/public/stylesheets
+/public/javascript
+/public/dist
+/public/favicon.ico
+/public/index.html
+*.swp
+*.pem
