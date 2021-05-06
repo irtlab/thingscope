@@ -25,7 +25,7 @@ To build and run the browser extension, see: [browser-extension/README.md](https
 ### Contributions
 Contributions are welcome and can be made by submitting GitHub pull requests
 to this repository.  
-In general, the `ThingScope` Javascript/TypeScript source code follows [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript), the Python code follows [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html).
+In general, the `ThingScope` Javascript/TypeScript source code follows [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript), and the Python code follows [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html).
 
 
 ### License
