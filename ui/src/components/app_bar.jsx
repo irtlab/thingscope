@@ -72,8 +72,8 @@ export default function AppBarComponent(props) {
             { listTabText(selectedItem) }
           </Typography>
           <div style={{marginLeft: 'auto'}}>
-          <img src={cuURL} alt="logo" style={{ marginRight: '15px', width: 55, borderRadius: '12%', float: 'left' }}/>
-          <img src={logoURL} alt="logo" style={{ width: 55, borderRadius: '12%', float: 'left' }}/>
+            <img src={cuURL} alt="logo" style={{ marginRight: '15px', width: 55, borderRadius: '12%', float: 'left' }}/>
+            <img src={logoURL} alt="logo" style={{ width: 55, borderRadius: '12%', float: 'left' }}/>
             <Typography variant="h5" gutterBottom style={{minWidth: 440, marginTop: '10px'}}>
                   &nbsp;
               {'IRT Lab Columbia University'}

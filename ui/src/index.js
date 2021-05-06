@@ -17,7 +17,7 @@ import * as serviceWorker from './serviceWorker';
  */
 function Main() {
   const UserContext = React.createContext();
-  const [socket, setSocket] = useState(null/*socketIOClient(apiURL)*/);
+  const [socket, setSocket] = useState(null/* socketIOClient(apiURL) */);
 
   return (
     <>

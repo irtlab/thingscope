@@ -91,7 +91,8 @@
     "react/forbid-prop-types": "off",
     "react/prop-types": "warn",
     "react/jsx-one-expression-per-line": "warn",
-    "react/jsx-filename-extension": ["error", { "extensions": [".jsx", ".tsx"] }],
-    "react/require-default-props": "warn"
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx", ".tsx"] }],
+    "react/require-default-props": "warn",
+    "no-use-before-define": ["warn", { "functions": true, "classes": true }]
   }
 }
