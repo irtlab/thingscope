@@ -1,12 +1,12 @@
 import { promises as fs } from 'fs';
 import mongodb from 'mongodb';
-
+import 'dotenv/config';
 
 export async function getAmazonDocumentDB() {
   // Specify the Amazon DocumentDB cert
   const ca = [await fs.readFile('rds-combined-ca-bundle.pem')];
 
-  const url = 'mongodb://thingscope:thingscope123*@thingscope-2020-10-06-00-17-45.cluster-cy9ej67us89r.us-east-2.docdb.amazonaws.com:27017/?ssl=true&ssl_ca_certs=rds-combined-ca-bundle.pem&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false';
+  const url = process.env.MONGODB_URL;
   const options = {
     poolSize: 64,
     useUnifiedTopology: true,

@@ -10,3 +10,4 @@
 /public/index.html
 *.swp
 *.pem
+.env

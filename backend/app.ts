@@ -29,11 +29,6 @@ const app = express();
   app.options('*', cors());
 
 
-  // view engine setup
-  const curr_dirname = path.resolve();
-  app.set('views', path.join(curr_dirname, 'public/views'));
-  app.set('view engine', 'pug');
-
   if (app.get('env') === 'production') {
     // If you have your node.js behind a proxy and are using secure: true,
     // you need to set "trust proxy" in express:
@@ -53,6 +48,7 @@ const app = express();
   app.use('/api/agent', await agent_api(amazon_document_db));
 
   app.get('*', (req, res) => {
+    const curr_dirname = path.resolve();
     res.sendFile(path.join(curr_dirname, '/public', 'index.html'));
   });
 
