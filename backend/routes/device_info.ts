@@ -1,5 +1,5 @@
 import express from 'express';
-import { BadRequestError } from '../errors';
+import { BadRequestError } from '../utils/errors';
 import { jsonify, hasKey } from '../utils/utils';
 import { devices_coll_str } from '../constants';
 

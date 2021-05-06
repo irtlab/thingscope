@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import mongodb from 'mongodb';
 import crypto from 'crypto';
-import { BadRequestError } from './errors';
+import { BadRequestError } from './utils/errors';
 import {
   auth_agents_coll_str,
   jwt_access_secret_key,

@@ -12,7 +12,7 @@ process.env.UV_THREADPOOL_SIZE = '128';
   const server = http.createServer(app);
 
   const mode = process.env.NODE_ENV === 'development';
-  dbg(`Starting in ${mode ? 'development' : 'production'} mode`);
+  console.log(`Starting in ${mode ? 'development' : 'production'} mode`);
 
   // Event listener for HTTP server "error" event.
   const on_error = (error) => {
@@ -41,7 +41,7 @@ process.env.UV_THREADPOOL_SIZE = '128';
   const on_listening = () => {
     const addr: any = server.address();
     const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
-    dbg('Listening on ' + bind);
+    console.log(`Listening on ${bind}`);
   };
 
   // Listen on provided port, on all network interfaces.

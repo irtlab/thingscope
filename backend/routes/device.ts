@@ -1,7 +1,7 @@
 import express from 'express';
 import mongodb from 'mongodb';
 import { promises as fs } from 'fs';
-import { BadRequestError, NotFoundError } from '../errors';
+import { BadRequestError, NotFoundError } from '../utils/errors';
 import { jsonify, hasKey, hasKeys } from '../utils/utils';
 import { authorize } from '../auth';
 import { devices_coll_str } from '../constants';

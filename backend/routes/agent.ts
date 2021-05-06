@@ -1,7 +1,7 @@
 import express from 'express';
 import mongodb from 'mongodb';
 import { initAuthentication, createKeyPairs, getAccessToken } from '../auth';
-import { BadRequestError, NotFoundError } from '../errors';
+import { BadRequestError, NotFoundError } from '../utils/errors';
 import { jsonify, hasKey, hasKeys } from '../utils/utils';
 import { agents_coll_str, auth_agents_coll_str } from '../constants';
 
