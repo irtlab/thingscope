@@ -1,4 +1,4 @@
-# ThingScope
+# ThingScope Backend API
 
 ### Introduction
 The backend server of the `ThingScope` project is implemented in TypeScript and based on ExpressJS web fremawork, and as a database it uses MongoDB.
