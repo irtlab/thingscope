@@ -20,4 +20,4 @@ rm -fr *
 cd $thingscope_web_dir/build
 cp -r * $thingscope_public_dir
 cd $thingscope_web_dir/public
-cp favicon.ico $thingscope_public_dir
+cp favicon.ico cs_cu.svg irt_logo.svg $thingscope_public_dir
