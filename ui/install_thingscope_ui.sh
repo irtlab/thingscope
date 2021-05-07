@@ -8,8 +8,7 @@ cd $thingscope_web_dir
 rm -fr node_modules/
 rm -fr build
 npm install
-npm run build
-
+INLINE_RUNTIME_CHUNK=false npm run build
 
 cd $thingscope_root
 mkdir -p public
