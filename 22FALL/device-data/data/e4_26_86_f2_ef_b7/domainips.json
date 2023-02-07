@@ -1,0 +1,7 @@
+{"_id":{"$oid":"63a489e5486c108107117137"},"device_mac":"e4:26:86:f2:ef:b7","domain_name":"ec2-35-161-77-247.us-west-2.compute.amazonaws.com","ip_count":1,"ips":"35.161.77.247"}
+{"_id":{"$oid":"63a489e5486c10810711713a"},"device_mac":"e4:26:86:f2:ef:b7","domain_name":"ec2-35-162-182-55.us-west-2.compute.amazonaws.com","ip_count":1,"ips":"35.162.182.55"}
+{"_id":{"$oid":"63a489e5486c10810711713d"},"device_mac":"e4:26:86:f2:ef:b7","domain_name":"ec2-34-208-182-11.us-west-2.compute.amazonaws.com","ip_count":1,"ips":"34.208.182.11"}
+{"_id":{"$oid":"63a489e5486c108107117140"},"device_mac":"e4:26:86:f2:ef:b7","domain_name":"api.st-av.net","ip_count":5,"ips":"34.217.170.24,52.34.45.103,52.88.211.192,54.212.65.189,54.212.69.193"}
+{"_id":{"$oid":"63a489e5486c108107117143"},"device_mac":"e4:26:86:f2:ef:b7","domain_name":"ec2-44-230-176-106.us-west-2.compute.amazonaws.com","ip_count":1,"ips":"44.230.176.106"}
+{"_id":{"$oid":"63a489e5486c108107117146"},"device_mac":"e4:26:86:f2:ef:b7","domain_name":"ec2-34-254-152-209.eu-west-1.compute.amazonaws.com","ip_count":1,"ips":"34.254.152.209"}
+{"_id":{"$oid":"63a489e5486c108107117149"},"device_mac":"e4:26:86:f2:ef:b7","domain_name":"ec2-52-89-67-185.us-west-2.compute.amazonaws.com","ip_count":1,"ips":"52.89.67.185"}

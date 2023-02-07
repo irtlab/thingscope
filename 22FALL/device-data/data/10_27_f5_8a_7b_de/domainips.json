@@ -1,0 +1,6 @@
+{"_id":{"$oid":"63a4881f486c108107116eca"},"device_mac":"10:27:f5:8a:7b:de","domain_name":"use1-api.tplinkra.com","ip_count":8,"ips":"3.222.62.161,34.193.158.35,34.225.176.186,35.168.115.244,52.1.177.181,52.200.142.22,52.206.95.1,75.101.174.7"}
+{"_id":{"$oid":"63a4881f486c108107116ecd"},"device_mac":"10:27:f5:8a:7b:de","domain_name":"ntp1.glb.nist.gov","ip_count":1,"ips":"132.163.96.1"}
+{"_id":{"$oid":"63a4881f486c108107116ed0"},"device_mac":"10:27:f5:8a:7b:de","domain_name":"pool.ntp.org","ip_count":4,"ips":"12.193.130.130,171.66.97.126,216.240.36.24,66.220.9.122"}
+{"_id":{"$oid":"63a4881f486c108107116ed3"},"device_mac":"10:27:f5:8a:7b:de","domain_name":"n-use1-devs.tplinkcloud.com","ip_count":8,"ips":"100.25.7.180,3.218.120.236,3.94.139.232,34.203.96.196,52.0.209.60,52.4.213.142,54.166.26.50,54.83.206.156"}
+{"_id":{"$oid":"63a4881f486c108107116ed6"},"device_mac":"10:27:f5:8a:7b:de","domain_name":"n-use1-deventry.tplinkcloud.com","ip_count":2,"ips":"52.87.40.72,54.147.112.183"}
+{"_id":{"$oid":"63a4881f486c108107116ed9"},"device_mac":"10:27:f5:8a:7b:de","domain_name":"2.android.pool.ntp.org","ip_count":4,"ips":"162.159.200.123,65.100.46.166,69.164.213.136,69.89.207.199"}

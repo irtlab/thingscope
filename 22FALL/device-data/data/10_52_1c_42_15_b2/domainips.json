@@ -1,0 +1,5 @@
+{"_id":{"$oid":"63a489e5486c108107117153"},"device_mac":"10:52:1c:42:15:b2","domain_name":"fwsrv.emporiaenergy.com","ip_count":1,"ips":"18.223.118.122"}
+{"_id":{"$oid":"63a489e5486c108107117156"},"device_mac":"10:52:1c:42:15:b2","domain_name":"s3.us-east-2.amazonaws.com","ip_count":1,"ips":"52.219.110.201"}
+{"_id":{"$oid":"63a489e5486c108107117159"},"device_mac":"10:52:1c:42:15:b2","domain_name":"time.google.com","ip_count":4,"ips":"216.239.35.0,216.239.35.12,216.239.35.4,216.239.35.8"}
+{"_id":{"$oid":"63a489e5486c10810711715c"},"device_mac":"10:52:1c:42:15:b2","domain_name":"pool.ntp.org","ip_count":4,"ips":"12.193.130.130,171.66.97.126,216.240.36.24,66.220.9.122"}
+{"_id":{"$oid":"63a489e5486c10810711715f"},"device_mac":"10:52:1c:42:15:b2","domain_name":"a2poo8btpqc3gs-ats.iot.us-east-2.amazonaws.com","ip_count":8,"ips":"18.218.8.149,18.220.62.77,18.223.84.238,3.130.147.74,3.134.47.192,3.135.173.59,3.143.10.13,3.20.29.13"}
