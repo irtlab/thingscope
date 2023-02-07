@@ -3,7 +3,7 @@
 internet of things (IoT) devices, such as security cameras, thermostats, smart TV and smart
 speakers, both pre-purchase and when the device is installed in their home.
 
-This project is used for applied research course offered in Spring and Fall terms. 
+This project is used for an applied research course offered in Spring and Fall terms. 
 
 ### Directory Structure
 ```
