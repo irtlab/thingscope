@@ -1,0 +1,8 @@
+{"_id":{"$oid":"63a489e6486c108107117163"},"device_mac":"8c:85:80:3a:4e:4f","domain_name":"p2p-vir-6.eufylife.com","ip_count":1,"ips":"18.224.66.194"}
+{"_id":{"$oid":"63a489e6486c108107117166"},"device_mac":"8c:85:80:3a:4e:4f","domain_name":"pushproxy-usa8.eufylife.com","ip_count":1,"ips":"18.222.92.50"}
+{"_id":{"$oid":"63a489e6486c108107117169"},"device_mac":"8c:85:80:3a:4e:4f","domain_name":"security-prod-678721939.us-east-2.elb.amazonaws.com","ip_count":8,"ips":"18.189.40.35,18.218.255.163,3.133.35.20,3.140.3.238,3.18.244.186,3.19.154.45,3.19.8.130,3.22.53.5"}
+{"_id":{"$oid":"63a489e6486c10810711716c"},"device_mac":"8c:85:80:3a:4e:4f","domain_name":"ntp1.glb.nist.gov","ip_count":1,"ips":"132.163.96.1"}
+{"_id":{"$oid":"63a489e6486c10810711716f"},"device_mac":"8c:85:80:3a:4e:4f","domain_name":"d6r5idgtnd8fo.cloudfront.net","ip_count":1,"ips":"18.164.125.113"}
+{"_id":{"$oid":"63a489e6486c108107117172"},"device_mac":"8c:85:80:3a:4e:4f","domain_name":"pushproxy-usa4.eufylife.com","ip_count":1,"ips":"18.221.14.3"}
+{"_id":{"$oid":"63a489e6486c108107117175"},"device_mac":"8c:85:80:3a:4e:4f","domain_name":"time4.google.com","ip_count":1,"ips":"216.239.35.12"}
+{"_id":{"$oid":"63a489e6486c108107117178"},"device_mac":"8c:85:80:3a:4e:4f","domain_name":"pool.ntp.org","ip_count":4,"ips":"12.193.130.130,171.66.97.126,216.240.36.24,66.220.9.122"}

@@ -1,0 +1,98 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "extends": [ "airbnb-base" ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "plugins": ["react", "jsx-a11y"],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "overrides": [{
+    "files": ["**/*.ts", "**/*.tsx"],
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["react", "jsx-a11y", "prettier", "@typescript-eslint"],
+    "rules": {
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "warn",
+      "no-useless-constructor": "off",
+      "@typescript-eslint/no-useless-constructor": "error"
+    }
+  }],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    // The following settings seem to be necessary in order for the import
+    // plugin to work correctly with @typescript-eslint/parser.
+    // https://medium.com/@myylow/how-to-keep-the-airbnb-eslint-config-when-moving-to-typescript-1abb26adb5c6
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "rules": {
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "no-trailing-spaces": "error",
+    "no-console": "warn",
+    "one-var": "off",
+    "camelcase": "off",
+    "object-shorthand": "warn",
+    "func-names": "off",
+    "import/extensions": "off",
+    "no-multi-spaces": "off",
+    "key-spacing": "off",
+    "no-plusplus": "off",
+    "import/prefer-default-export": "off",
+    "no-underscore-dangle": "off",
+    "prefer-destructuring": "off",
+    "max-classes-per-file": "off",
+    "no-unused-vars": "warn",
+    "no-param-reassign": "off",
+    "no-new-object": "error",
+    "dot-notation": "off",
+    "no-await-in-loop": "off",
+    "no-nested-ternary": "off",
+    "indent": ["error", 2],
+    "object-curly-newline": "off",
+    "comma-dangle": ["error", "never"],
+    "object-curly-spacing": "off",
+    "operator-linebreak": ["error", "after"],
+    "no-multiple-empty-lines": ["error", {"max": 2, "maxEOF": 1}],
+    "no-restricted-syntax": ["error", {
+      "selector": "ForInStatement",
+      "message": "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array."
+    }, {
+      "selector": "LabeledStatement",
+      "message": "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."
+    }, {
+      "selector": "WithStatement",
+      "message": "`with` is disallowed in strict mode because it makes code impossible to predict and optimize."
+    }],
+    "no-constant-condition": ["error", { "checkLoops": false }],
+    "jsx-a11y/aria-role": "warn",
+    "react/destructuring-assignment": [1, "always"],
+    "react/forbid-prop-types": "off",
+    "react/prop-types": "warn",
+    "react/jsx-one-expression-per-line": "warn",
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx", ".tsx"] }],
+    "react/require-default-props": "warn",
+    "no-use-before-define": ["warn", { "functions": true, "classes": true }]
+  }
+}

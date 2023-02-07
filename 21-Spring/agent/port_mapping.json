@@ -1,0 +1,12 @@
+{
+
+    "53": "DNS",
+    "67": "DHCP",
+    "68": "DHCP",
+    "80": "HTTP",
+    "443": "HTTPS",
+    "1883": "Insecure MQTT",
+    "5353": "MDNS",
+    "8883": "Secure MQTT"
+
+}
