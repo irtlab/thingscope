@@ -1,1 +1,0 @@
-python domain_ip_monitor.py  --interval=30 --times=100 --db_name=iotv2 --device_macs="10:27:f5:8a:7b:de,ec:2b:eb:47:a1:56,18:b7:9e:02:3d:90,80:9f:9b:f6:4a:c7,e4:26:86:f2:ef:b7,dc:4f:22:8d:9b:7a,10:52:1c:42:15:b2,8c:85:80:3a:4e:4f,78:11:dc:21:9a:f9,b4:c9:b9:92:89:fc,90:20:3a:07:b4:48,a4:da:22:2f:6f:6a,38:01:46:8b:d3:46,10:09:f9:1e:c7:c7,90:0c:c8:fb:34:ef"
