@@ -1,0 +1,3 @@
+{"_id":{"$oid":"63a489e6486c10810711717c"},"device_mac":"78:11:dc:21:9a:f9","domain_name":"gm.iotcplatform.com","ip_count":3,"ips":"15.164.195.115,198.16.70.61,50.7.97.51"}
+{"_id":{"$oid":"63a489e6486c10810711717f"},"device_mac":"78:11:dc:21:9a:f9","domain_name":"us-business-smartcamera-api-com-1463335676.us-west-2.elb.amazonaws.com","ip_count":2,"ips":"34.218.8.93,54.149.185.102"}
+{"_id":{"$oid":"63a489e6486c108107117182"},"device_mac":"78:11:dc:21:9a:f9","domain_name":"ot-otu-io-m-com-aef59656296eaf20.elb.us-west-2.amazonaws.com","ip_count":1,"ips":"52.13.113.26"}

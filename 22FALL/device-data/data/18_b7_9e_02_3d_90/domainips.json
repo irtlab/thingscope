@@ -1,0 +1,10 @@
+{"_id":{"$oid":"63a489e3486c10810711710e"},"device_mac":"18:b7:9e:02:3d:90","domain_name":"0.north-america.pool.ntp.org","ip_count":4,"ips":"192.99.160.57,216.218.254.202,216.6.2.70,38.229.58.9"}
+{"_id":{"$oid":"63a489e3486c108107117111"},"device_mac":"18:b7:9e:02:3d:90","domain_name":"radiolatina.info","ip_count":1,"ips":"54.39.106.212"}
+{"_id":{"$oid":"63a489e3486c108107117114"},"device_mac":"18:b7:9e:02:3d:90","domain_name":"2.invoxia.pool.ntp.org","ip_count":4,"ips":"134.215.114.62,138.236.128.112,66.85.78.80,72.30.35.88"}
+{"_id":{"$oid":"63a489e4486c108107117117"},"device_mac":"18:b7:9e:02:3d:90","domain_name":"crossbar.aws.invoxia.io","ip_count":1,"ips":"54.216.220.28"}
+{"_id":{"$oid":"63a489e4486c10810711711a"},"device_mac":"18:b7:9e:02:3d:90","domain_name":"0.invoxia.pool.ntp.org","ip_count":4,"ips":"204.2.134.162,205.233.73.201,23.94.200.138,73.193.62.250"}
+{"_id":{"$oid":"63a489e4486c10810711711d"},"device_mac":"18:b7:9e:02:3d:90","domain_name":"sip.aws.invoxia.io","ip_count":1,"ips":"18.202.174.55"}
+{"_id":{"$oid":"63a489e4486c108107117120"},"device_mac":"18:b7:9e:02:3d:90","domain_name":"developer.invoxia.com","ip_count":1,"ips":"91.121.58.223"}
+{"_id":{"$oid":"63a489e4486c108107117123"},"device_mac":"18:b7:9e:02:3d:90","domain_name":"a1524.g.akamai.net","ip_count":2,"ips":"23.55.235.202,23.55.235.209"}
+{"_id":{"$oid":"63a489e4486c108107117126"},"device_mac":"18:b7:9e:02:3d:90","domain_name":"cloud-1-4-loadbala-10a641o5y5p9e-1398684846.eu-west-1.elb.amazonaws.com","ip_count":3,"ips":"34.248.215.224,52.48.50.20,52.51.18.85"}
+{"_id":{"$oid":"63a489e4486c108107117129"},"device_mac":"18:b7:9e:02:3d:90","domain_name":"1129153316.airable.io","ip_count":1,"ips":"144.76.157.132"}
