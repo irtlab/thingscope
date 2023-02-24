@@ -1,0 +1,7 @@
+requests==2.26.0
+pycurl==7.43.0.6 --install-option='--with-openssl'
+scapy==2.4.5
+pandas==1.5.2
+numpy==1.23.5
+dpkt==1.9.8
+pymongo==4.3.3

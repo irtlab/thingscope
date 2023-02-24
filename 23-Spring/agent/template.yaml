@@ -1,0 +1,74 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Description: thingscope mini
+
+Resources:
+  thingscope:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: aws_handler.handler
+      Runtime: python3.7
+      Timeout: 120
+      Role: !GetAtt FunctionRole.Arn
+      Environment:
+        Variables:
+          BUCKET: !Sub "${AWS::StackName}bucket"
+
+  bucket:
+    Type: AWS::S3::Bucket
+    DependsOn:
+      - bucketPermission
+    Properties:
+      BucketName: !Sub "${AWS::StackName}bucket"
+      NotificationConfiguration:
+        LambdaConfigurations:
+            - Event: s3:ObjectCreated:*
+              Function: !GetAtt thingscope.Arn
+      
+  bucketPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: 'lambda:InvokeFunction'
+      FunctionName: !GetAtt thingscope.Arn
+      Principal: s3.amazonaws.com
+      SourceArn: !Sub 'arn:aws:s3:::${AWS::StackName}bucket'
+      SourceAccount: !Ref AWS::AccountId
+
+  FunctionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      Policies:
+        - PolicyName: s3ReadWrite
+          PolicyDocument:
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 's3:GetObject'
+                  - 's3:PutObject'
+                Resource:
+                  - !Sub "arn:aws:s3:::${AWS::StackName}bucket/*"
+              - Effect: Allow
+                Action:
+                  - "logs:CreateLogGroup"
+                  - "logs:CreateLogStream"
+                  - "logs:PutLogEvents"
+                Resource:
+                  - "*"
+
+#  SubmissionNofification:
+#    Type: AWS::SNS::Topic
+#    Properties:
+#      Subscription:
+#        - Endpoint: "ajschwartz23@gmail.com"
+#          Protocol: "email"

@@ -1,0 +1,17 @@
+babyws.withings.net
+core-prod-cloud-gateway-1340290424.us-west-2.elb.amazonaws.com
+
+Ntp-g7g.amazon.com
+0.north-america.pool.ntp.org
+ap.single-gslb.spotify.com
+acsechocaptiveportal.com
+device-metrics-us-2.amazon.com
+pindorama.amazon.com
+device-metrics-us.amazon.com
+ghs-svc-https-c101.ghs-ssl.googlehosted.com
+updates.amazon.com
+www.example.org
+0.invoxia.pool.ntp.org
+ntp1.glb.nist.gov
+www.google.com
+time.google.com
