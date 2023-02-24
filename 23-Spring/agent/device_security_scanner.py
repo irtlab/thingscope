@@ -282,12 +282,15 @@ class SecurityAnalyzer:
             port_proto = str(pkt[scapy.UDP].dport) + "/" + "udp"
             self.protocols.add(port_proto)
             protocol = 'udp'
-        if scapy.TCP in pkt:
-            port_proto = str(pkt[scapy.TCP].dport) + "/" + "tcp"
-            if (port_proto == "443/tcp"):
-                tls_result = self.identify_tls_payload_type(pkt)
-                if tls_result:
-                    self.ip_tls_map[str(pkt[scapy.IP].dst)] = tls_result
+        try:
+            if scapy.TCP in pkt:
+                port_proto = str(pkt[scapy.TCP].dport) + "/" + "tcp"
+                if (port_proto == "443/tcp"):
+                    tls_result = self.identify_tls_payload_type(pkt)
+                    if tls_result:
+                       self.ip_tls_map[str(pkt[scapy.IP].dst)] = tls_result
+        except IndexError as e:
+            logging.warning("Unexpected exception during identification of tls payload type")
 
             self.protocols.add(port_proto)
             protocol = 'tcp'
@@ -577,6 +580,22 @@ class SecurityAnalyzer:
             scapy.wrpcap(pcap_filename, pkt, append=True)
             self.writeq.task_done()
 
+#
+# Read pcap file, calls pktHnadler for each packet
+# performs post processing on the accumulated data structure
+#
+def process_pcap(pcapf, internal_ip_prefix):
+    packets = scapy.rdpcap(pcapf)
+    logging.info(packets)
+    unique_macs = list(set([x.src for x in packets]))
+    logging.info(unique_macs)
+    for mac in unique_macs:
+        logging.info(f"Now processing {mac}\n\n")
+        security_analyzer = SecurityAnalyzer(device_mac_address=mac, internal_ip_prefix=internal_ip_prefix)
+        for pkt in packets:
+            security_analyzer.pktHandler(pkt)
+        security_analyzer.postProcess()
+        security_analyzer.printStore()
 
 ### helper functions ###
 
@@ -623,27 +642,12 @@ if __name__ == "__main__":
     #                                     internal_ip_prefix=args.internal_ip_prefix)
 
 
-    #
-    # Read pcap file, calls pktHnadler for each packet
-    # performs post processing on the accumulated data structure
-    #
-    def process_pcap(pcapf):
-        packets = scapy.rdpcap(pcapf)
-        unique_macs = list(set([x.src for x in packets]))
-        for mac in unique_macs:
-            logging.info(f"Now processing {mac}\n\n")
-            security_analyzer = SecurityAnalyzer(device_mac_address=mac, internal_ip_prefix=args.internal_ip_prefix)
-            for pkt in packets:
-                security_analyzer.pktHandler(pkt)
-            security_analyzer.postProcess()
-            security_analyzer.printStore()
-
     try:
 
         # Pcap file processing mode
         if args.iface is None:
             logging.info(f'Processing pcap file {args.pcap}')
-            process_pcap(args.pcap)
+            process_pcap(args.pcap, args.internal_ip_prefix)
 
         # Realtime sniffing mode
         else:

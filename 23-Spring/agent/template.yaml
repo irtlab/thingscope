@@ -11,6 +11,7 @@ Resources:
       Handler: aws_handler.handler
       Runtime: python3.7
       Timeout: 120
+      MemorySize: 256
       Role: !GetAtt FunctionRole.Arn
       Environment:
         Variables:
@@ -65,10 +66,3 @@ Resources:
                   - "logs:PutLogEvents"
                 Resource:
                   - "*"
-
-#  SubmissionNofification:
-#    Type: AWS::SNS::Topic
-#    Properties:
-#      Subscription:
-#        - Endpoint: "ajschwartz23@gmail.com"
-#          Protocol: "email"
