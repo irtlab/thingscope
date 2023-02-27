@@ -546,18 +546,14 @@ class SecurityAnalyzer:
                 cnames.add(cname)
                 self.domain_cnames[domain_name] = cnames
 
-
-        #try:
-            if pkt.haslayer(scapy.DNS):
-                ancount = pkt[scapy.DNS].ancount
-                i = ancount + 4
-                while i > 4:
-                    if pkt[0][i].type == 1:
-                        self.iot_servers.append({'dns_name': clean_endpoint(str(pkt[0][i].rrname)), 'ip': pkt[0][i].rdata})
-                    i -= 1
-                process_dns_packet(pkt[scapy.DNS])
-        #except Exception as e:
-        #    logging.warning(f'DNS packet local')
+        if pkt.haslayer(scapy.DNS):
+            ancount = pkt[scapy.DNS].ancount
+            i = ancount + 4
+            while i > 4:
+                if 'type' in pkt[0][i] and pkt[0][i].type == 1:
+                    self.iot_servers.append({'dns_name': clean_endpoint(str(pkt[0][i].rrname)), 'ip': pkt[0][i].rdata})
+                i -= 1
+            process_dns_packet(pkt[scapy.DNS])
 
     def write_pcap(self, pcap_filename, pkt):
         scapy.wrpcap(pcap_filename, pkt, append=True)
