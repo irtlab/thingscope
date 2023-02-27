@@ -350,16 +350,16 @@ class SecurityAnalyzer:
             self.sink.save_domain_map(d, list(cnames))
 
     def postProcess(self):
-        logging.info(f'Sink Started')
+        logging.debug(f'Sink Started')
         ip_domain_map = {}
         df = pd.DataFrame.from_records(self.iot_servers)
         df = df.drop_duplicates()
 
-        logging.info(df)
+        logging.debug(df)
         if not df.empty:
             for index, group in df.groupby('ip'):
                 domains = group['dns_name'].tolist()
-                logging.info(f'index {index } group {domains}')
+                logging.debug(f'index {index } group {domains}')
                 ip_domain_map[index] = max(domains, key= len)
 
         logging.info(f'ip_domain_map {ip_domain_map}')
@@ -415,10 +415,11 @@ class SecurityAnalyzer:
                 if not self.device_mac_address:
                     name = self.device_title
                 sink.save_device(device, self.device_meta_map[device], name=name)
-        self.sink_domain_maps()
+        if self.sink:
+            self.sink_domain_maps()
 
     def printStore(self):
-        logging.info(self.device_endpoints_store)
+        logging.info(json.dumps(self.device_endpoints_store, indent=3, sort_keys=True))
 
     def is_endpoint_exist(self, device_mac, ip):
         if not self.device_endpoints_store.__contains__(device_mac):
@@ -501,8 +502,7 @@ class SecurityAnalyzer:
                     self.identify_security_posture(endpoint_info, pkt)
                     self.add_device_endpoint(mac_addr, endpoint_ip, endpoint_info)
 
-            # self.standard_dns_callback(pkt)
-            self.dns_callbackV2(pkt)
+            self.dns_callback(pkt)
 
             time_since_last_sink = (time.time() - self.last_sink_time)
             if time_since_last_sink >= self.sink_interval_secs:
@@ -512,17 +512,8 @@ class SecurityAnalyzer:
         except Exception as e:
             logging.exception("Unexpected exception during pkt handling ! %s %s", e, str(pkt))
 
-    def standard_dns_callback(self, pkt):
 
-        layers = list(layer_expand(pkt))
-
-        if "DNS" in layers:
-            self.dns_callback(pkt)
-        else:
-            pass
-
-
-    def dns_callbackV2(self, pkt):
+    def dns_callback(self, pkt):
 
         def get_dest_ip(packet):
             if packet.haslayer(scapy.IP):
@@ -543,12 +534,12 @@ class SecurityAnalyzer:
                 dest_ip = get_dest_ip(packet)
                 domain_name = packet[scapy.DNSRR].rrname
                 domain_ip_address = packet[scapy.DNSRR].rdata
-                logging.info('****[DNS-A]\t' + str(dest_ip) + ' <<< ' + str(domain_name) + ' (' + str(domain_ip_address) + ')')
+                logging.debug('****[DNS-A]\t' + str(dest_ip) + ' <<< ' + str(domain_name) + ' (' + str(domain_ip_address) + ')')
             if packet.haslayer(scapy.DNSRR) and packet[scapy.DNSRR].type == 5:  # 1 is stands for 'CNAME' DNS record
                 dest_ip = get_dest_ip(packet)
                 domain_name = str(packet[scapy.DNSRR].rrname)
                 cname = str(packet[scapy.DNSRR].rdata)
-                logging.info('****[DNS-CNAME]\t' + str(dest_ip) + ' <<< ' + domain_name + ' (' + cname + ')')
+                logging.debug('****[DNS-CNAME]\t' + str(dest_ip) + ' <<< ' + domain_name + ' (' + cname + ')')
                 cnames = self.domain_cnames.get(domain_name)
                 if not cnames:
                     cnames = set()
@@ -586,16 +577,15 @@ class SecurityAnalyzer:
 #
 def process_pcap(pcapf, internal_ip_prefix):
     packets = scapy.rdpcap(pcapf)
-    logging.info(packets)
     unique_macs = list(set([x.src for x in packets]))
     logging.info(unique_macs)
     for mac in unique_macs:
-        logging.info(f"Now processing {mac}\n\n")
+        logging.info(f"\nNow processing {mac}")
         security_analyzer = SecurityAnalyzer(device_mac_address=mac, internal_ip_prefix=internal_ip_prefix)
         for pkt in packets:
             security_analyzer.pktHandler(pkt)
-        security_analyzer.postProcess()
-        security_analyzer.printStore()
+    security_analyzer.postProcess()
+    security_analyzer.printStore()
 
 ### helper functions ###
 
@@ -607,6 +597,7 @@ def layer_expand(packet):
         yield packet.name
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO)
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--pcap", help="pcap file to process", default="", required=False)
@@ -616,7 +607,7 @@ if __name__ == "__main__":
     parser.add_argument("--save_pcap", help="Enable Pcap file saving to create pcap file. Useful when processing live network traffic.", action='store_true', required=False)
     parser.add_argument("--disable_sink", help="Disable Sink. This will just print final Device Endpoint map.", action='store_true', required=False)
     parser.add_argument("--ignore_mac_addrs", help="Comma separated list of mac addresses to ignore", default="", required=False)
-    #parser.add_argument("--internal_ip_prefix", help="Internal ip prefixes (as list)", default=["10."], required=False)
+    parser.add_argument("--internal_ip_prefix", help="Internal ip prefixes (as list)", default=["10.", "192.168.", "255.255.255.255"], required=False)
 
     parser.add_argument("--iface_mac_addr", help="Interface Mac address", default="",
                         required=False)

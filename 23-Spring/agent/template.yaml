@@ -10,8 +10,8 @@ Resources:
       CodeUri: .
       Handler: aws_handler.handler
       Runtime: python3.7
-      Timeout: 120
-      MemorySize: 256
+      Timeout: 300
+      MemorySize: 2048
       Role: !GetAtt FunctionRole.Arn
       Environment:
         Variables:

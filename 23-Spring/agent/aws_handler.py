@@ -1,6 +1,7 @@
 from device_security_scanner import *
 import boto3
 import logging
+import time
 
 class ArrayHandler(logging.Handler):
 	def emit(self, record):
@@ -20,6 +21,7 @@ class s3():
 		self.s3Client.put_object(Bucket = self.bucket, Key=key, Body=file, ContentDisposition='inline')
 
 def handler(event, context):
+	time.sleep(30)
 	global log_array
 	log_array = []
 	logger = logging.getLogger()
@@ -28,6 +30,6 @@ def handler(event, context):
 	key = event['Records'][0]['s3']['object']['key'] 
 	if key.split('.')[-1] == 'pcap':
 		pcap_file = s3().get(key)
-		process_pcap(pcap_file, [])
+		process_pcap(pcap_file, ['10.', '192.168.'])
 		filename = f"report_{key.split('.')[:-1][0]}.txt"
 		s3().put(filename, '\n'.join(log_array))
