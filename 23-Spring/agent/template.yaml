@@ -66,3 +66,6 @@ Resources:
                   - "logs:PutLogEvents"
                 Resource:
                   - "*"
+              - Effect: Allow
+                Action: secretsmanager:GetSecretValue
+                Resource: 'arn:aws:secretsmanager:us-east-1:040801773313:secret:thingscopegoogle-DPnHOr'

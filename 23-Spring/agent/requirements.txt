@@ -4,3 +4,5 @@ pandas
 numpy
 dpkt==1.9.8
 pymongo==4.3.3
+google-api-python-client
+google-auth
