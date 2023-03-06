@@ -98,7 +98,7 @@ class SecurityAnalyzer:
     # calls endpoint to retrieve details from the received certificate
     #
     def do_endpoint_security(self, endpoint):
-        logging.info(f'Starting Endpoint Security On {endpoint}')
+        logging.debug(f'Starting Endpoint Security On {endpoint}')
         debug_entries = []
         
         r = requests.get(endpoint, verify=False)
@@ -450,12 +450,12 @@ class SecurityAnalyzer:
 
     def pktq_consumer(self):
         time_since_last_log = time.time()
-        logging.info('Starting pkt q consumer')
+        logging.debug('Starting pkt q consumer')
         while True:
             pkt = self.pktq.get()
 
             if ( time.time() - time_since_last_log > 5):
-                logging.info(f'pktq size {self.pktq.qsize()} {pkt.summary()} total recvd pkts {self.recvd_pkts_count} total processed pkts {self.processed_pkts_count}')
+                logging.debug(f'pktq size {self.pktq.qsize()} {pkt.summary()} total recvd pkts {self.recvd_pkts_count} total processed pkts {self.processed_pkts_count}')
                 time_since_last_log = time.time()
 
             self.pktHandler(pkt)
@@ -471,7 +471,7 @@ class SecurityAnalyzer:
     def pktHandler(self, pkt):
 
         try:
-            #logging.info(pkt.summary())
+            #logging.debug(pkt.summary())
             if not pkt.haslayer(scapy.Ether):
                 return
 
@@ -484,7 +484,7 @@ class SecurityAnalyzer:
                 return
 
             
-            #logging.info(f'device {mac_addr}')
+            #logging.debug(f'device {mac_addr}')
 
             if self.ignore_macs.__contains__(mac_addr):
                 return
@@ -529,7 +529,7 @@ class SecurityAnalyzer:
             return e
 
         def process_dns_packet(packet):
-            #logging.info(packet.show())
+            #logging.debug(packet.show())
             if packet.haslayer(scapy.DNSRR) and packet[scapy.DNSRR].type == 1:  # 1 is stands for 'A' DNS record
                 dest_ip = get_dest_ip(packet)
                 domain_name = packet[scapy.DNSRR].rrname
@@ -574,9 +574,9 @@ class SecurityAnalyzer:
 def process_pcap(pcapf, internal_ip_prefix):
     packets = scapy.rdpcap(pcapf)
     unique_macs = list(set([x.src for x in packets]))
-    logging.info(unique_macs)
+    logging.debug(f"Unique Mac Addresses: {','.join(unique_macs)}")
     for mac in unique_macs:
-        logging.info(f"\nNow processing {mac}")
+        logging.debug(f"\nNow processing {mac}")
         security_analyzer = SecurityAnalyzer(device_mac_address=mac, internal_ip_prefix=internal_ip_prefix)
         for pkt in packets:
             security_analyzer.pktHandler(pkt)
@@ -633,7 +633,7 @@ if __name__ == "__main__":
 
         # Pcap file processing mode
         if args.iface is None:
-            logging.info(f'Processing pcap file {args.pcap}')
+            logging.debug(f'Processing pcap file {args.pcap}')
             process_pcap(args.pcap, args.internal_ip_prefix)
 
         # Realtime sniffing mode
