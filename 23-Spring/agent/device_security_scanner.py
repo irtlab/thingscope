@@ -518,13 +518,6 @@ class SecurityAnalyzer:
             else:
                 return ""
 
-        def clean_endpoint(e):
-            e = e.replace("b'", "")
-            e = e.replace("'\n","")
-            e = e.replace("\.'", "")
-            e = e.replace(".'", "")
-            return e
-
         def process_dns_packet(packet):
             #logging.debug(packet.show())
             if packet.haslayer(scapy.DNSRR) and packet[scapy.DNSRR].type == 1:  # 1 is stands for 'A' DNS record
@@ -543,13 +536,10 @@ class SecurityAnalyzer:
                 cnames.add(cname)
                 self.domain_cnames[domain_name] = cnames
 
-        if pkt.haslayer(scapy.DNS):
-            ancount = pkt[scapy.DNS].ancount
-            i = ancount + 4
-            while i > 4:
-                if 'type' in pkt[0][i] and pkt[0][i].type == 1:
-                    self.iot_servers.append({'dns_name': clean_endpoint(str(pkt[0][i].rrname)), 'ip': pkt[0][i].rdata})
-                i -= 1
+        if pkt.haslayer(scapy.DNSRR):
+            for p in pkt[scapy.DNSRR]:
+                if p.type == 1:
+                    self.iot_servers.append({'dns_name': (p.rrname.decode()), 'ip': p.rdata})
             process_dns_packet(pkt[scapy.DNS])
 
     def write_pcap(self, pcap_filename, pkt):
