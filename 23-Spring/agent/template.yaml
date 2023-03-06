@@ -11,8 +11,12 @@ Resources:
       Handler: aws_handler.handler
       Runtime: python3.7
       Timeout: 300
-      MemorySize: 2048
+      MemorySize: 4096
+      EphemeralStorage: 
+        Size: 2048
       Role: !GetAtt FunctionRole.Arn
+      Layers:
+        - arn:aws:lambda:us-east-1:040801773313:layer:thingscope:1
       Environment:
         Variables:
           BUCKET: !Sub "${AWS::StackName}bucket"
