@@ -119,9 +119,6 @@ class SecurityAnalyzer:
 
         # logging.debug('Output of GET request:\n%s' % get_body.decode('utf8'))
 
-    def identify_security_posture(self, endpoint_info, pkt):
-        endpoint_info['security_posture'] = 'unknown'
-
     #
     # Returns a dictionary containing info about the payload type
     #
@@ -499,7 +496,7 @@ class SecurityAnalyzer:
             if endpoint_info and endpoint_info.get('ip'):
                 endpoint_ip = endpoint_info['ip']
                 if not self.is_endpoint_exist(mac_addr, endpoint_ip):
-                    self.identify_security_posture(endpoint_info, pkt)
+                    endpoint_info['security_posture'] = 'unknown'
                     self.add_device_endpoint(mac_addr, endpoint_ip, endpoint_info)
 
             self.dns_callback(pkt)
