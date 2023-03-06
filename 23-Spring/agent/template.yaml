@@ -3,23 +3,34 @@ Transform: AWS::Serverless-2016-10-31
 
 Description: thingscope mini
 
+Globals:
+  Function:
+    CodeUri: .
+    Runtime: python3.7
+    Timeout: 300
+    MemorySize: 4096
+    EphemeralStorage: 
+      Size: 2048
+    Layers:
+      - arn:aws:lambda:us-east-1:040801773313:layer:thingscope:1
+    Environment:
+      Variables:
+        BUCKET: !Sub "${AWS::StackName}bucket"
+
 Resources:
-  thingscope:
+  thingscopeAWS:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: .
-      Handler: aws_handler.handler
-      Runtime: python3.7
-      Timeout: 300
-      MemorySize: 4096
-      EphemeralStorage: 
-        Size: 2048
+      Handler: aws_handler.handlerFromS3
       Role: !GetAtt FunctionRole.Arn
-      Layers:
-        - arn:aws:lambda:us-east-1:040801773313:layer:thingscope:1
-      Environment:
-        Variables:
-          BUCKET: !Sub "${AWS::StackName}bucket"
+
+  thingscopeDrive:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: aws_handler.handlerFromDrive
+      Role: !GetAtt FunctionRole.Arn
+      FunctionUrlConfig:
+        AuthType: NONE
 
   bucket:
     Type: AWS::S3::Bucket
@@ -30,13 +41,13 @@ Resources:
       NotificationConfiguration:
         LambdaConfigurations:
             - Event: s3:ObjectCreated:*
-              Function: !GetAtt thingscope.Arn
+              Function: !GetAtt thingscopeAWS.Arn
       
   bucketPermission:
     Type: AWS::Lambda::Permission
     Properties:
       Action: 'lambda:InvokeFunction'
-      FunctionName: !GetAtt thingscope.Arn
+      FunctionName: !GetAtt thingscopeAWS.Arn
       Principal: s3.amazonaws.com
       SourceArn: !Sub 'arn:aws:s3:::${AWS::StackName}bucket'
       SourceAccount: !Ref AWS::AccountId
@@ -73,3 +84,8 @@ Resources:
               - Effect: Allow
                 Action: secretsmanager:GetSecretValue
                 Resource: 'arn:aws:secretsmanager:us-east-1:040801773313:secret:thingscopegoogle-DPnHOr'
+
+Outputs:
+  MyFunctionUrlEndpoint:
+      Value:
+        !GetAtt thingscopeDriveUrl.FunctionUrl
