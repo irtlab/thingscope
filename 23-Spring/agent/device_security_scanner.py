@@ -521,8 +521,8 @@ class SecurityAnalyzer:
                 logging.debug('****[DNS-A]\t' + str(dest_ip) + ' <<< ' + str(domain_name) + ' (' + str(domain_ip_address) + ')')
             if packet.haslayer(scapy.DNSRR) and packet[scapy.DNSRR].type == 5:  # 1 is stands for 'CNAME' DNS record
                 dest_ip = get_dest_ip(packet)
-                domain_name = str(packet[scapy.DNSRR].rrname)
-                cname = str(packet[scapy.DNSRR].rdata)
+                domain_name = packet[scapy.DNSRR].rrname.decode()
+                cname = packet[scapy.DNSRR].rdata.decode()
                 logging.debug('****[DNS-CNAME]\t' + str(dest_ip) + ' <<< ' + domain_name + ' (' + cname + ')')
                 cnames = self.domain_cnames.get(domain_name)
                 if not cnames:
