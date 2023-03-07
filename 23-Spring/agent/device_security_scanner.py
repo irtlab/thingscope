@@ -13,10 +13,8 @@ import pandas as pd
 from sink import DeviceSink
 import numpy as np
 import logging
-import logging.config
 import queue
 import threading
-from aws_handler import *
 
 
 #
@@ -359,9 +357,6 @@ class SecurityAnalyzer:
                 logging.debug(f'index {index } group {domains}')
                 ip_domain_map[index] = max(domains, key= len)
 
-        logging.info(f'ip_domain_map {ip_domain_map}')
-        logging.info(f'domain_cnames {self.domain_cnames}')
-
         for device_mac in self.device_endpoints_store:
             endpoints_map = self.device_endpoints_store[device_mac]
             for ip in endpoints_map.keys():
@@ -402,6 +397,8 @@ class SecurityAnalyzer:
 
                 except Exception as e:
                     logging.error(f'post processing exception for {ip} {e}')
+        cnames = {k:list(v) for k,v in self.domain_cnames.items()}
+        return {"Endpoints":self.device_endpoints_store, "IP Domain Map": ip_domain_map, "Domain CNAME Map:": cnames}
 
         for device in self.device_meta_map.keys():
             if self.sink and self.sink.is_device_exist(device):
@@ -414,9 +411,6 @@ class SecurityAnalyzer:
                 sink.save_device(device, self.device_meta_map[device], name=name)
         if self.sink:
             self.sink_domain_maps()
-
-    def printStore(self):
-        logging.info(json.dumps(self.device_endpoints_store, indent=3, sort_keys=True))
 
     def is_endpoint_exist(self, device_mac, ip):
         if not self.device_endpoints_store.__contains__(device_mac):
@@ -562,14 +556,15 @@ def process_pcap(pcapf, internal_ip_prefix):
     packets = scapy.rdpcap(pcapf)
     unique_macs = list(set([x.src for x in packets]))
     logging.debug(f"Unique Mac Addresses: {','.join(unique_macs)}")
+    report = {}
     for mac in unique_macs:
         logging.debug(f"\nNow processing {mac}")
         security_analyzer = SecurityAnalyzer(device_mac_address=mac, internal_ip_prefix=internal_ip_prefix)
         for pkt in packets:
             security_analyzer.pktHandler(pkt)
-    security_analyzer.postProcess()
-    security_analyzer.printStore()
-
+        report[mac] = security_analyzer.postProcess()
+    return report
+    
 ### helper functions ###
 
 # expand the packet to check for DNS type

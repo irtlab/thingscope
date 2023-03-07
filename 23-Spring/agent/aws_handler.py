@@ -7,10 +7,6 @@ from google.oauth2.service_account import Credentials
 from apiclient.http import MediaFileUpload
 import json
 
-class ArrayHandler(logging.Handler):
-	def emit(self, record):
-		log_array.append(record.getMessage())
-
 class s3():
 	def __init__(self):
 		self.bucket = 'thingscopeminibucket'
@@ -53,24 +49,19 @@ class google():
 		return filename
 
 def main(pcap_file):
-	global log_array
-	log_array = []
-	logger = logging.getLogger()
-	logger.setLevel(logging.INFO)
-	logger.addHandler(ArrayHandler())
-	
-	process_pcap(f"/tmp/{pcap_file}", ["10.", "192.168.", "253.", "254.", "255."])
-	filename = f"report_{pcap_file.split('.')[:-1][0]}.txt"
-	s3().put(filename, '\n'.join(log_array))
-	google().push(filename, '\n'.join(log_array))
+	report = json.dumps(process_pcap(f"/tmp/{pcap_file}", ["10.", "192.168.", "253.", "254.", "255."]), sort_keys=True)
+	filename = f"report_{pcap_file.split('.')[:-1][0]}.json"
+	s3().put(filename, report)
+	google().push(filename, report)
+	return report
 
 def handlerFromS3(event, context):
 	key = event['Records'][0]['s3']['object']['key']
 	if key.split('.')[-1] == 'pcap':
 		pcap_file = s3().get(key)
-		main(pcap_file)
+		x = main(pcap_file)
 
 def handlerFromDrive(event, context):
 	filename = google().get(event['rawQueryString'])
-	main(filename)
-	return {'status':202}
+	report = main(filename)
+	return {"statusCode": "200", "headers": {"Content-Type": "application/json",},"body": report}
