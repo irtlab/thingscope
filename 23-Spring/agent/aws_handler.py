@@ -51,8 +51,6 @@ class google():
 def main(pcap_file):
 	report = json.dumps(process_pcap(f"/tmp/{pcap_file}"), sort_keys=True)
 	filename = f"report_{pcap_file.split('.')[:-1][0]}.json"
-	s3().put(filename, report)
-	google().push(filename, report)
 	return report
 
 def handlerFromS3(event, context):
@@ -62,6 +60,10 @@ def handlerFromS3(event, context):
 		x = main(pcap_file)
 
 def handlerFromDrive(event, context):
-	filename = google().get(event['rawQueryString'])
 	report = main(filename)
+	filename = google().get(event['queryStringParameters']['id'])
+	noDrop = 'noDrop' in event['queryStringParameters']
+	if not noDrop:
+		s3().put(filename, report)
+		google().push(filename, report)
 	return {"statusCode": "200", "headers": {"Content-Type": "application/json",},"body": report}
