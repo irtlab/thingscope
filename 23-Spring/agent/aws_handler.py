@@ -1,4 +1,5 @@
 from device_security_scanner import *
+from analysis4 import *
 import boto3
 import logging
 import time
@@ -53,6 +54,10 @@ def main(pcap_file):
 	filename = f"report_{pcap_file.split('.')[:-1][0]}.json"
 	return report
 
+def beta(pcap_file):
+	report = json.dumps(betaMain(f"/tmp/{pcap_file}"), sort_keys=True)
+	return report
+
 def handlerFromS3(event, context):
 	key = event['Records'][0]['s3']['object']['key']
 	if key.split('.')[-1] == 'pcap':
@@ -60,9 +65,13 @@ def handlerFromS3(event, context):
 		x = main(pcap_file)
 
 def handlerFromDrive(event, context):
-	report = main(filename)
 	filename = google().get(event['queryStringParameters']['id'])
 	noDrop = 'noDrop' in event['queryStringParameters']
+	isBeta = 'beta' in event['queryStringParameters']
+	if isBeta:
+		report = beta(filename)
+	else:
+		report = main(filename)
 	if not noDrop:
 		s3().put(filename, report)
 		google().push(filename, report)
