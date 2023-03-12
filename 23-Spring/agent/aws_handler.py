@@ -49,7 +49,7 @@ class google():
 		return filename
 
 def main(pcap_file):
-	report = json.dumps(process_pcap(f"/tmp/{pcap_file}", ["10.", "192.168.", "253.", "254.", "255."]), sort_keys=True)
+	report = json.dumps(process_pcap(f"/tmp/{pcap_file}"), sort_keys=True)
 	filename = f"report_{pcap_file.split('.')[:-1][0]}.json"
 	s3().put(filename, report)
 	google().push(filename, report)

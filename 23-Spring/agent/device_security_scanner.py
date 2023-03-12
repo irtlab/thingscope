@@ -1,6 +1,6 @@
 
 from io import BytesIO
-
+import ipaddress
 import sys
 import argparse
 import scapy.all as scapy
@@ -25,7 +25,7 @@ import threading
 #
 
 class SecurityAnalyzer:
-    def __init__(self, device_mac_address="", device_title="", sink=None, sink_interval=10, is_save_pcap=False, iface_mac_addr=None, ignore_mac_addrs="", internal_ip_prefix=""):
+    def __init__(self, device_mac_address="", device_title="", sink=None, sink_interval=10, is_save_pcap=False, iface_mac_addr=None, ignore_mac_addrs=""):
         self.domains = set()
         self.sink = sink
         self.device_title = device_title
@@ -42,7 +42,6 @@ class SecurityAnalyzer:
         self.last_sink_time = time.time()
         self.is_save_pcap = is_save_pcap
         self.ignore_macs = set()
-        self.internal_ip_prefix = internal_ip_prefix
         for m in ignore_mac_addrs.split(","):
             self.ignore_macs.add(m)
 
@@ -387,7 +386,7 @@ class SecurityAnalyzer:
                         except Exception as e:
                             logging.error(f'post processing exception for {ip} {e}')
 
-                    if not any(str(ip).startswith(item) for item in self.internal_ip_prefix):
+                    if not any(ipaddress.ip_address(ip).is_private):
                         location_data = self.get_location(ip)
                         logging.debug(f'{ip} location {location_data}')
                         endpoints_map[ip]['location'] = location_data
@@ -552,14 +551,14 @@ class SecurityAnalyzer:
 # Read pcap file, calls pktHnadler for each packet
 # performs post processing on the accumulated data structure
 #
-def process_pcap(pcapf, internal_ip_prefix):
+def process_pcap(pcapf):
     packets = scapy.rdpcap(pcapf)
     unique_macs = list(set([x.src for x in packets]))
     logging.debug(f"Unique Mac Addresses: {','.join(unique_macs)}")
     report = {}
     for mac in unique_macs:
         logging.debug(f"\nNow processing {mac}")
-        security_analyzer = SecurityAnalyzer(device_mac_address=mac, internal_ip_prefix=internal_ip_prefix)
+        security_analyzer = SecurityAnalyzer(device_mac_address=mac)
         for pkt in packets:
             security_analyzer.pktHandler(pkt)
         report[mac] = security_analyzer.postProcess()
@@ -585,7 +584,6 @@ if __name__ == "__main__":
     parser.add_argument("--save_pcap", help="Enable Pcap file saving to create pcap file. Useful when processing live network traffic.", action='store_true', required=False)
     parser.add_argument("--disable_sink", help="Disable Sink. This will just print final Device Endpoint map.", action='store_true', required=False)
     parser.add_argument("--ignore_mac_addrs", help="Comma separated list of mac addresses to ignore", default="", required=False)
-    parser.add_argument("--internal_ip_prefix", help="Internal ip prefixes (as list)", default=["10.", "192.168.", "255.255.255.255"], required=False)
 
     parser.add_argument("--iface_mac_addr", help="Interface Mac address", default="",
                         required=False)
@@ -607,8 +605,7 @@ if __name__ == "__main__":
 
 
     #security_analyzer = SecurityAnalyzer(device_mac_address=args.devmacaddr, device_title= args.title, sink=sink, sink_interval=args.sink_interval,
-    #                                     is_save_pcap=args.save_pcap, iface_mac_addr=args.iface_mac_addr, ignore_mac_addrs=args.ignore_mac_addrs,
-    #                                     internal_ip_prefix=args.internal_ip_prefix)
+    #                                     is_save_pcap=args.save_pcap, iface_mac_addr=args.iface_mac_addr, ignore_mac_addrs=args.ignore_mac_addrs)
 
 
     try:
@@ -616,7 +613,7 @@ if __name__ == "__main__":
         # Pcap file processing mode
         if args.iface is None:
             logging.debug(f'Processing pcap file {args.pcap}')
-            process_pcap(args.pcap, args.internal_ip_prefix)
+            process_pcap(args.pcap)
 
         # Realtime sniffing mode
         else:
