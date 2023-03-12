@@ -6,6 +6,5 @@ stack_name = "thingscopemini"
 s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-187rzn65rx22l"
 s3_prefix = "thingscopemini"
 region = "us-east-1"
-confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
 image_repositories = []
