@@ -11,7 +11,6 @@ import requests
 from requests.packages.urllib3.connection import VerifiedHTTPSConnection
 import pandas as pd
 from sink import DeviceSink
-import numpy as np
 import logging
 import queue
 import threading

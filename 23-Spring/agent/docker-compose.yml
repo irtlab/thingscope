@@ -1,0 +1,33 @@
+# build a docker compost file with a mongo database, a python flask api, and a basic volume to hold files
+version: '3.7'
+
+services:
+  mongodb:
+    image: mongo:4.2.3
+    container_name: mongodb
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/db:/data/db
+    networks:
+      - backend
+
+  flask:
+    build: .
+    container_name: flask
+    restart: always
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/app
+    networks:
+      - backend
+    depends_on:
+      - mongodb
+
+volumes:
+  dbdata:
+
+networks:
+  backend: 
