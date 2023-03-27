@@ -1,0 +1,254 @@
+# AWS cloudformation template to deploy a docker compose container to EC2
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Thingscope docker container'
+
+Resources:
+  ECSTask:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      RequiresCompatibilities:
+        - EC2
+      ContainerDefinitions:
+        - Name: !Ref AWS::StackName
+          Image: 040801773313.dkr.ecr.us-east-1.amazonaws.com/thingscope:latest
+          PortMappings:
+            - ContainerPort: 5000
+          LogConfiguration:
+            LogDriver: awslogs
+            Options:
+              awslogs-group: !Ref LogGroup
+              awslogs-region: !Ref AWS::Region
+              awslogs-stream-prefix: thingscope
+      Cpu: 256
+      Memory: 512
+      NetworkMode: bridge
+
+  LogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub "/ecs/${AWS::StackName}"
+      RetentionInDays: 14
+
+  # ECSService:
+  #   DependsOn: LoadBalancerListener
+  #   Type: AWS::ECS::Service
+  #   Properties:
+  #     Cluster: !Ref ECSCluster
+  #     TaskDefinition: !Ref ECSTask
+  #     LaunchType: EC2
+  #     LoadBalancers:
+  #       - ContainerName: !Ref AWS::StackName
+  #         ContainerPort: 5000
+  #         TargetGroupArn: !Ref DefaultTargetGroup
+  
+  ECSCluster:
+    Type: AWS::ECS::Cluster
+    Properties:
+      ClusterName: !Sub "${AWS::StackName}-cluster" 
+  
+  ECSLaunchTemplate:
+    Type: 'AWS::EC2::LaunchTemplate'
+    DependsOn: ECSCluster
+    Properties:
+      LaunchTemplateData:
+        ImageId: ami-083cd4eb32643c8a0
+        InstanceType: t2.large
+        IamInstanceProfile:
+          Name: !Ref ECSInstanceProfile
+        NetworkInterfaces:
+          - DeviceIndex: 0
+            SubnetId: !Ref PrivateSubnet
+            Groups:
+              - !Ref EC2SecurityGroup
+        UserData:
+          Fn::Base64: !Sub |
+            #!/bin/bash
+            echo ECS_CLUSTER=${AWS::StackName}-cluster >> /etc/ecs/ecs.config
+
+  ECSInstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      InstanceProfileName: !Sub "${AWS::StackName}instanceprofile"
+      Roles: 
+        - !Ref EC2Role
+  
+  EC2SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: ECS Security Group
+      VpcId: !Ref VPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          CidrIp: 0.0.0.0/0
+  
+  EC2Role:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub "${AWS::StackName}-role"
+      AssumeRolePolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: [ec2.amazonaws.com]
+            Action: ['sts:AssumeRole']
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceforEC2Role
+
+  ECSAutoScalingGroup:
+    Type: 'AWS::AutoScaling::AutoScalingGroup'
+    Properties:
+      MinSize: 1
+      MaxSize: 5
+      DesiredCapacity: 1
+      LaunchTemplate:
+        LaunchTemplateId: !Ref ECSLaunchTemplate
+        Version: !GetAtt 
+          - ECSLaunchTemplate
+          - LatestVersionNumber
+      AvailabilityZones:
+        - us-east-1a
+    
+  ECSAutoScalingGroupRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub "${AWS::StackName}-asg-role"
+      AssumeRolePolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: [autoscaling.amazonaws.com]
+            Action: ['sts:AssumeRole']
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceAutoscaleRole
+  
+  EC2CapacityProvider:
+    Type: 'AWS::ECS::CapacityProvider'
+    Properties:
+      AutoScalingGroupProvider:
+        AutoScalingGroupArn: !Ref ECSAutoScalingGroup
+        ManagedScaling:
+          Status: ENABLED
+          TargetCapacity: 100
+        ManagedTerminationProtection: DISABLED
+  
+  ClusterCPAssociation:
+    Type: 'AWS::ECS::ClusterCapacityProviderAssociations'
+    Properties:
+      Cluster: !Ref ECSCluster
+      CapacityProviders:
+        - !Ref EC2CapacityProvider
+      DefaultCapacityProviderStrategy:
+        - Base: 0
+          Weight: 1
+          CapacityProvider: !Ref EC2CapacityProvider
+
+  NetworkLoadBalancer:
+    Type: AWS::ElasticLoadBalancingV2::LoadBalancer
+    Properties:
+      Name: !Sub "${AWS::StackName}-loadbalancer"
+      Scheme: internet-facing
+      Type: network
+      Subnets: !Split [",", !Join [",", [!Ref PublicSubnet]]]
+
+  LoadBalancerListener:
+    Type: AWS::ElasticLoadBalancingV2::Listener
+    Properties:
+      LoadBalancerArn: !Ref NetworkLoadBalancer
+      Port: 80
+      # Protocol: HTTP
+      Protocol: TCP
+      DefaultActions:
+        - Type: forward
+          TargetGroupArn: !Ref DefaultTargetGroup
+
+  DefaultTargetGroup:
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+    Properties:
+      Name: !Sub ${AWS::StackName}-defaulttargetgroup
+      VpcId: !Ref VPC
+      Port: 5000
+      #Protocol: HTTP
+      Protocol: TCP
+      # Target: 
+      #   Type: instance
+      #   Id: !Ref ECSCluster
+
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 172.17.0.0/23
+      EnableDnsHostnames: true
+
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+
+  InternetGatewayAttachment:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      InternetGatewayId: !Ref InternetGateway
+      VpcId: !Ref VPC
+
+  PublicSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      AvailabilityZone: !Select [0, !GetAZs ""]
+      CidrBlock: 172.17.1.0/24
+      MapPublicIpOnLaunch: true
+
+  PrivateSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      AvailabilityZone: !Select [0, !GetAZs ""]
+      CidrBlock: 172.17.0.0/24
+      MapPublicIpOnLaunch: false
+
+  NatGatewayEIP:
+    Type: AWS::EC2::EIP
+    DependsOn: InternetGatewayAttachment
+    Properties:
+      Domain: vpc
+
+  NatGateway:
+    Type: AWS::EC2::NatGateway
+    Properties:
+      AllocationId: !GetAtt NatGatewayEIP.AllocationId
+      SubnetId: !Ref PublicSubnet
+
+  PublicRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref VPC
+
+  DefaultPublicRoute:
+    Type: AWS::EC2::Route
+    DependsOn: InternetGatewayAttachment
+    Properties:
+      RouteTableId: !Ref PublicRouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref InternetGateway
+
+  PublicSubnetRouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref PublicRouteTable
+      SubnetId: !Ref PublicSubnet
+
+  PrivateRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref VPC
+
+  DefaultPrivateRoute:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId: !Ref PrivateRouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      NatGatewayId: !Ref NatGateway
+
+  PrivateSubnetRouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref PrivateRouteTable
+      SubnetId: !Ref PrivateSubnet
