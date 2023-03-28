@@ -52,7 +52,7 @@ Resources:
     Properties:
       LaunchTemplateData:
         ImageId: ami-083cd4eb32643c8a0
-        InstanceType: t2.large
+        InstanceType: t2.medium
         IamInstanceProfile:
           Name: !Ref ECSInstanceProfile
         NetworkInterfaces:
@@ -80,6 +80,8 @@ Resources:
       SecurityGroupIngress:
         - IpProtocol: tcp
           CidrIp: 0.0.0.0/0
+          FromPort: 80
+          ToPort: 80
   
   EC2Role:
     Type: AWS::IAM::Role
@@ -102,9 +104,7 @@ Resources:
       DesiredCapacity: 1
       LaunchTemplate:
         LaunchTemplateId: !Ref ECSLaunchTemplate
-        Version: !GetAtt 
-          - ECSLaunchTemplate
-          - LatestVersionNumber
+        Version: !GetAtt ECSLaunchTemplate.LatestVersionNumber
       AvailabilityZones:
         - us-east-1a
     
@@ -155,7 +155,6 @@ Resources:
     Properties:
       LoadBalancerArn: !Ref NetworkLoadBalancer
       Port: 80
-      # Protocol: HTTP
       Protocol: TCP
       DefaultActions:
         - Type: forward
@@ -167,11 +166,7 @@ Resources:
       Name: !Sub ${AWS::StackName}-defaulttargetgroup
       VpcId: !Ref VPC
       Port: 5000
-      #Protocol: HTTP
       Protocol: TCP
-      # Target: 
-      #   Type: instance
-      #   Id: !Ref ECSCluster
 
   VPC:
     Type: AWS::EC2::VPC
