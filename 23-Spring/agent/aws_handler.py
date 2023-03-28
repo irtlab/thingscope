@@ -1,5 +1,4 @@
 from device_security_scanner import *
-from analysis4 import *
 import boto3
 from apiclient.discovery import build
 from google.oauth2.service_account import Credentials
