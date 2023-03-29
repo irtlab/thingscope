@@ -13,12 +13,26 @@ Resources:
           Image: 040801773313.dkr.ecr.us-east-1.amazonaws.com/thingscope:latest
           PortMappings:
             - ContainerPort: 5000
+          mountPoints:
+            - containerPath: /data/db
+              sourceVolume: mongo
+            - containerPath: /app
+              sourceVolume: api
           LogConfiguration:
             LogDriver: awslogs
             Options:
               awslogs-group: !Ref LogGroup
               awslogs-region: !Ref AWS::Region
               awslogs-stream-prefix: thingscope
+      Volumes:
+        - Name: mongo
+          DockerVolumeConfiguration:
+            Autoprovision: true
+            Scope: shared
+        - Name: api
+          DockerVolumeConfiguration:
+            Autoprovision: true
+            Scope: shared
       Cpu: 256
       Memory: 512
       NetworkMode: bridge
