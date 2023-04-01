@@ -577,7 +577,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--pcap", help="pcap file to process", default="", required=False)
-    parser.add_argument("--db_url", help="DB Connection Endpoint", default="mongodb://localhost:27017/", required=False)
+    parser.add_argument("--db_url", help="DB Connection Endpoint", default="mongodb://mongodb:27017/", required=False)
     parser.add_argument("--db_name", help="DB Name", default="iot", required=False)
     parser.add_argument("--title", help="Device Title to save. Useful when you are processing single pcap file. Otherwise, you will have to update device title through Web UI", default="", required=False)
     parser.add_argument("--save_pcap", help="Enable Pcap file saving to create pcap file. Useful when processing live network traffic.", action='store_true', required=False)

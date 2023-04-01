@@ -10,24 +10,30 @@ services:
       - 27017:27017
     volumes:
       - ./data/db:/data/db
-    networks:
-      - backend
 
-  flask:
+  api:
     build: ./agent
-    container_name: flask
+    container_name: api
     restart: always
     ports:
       - 5000:5000
     volumes:
       - ./agent:/app
-    networks:
-      - backend
     depends_on:
      - mongodb
 
-volumes:
-  dbdata:
+  webapp_server:
+    build: ./webapp
+    container_name: webapp_server
+    #restart: always
+    ports:
+      - 3000:3000
+    depends_on:
+     - mongodb
 
-networks:
-  backend: 
+  webapp_client:
+    build: ./webapp/client
+    container_name: webapp_client
+    #restart: always
+    ports:
+      - 4000:3000
