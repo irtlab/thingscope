@@ -5,19 +5,6 @@ from google.oauth2.service_account import Credentials
 from apiclient.http import MediaFileUpload
 import json
 
-class s3():
-	def __init__(self):
-		self.bucket = 'thingscopeminibucket'
-		self.s3Client = boto3.client('s3')
-
-	def get(self, key):
-		path = f"/tmp/{key}"
-		self.s3Client.download_file(self.bucket, key, path)
-		return path
-
-	def put(self, key, file):
-		self.s3Client.put_object(Bucket = self.bucket, Key=key, Body=file, ContentDisposition='inline')
-
 class google():
 	def __init__(self):
 		secret_name = "thingscopegoogle"
@@ -55,12 +42,6 @@ def beta(pcap_file):
 	report = json.dumps(betaMain(f"/tmp/{pcap_file}"), sort_keys=True)
 	return report
 
-def handlerFromS3(event, context):
-	key = event['Records'][0]['s3']['object']['key']
-	if key.split('.')[-1] == 'pcap':
-		pcap_file = s3().get(key)
-		x = main(pcap_file)
-
 def handlerFromDrive(event, context):
 	filename = google().get(event['queryStringParameters']['id'])
 	newFilename = f"report_{filename.split('.')[:-1][0]}.json"
@@ -71,6 +52,5 @@ def handlerFromDrive(event, context):
 	else:
 		report = main(filename)
 	if not noDrop:
-		s3().put(newFilename, report)
 		google().push(newFilename, report)
 	return {"statusCode": "200", "headers": {"Content-Type": "application/json",},"body": report}

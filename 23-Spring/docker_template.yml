@@ -107,6 +107,13 @@ Resources:
             Principal:
               Service: [ec2.amazonaws.com]
             Action: ['sts:AssumeRole']
+      Policies:
+        - PolicyName: s3ReadWriteAndSecrets
+          PolicyDocument:
+            Statement:
+              - Effect: Allow
+                Action: secretsmanager:GetSecretValue
+                Resource: 'arn:aws:secretsmanager:us-east-1:040801773313:secret:thingscopegoogle-DPnHOr'
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceforEC2Role
 
