@@ -1,5 +1,6 @@
 from flask import Flask, request
 from device_security_scanner import *
+from aws_handler import *
 import json
 import os
 
@@ -20,6 +21,14 @@ def agent():
     except Exception as e:
         print(e)
         return 'Internal Server Error', 500
+    
+@app.route("/agent/legacy")
+def agentLegacy():
+    return handlerFromDrive({'queryStringParameters' : {'id': request.args.get('id')}}, None)
+    try:
+        return handlerFromDrive({'queryStringParameters' : {'id': request.args.get('id')}}, None)
+    except Exception as e:
+        return str(e), 500
 
 # Uploads a file to the volume. Posts the file in the HTTP request
 @app.route("/upload_pcap", methods=['POST'])
