@@ -385,7 +385,7 @@ class SecurityAnalyzer:
                         except Exception as e:
                             logging.error(f'post processing exception for {ip} {e}')
 
-                    if not any(ipaddress.ip_address(ip).is_private):
+                    if not ipaddress.ip_address(ip).is_private:
                         location_data = self.get_location(ip)
                         logging.debug(f'{ip} location {location_data}')
                         endpoints_map[ip]['location'] = location_data

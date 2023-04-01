@@ -63,6 +63,7 @@ def handlerFromS3(event, context):
 
 def handlerFromDrive(event, context):
 	filename = google().get(event['queryStringParameters']['id'])
+	newFilename = f"report_{filename.split('.')[:-1][0]}.json"
 	noDrop = 'noDrop' in event['queryStringParameters']
 	isBeta = 'beta' in event['queryStringParameters']
 	if isBeta:
@@ -70,6 +71,6 @@ def handlerFromDrive(event, context):
 	else:
 		report = main(filename)
 	if not noDrop:
-		s3().put(filename, report)
-		google().push(filename, report)
+		s3().put(newFilename, report)
+		google().push(newFilename, report)
 	return {"statusCode": "200", "headers": {"Content-Type": "application/json",},"body": report}

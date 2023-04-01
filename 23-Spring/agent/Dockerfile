@@ -1,5 +1,4 @@
 # dockerfile for a python application whose source is at flask_handler.py
-# and whose dependencies are in requirements.txt
 FROM python:3.7
 WORKDIR /app
 COPY requirements.txt ./
