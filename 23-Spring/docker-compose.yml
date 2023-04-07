@@ -29,11 +29,15 @@ services:
     ports:
       - 3000:3000
     depends_on:
-     - mongodb
+      - mongodb
+    environment:
+      - PORT=3000
 
   webapp_client:
     build: ./webapp/client
     container_name: webapp_client
     #restart: always
     ports:
-      - 4000:3000
+      - 4000:4000
+    environment:
+      - PORT=4000
