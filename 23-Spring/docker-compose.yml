@@ -41,3 +41,17 @@ services:
       - 4000:4000
     environment:
       - PORT=4000
+      - REACT_APP_API_URL=http://localhost
+      - HOST=webapp_client
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    depends_on:
+      - webapp_client
+      - api
