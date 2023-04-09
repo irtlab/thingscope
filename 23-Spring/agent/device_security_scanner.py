@@ -396,19 +396,18 @@ class SecurityAnalyzer:
                 except Exception as e:
                     logging.error(f'post processing exception for {ip} {e}')
         cnames = {k:list(v) for k,v in self.domain_cnames.items()}
-        return {"Endpoints":self.device_endpoints_store, "IP Domain Map": ip_domain_map, "Domain CNAME Map:": cnames}
 
         for device in self.device_meta_map.keys():
             if self.sink and self.sink.is_device_exist(device):
                 continue
 
             if self.sink:
-                name='TBD'
-                if not self.device_mac_address:
-                    name = self.device_title
-                sink.save_device(device, self.device_meta_map[device], name=name)
+                name = self.device_title if self.device_title else self.device_mac_address
+                self.sink.save_device(device, self.device_meta_map[device], name=name)
         if self.sink:
             self.sink_domain_maps()
+        
+        return {"Endpoints":self.device_endpoints_store, "IP Domain Map": ip_domain_map, "Domain CNAME Map:": cnames}
 
     def is_endpoint_exist(self, device_mac, ip):
         if not self.device_endpoints_store.__contains__(device_mac):
@@ -550,7 +549,7 @@ class SecurityAnalyzer:
 # Read pcap file, calls pktHnadler for each packet
 # performs post processing on the accumulated data structure
 #
-def process_pcap(pcapf):
+def process_pcap_interactive(pcapf):
     packets = scapy.rdpcap(pcapf)
     unique_macs = list(set([x.src for x in packets]))
     logging.debug(f"Unique Mac Addresses: {','.join(unique_macs)}")
@@ -562,6 +561,17 @@ def process_pcap(pcapf):
             security_analyzer.pktHandler(pkt)
         report[mac] = security_analyzer.postProcess()
     return report
+
+def process_pcap_sink(pcapf, title, db_url, db_name):
+    packets = scapy.rdpcap(pcapf)
+    unique_macs = list(set([x.src for x in packets]))
+    # TODO: have user select the mac address
+    mac = unique_macs[0]
+    security_analyzer = SecurityAnalyzer(device_mac_address=mac, device_title=title, sink = DeviceSink(db_url=db_url, db_name=db_name))
+    for pkt in packets:
+        security_analyzer.pktHandler(pkt)
+    security_analyzer.postProcess()
+
     
 ### helper functions ###
 
@@ -603,8 +613,8 @@ if __name__ == "__main__":
         sink = DeviceSink(db_url=args.db_url, db_name=args.db_name)
 
 
-    #security_analyzer = SecurityAnalyzer(device_mac_address=args.devmacaddr, device_title= args.title, sink=sink, sink_interval=args.sink_interval,
-    #                                     is_save_pcap=args.save_pcap, iface_mac_addr=args.iface_mac_addr, ignore_mac_addrs=args.ignore_mac_addrs)
+    security_analyzer = SecurityAnalyzer(device_mac_address=args.devmacaddr, device_title= args.title, sink=sink, sink_interval=args.sink_interval,
+                                         is_save_pcap=args.save_pcap, iface_mac_addr=args.iface_mac_addr, ignore_mac_addrs=args.ignore_mac_addrs)
 
 
     try:
@@ -612,7 +622,7 @@ if __name__ == "__main__":
         # Pcap file processing mode
         if args.iface is None:
             logging.debug(f'Processing pcap file {args.pcap}')
-            process_pcap(args.pcap)
+            process_pcap_interactive(args.pcap)
 
         # Realtime sniffing mode
         else:

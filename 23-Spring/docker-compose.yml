@@ -19,6 +19,9 @@ services:
       - 5000:5000
     volumes:
       - ./agent:/app
+    environment:
+      - ATLAS_URI=mongodb://mongodb:27017
+      - IOT_DB_NAME=iot
     depends_on:
      - mongodb
 
