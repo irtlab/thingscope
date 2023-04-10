@@ -48,7 +48,6 @@ class SecurityAnalyzer:
         self.recvd_pkts_count = 0
         self.processed_pkts_count = 0
         self.iface_mac_addr = iface_mac_addr
-        self.device_meta_map = dict()
         self.pktq = queue.Queue()
         # list of devices seen right now
         self.devices = set()
@@ -266,10 +265,6 @@ class SecurityAnalyzer:
 
         port_proto = None
         protocol = None
-        if scapy.IP in pkt:
-            device_ip = str(pkt[scapy.IP].src)
-            if device_ip != '0.0.0.0':
-                self.device_meta_map[mac_addr_src] = device_ip
 
         if scapy.UDP in pkt:
             port_proto = str(pkt[scapy.UDP].dport) + "/" + "udp"
@@ -340,7 +335,7 @@ class SecurityAnalyzer:
     def sink_domain_maps(self):
         for d in self.domain_cnames.keys():
             cnames = self.domain_cnames.get(d)
-            self.sink.save_domain_map(d, list(cnames))
+            self.sink.save_domain_map(self.device_title, d, list(cnames))
 
     def postProcess(self):
         logging.debug(f'Sink Started')
@@ -362,7 +357,7 @@ class SecurityAnalyzer:
                     if ip == 'debug_me':
                         logging.debug('wait')
 
-                    if self.sink and self.sink.is_endpoint_exist(ip):
+                    if self.sink and self.sink.is_endpoint_exist(ip, self.device_title):
                         continue
 
                     if ip in ip_domain_map:
@@ -391,19 +386,15 @@ class SecurityAnalyzer:
                         endpoints_map[ip]['location'] = location_data
 
                     if self.sink:
-                        self.sink.save_endpoint(device_mac=device_mac, endpoint_info=endpoints_map[ip])
+                        self.sink.save_endpoint(device_mac, self.device_title, endpoints_map[ip])
 
                 except Exception as e:
                     logging.error(f'post processing exception for {ip} {e}')
         cnames = {k:list(v) for k,v in self.domain_cnames.items()}
 
-        for device in self.device_meta_map.keys():
-            if self.sink and self.sink.is_device_exist(device):
-                continue
-
-            if self.sink:
-                name = self.device_title if self.device_title else self.device_mac_address
-                self.sink.save_device(device, self.device_meta_map[device], name=name)
+        if self.sink and not self.sink.is_device_exist(self.device_title):
+            name = self.device_title if self.device_title else self.device_mac_address
+            self.sink.save_device(self.device_mac_address, name)
         if self.sink:
             self.sink_domain_maps()
         
