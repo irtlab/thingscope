@@ -1,0 +1,25 @@
+import os
+import json
+from sink import *
+
+sink = DeviceSink(db_url=os.environ['ATLAS_URI'], db_name=os.environ['IOT_DB_NAME'])
+
+targetPath = ""
+for folderName, subfolders, filenames in os.walk(target_path):
+    for subfolder in subfolders:
+        name = ""
+        with open(os.path.join(folderName, subfolder, 'devicemeta.json')) as f:
+            devicemeta = json.load(f)
+            sink.save_device(devicemeta['name'], devicemeta['mac_addr'])
+            name = devicemeta['name']
+
+        with open(os.path.join(folderName, subfolder, 'domainips.json')) as f:
+            domainips = json.load(f)
+            for domainip in domainips.items():
+                sink.domain_coll.update_one({'name': name, 'domain': domainip['domain_name']}, {'$set': {'cnames': domainip['ips'].split(',')}}, upsert=True)
+            
+        with open(os.path.join(folderName, subfolder, 'endpoints.json')) as f:
+            endpoints = json.load(f)
+            for endpoint in endpoints:
+                endpoint['_id'] = {'ip': endpoint['ip'], 'name': name}
+                sink.endpoints_coll.insert_one(endpoint)
