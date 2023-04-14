@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+import logging
 
 
 class DeviceSink:
@@ -25,14 +26,7 @@ class DeviceSink:
 
             self.save = True
         except:
-            print('Connection to MongoDB failed')
-
-
-    def print_endpoints(self):
-        cursor = self.endpoints_coll.find()
-        for record in cursor:
-            print(record)
-
+            logging.error('Connection to MongoDB failed')
 
     def is_endpoint_exist(self, ip, name):
         try:
@@ -46,7 +40,7 @@ class DeviceSink:
             return False
 
         except Exception as e:
-            print(f'is_endpoint_exist processing exception for {ip}/{name},{e}')
+            logging.error(f'is_endpoint_exist processing exception for {ip}/{name},{e}')
             return False
 
     def is_device_exist(self, name):
@@ -59,7 +53,7 @@ class DeviceSink:
             return False
 
         except Exception as e:
-            print(f'is_endpoint_exist processing exception for {name} {e}')
+            logging.error(f'is_endpoint_exist processing exception for {name} {e}')
             return False
 
     def save_device(self, device, name):
@@ -71,9 +65,9 @@ class DeviceSink:
             if self.save:
                 result = self.devices_coll.insert_one(device_info)
 
-            print(f'Saved {self.save} {device_info}')
+            logging.info(f'Saved {self.save} {device_info}')
         except Exception as e:
-            print(f'save_device exception for {name} {e}')
+            logging.error(f'save_device exception for {name} {e}')
 
     def save_endpoint(self, device_mac, name, endpoint_info):
         try:
@@ -81,17 +75,17 @@ class DeviceSink:
             endpoint_info['_id'] = {'ip': endpoint_info['ip'], 'name': name}
             if self.save:
                 result = self.endpoints_coll.insert_one(endpoint_info)
-            print(f'Saved {self.save} {endpoint_info}')
+            logging.info(f'Saved {self.save} {endpoint_info}')
         except Exception as e:
-            print(f'save_endpoints exception for {name} {e}')
+            logging.error(f'save_endpoints exception for {name} {e}')
 
     def save_domain_map(self, name, domain, cnames):
         try:
             if self.save:
-                result = self.domain_coll.update_one({'name': name, 'domain': domain}, {'$set': {'cnames': cnames}}, upsert=True)
-            print(f'Saved {self.save} {name}/{domain} {cnames}')
+                result = self.domain_coll.update_one({"_id":{'name': name, 'domain': domain}}, {'$set': {'cnames': cnames}}, upsert=True)
+            logging.info(f'Saved {self.save} {name}/{domain} {cnames}')
         except Exception as e:
-            print(f'save_domain_map exception for {name}/{domain} {e}')
+            logging.error(f'save_domain_map exception for {name}/{domain} {e}')
 
     # def fetch_endpoints(self, filter):
     #     try:

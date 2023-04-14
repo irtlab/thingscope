@@ -373,10 +373,10 @@ class SecurityAnalyzer:
                         try:
                             if ip in ip_domain_map:
                                 domain_name = ip_domain_map[ip]
-                                cipher_name, cipher_version = security_analyzer.do_endpoint_security('https://' + str(domain_name))
+                                cipher_name, cipher_version = self.do_endpoint_security('https://' + str(domain_name))
                                 #endpoints_map[ip]['self_signed'] = self_signed
                                 endpoints_map[ip]['openssl_name'] = cipher_name
-                                endpoints_map[ip]['cert_tls_version'] = tls_version
+                                #endpoints_map[ip]['cert_tls_version'] = tls_version
                         except Exception as e:
                             logging.error(f'post processing exception for {ip} {e}')
 
@@ -561,7 +561,7 @@ def process_pcap_sink(pcapf, title, db_url, db_name):
     security_analyzer = SecurityAnalyzer(device_mac_address=mac, device_title=title, sink = DeviceSink(db_url=db_url, db_name=db_name))
     for pkt in packets:
         security_analyzer.pktHandler(pkt)
-    security_analyzer.postProcess()
+    return security_analyzer.postProcess()
 
     
 ### helper functions ###

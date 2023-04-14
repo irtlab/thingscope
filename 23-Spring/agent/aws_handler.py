@@ -34,12 +34,8 @@ class google():
 		return filename
 
 def main(pcap_file):
-	report = json.dumps(process_pcap(f"/tmp/{pcap_file}"), sort_keys=True)
+	report = json.dumps(process_pcap_interactive(f"/tmp/{pcap_file}"), sort_keys=True)
 	filename = f"report_{pcap_file.split('.')[:-1][0]}.json"
-	return report
-
-def beta(pcap_file):
-	report = json.dumps(betaMain(f"/tmp/{pcap_file}"), sort_keys=True)
 	return report
 
 def handlerFromDrive(event, context):
