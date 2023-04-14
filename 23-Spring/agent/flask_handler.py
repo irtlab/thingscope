@@ -28,6 +28,15 @@ def agentLegacy():
     except Exception as e:
         return str(e), 500
 
+@app.route("/agent/compare")
+def compare():
+    #try:
+        old = request.args.get('old')
+        new = request.args.get('new')
+        return compareEndpoints(old, new, os.environ['ATLAS_URI'], os.environ['IOT_DB_NAME'])
+    #except Exception as e:
+    #    return str(e), 500
+
 # Uploads a file to the volume. Posts the file in the HTTP request
 @app.route("/upload_pcap", methods=['POST'])
 def upload():
