@@ -21,6 +21,7 @@ In this version of thingscope, multiple pcap files for the same device are store
 
 ## Devices
 Primary key: name of a specific device run.
+```json
   {
     "_id": "S23_EmporiaPlug",
     "mac_addr": "10:52:1c:42:15:b2"
@@ -29,8 +30,10 @@ Primary key: name of a specific device run.
     "_id": "S23_EufyCamera",
     "mac_addr": "8c:85:80:3a:4e:4f"
   }
+```
 ## Endpoints
 Primary Composite Key: device run ID and IP address
+```json
  {
     "_id": {
       "ip": "18.223.118.122",
@@ -42,8 +45,9 @@ Primary Composite Key: device run ID and IP address
     "location": {
       "city": "Columbus",
 	...
-
+```
 ## Domains
+```json
 Primary Composite Key: device run ID and domain url
   {
     "_id": "{'name': 'S23_EmporiaPlug', 'domain': 'prod-mqtt.emporiaenergy.com.'}",
@@ -57,7 +61,7 @@ Primary Composite Key: device run ID and domain url
       "ntp1.glb.nist.gov."
     ]
   },
-
+```
 # Docker Stack
 This version of thingscope operates on a stack of 5 images, found in the docker-compose.yml file
 ## Agent
