@@ -1,5 +1,5 @@
 # Introduction
-The thingscope 23-Spring project revolved around turning the previous versions of the code into a dockerized container which could be easily distributed to students at Columbia and other universities such that dependency management would not be required to spin up the systems. 
+The thingscope 23-Spring project turned the previous versions of the code into a dockerized container which could be easily distributed to students at Columbia and other universities such that dependency management would not be required to spin up the systems. 
 
 # Infrastructure Changes
 - Introduction of docker-compose and docker files to manage the automated building and deploying of each individual image
@@ -44,7 +44,7 @@ Primary Composite Key: device run ID and IP address
     "ip": "18.223.118.122",
     "location": {
       "city": "Columbus",
-	...
+	//...
 ```
 ## Domains
 Primary Composite Key: device run ID and domain url
@@ -86,9 +86,9 @@ All applications are provided behind a single URL. Nginx allows for multiple ima
 # Installation & Usage
 This version of thingscope is designed to operate without installing anything other than docker and docker compose 
 
-Step 1. Install Docker & Docker Compose - See https://docs.docker.com/compose/install/linux/
-Step 2. run docker-compose up in the Spring-23 directory
-Step 3. Access the web client at localhost:80. To access the api methods directly, access localhost:80/agent and use the file at agent/flask_handler.py to see what methods are available
+- Step 1. Install Docker & Docker Compose - See https://docs.docker.com/compose/install/linux/
+- Step 2. run docker-compose up in the Spring-23 directory
+- Step 3. Access the web client at localhost:80. To access the api methods directly, access localhost:80/agent and use the file at agent/flask_handler.py to see what methods are available
 
 # Deploying to AWS
 While not part of the original deliverables, multiple templates were built to deploy these images to AWS. There are two ways to deploy
