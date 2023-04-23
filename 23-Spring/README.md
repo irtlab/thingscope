@@ -47,17 +47,17 @@ Primary Composite Key: device run ID and IP address
 	...
 ```
 ## Domains
-```json
 Primary Composite Key: device run ID and domain url
+```json
   {
     "_id": "{'name': 'S23_EmporiaPlug', 'domain': 'prod-mqtt.emporiaenergy.com.'}",
-    "cnames": \[
+    "cnames": [
       "a2poo8btpqc3gs-ats.iot.us-east-2.amazonaws.com."
     ]
   },
   {
     "_id": "{'name': 'S23_EufyCamera', 'domain': 'time.nist.gov.'}",
-    "cnames": \[
+    "cnames": [
       "ntp1.glb.nist.gov."
     ]
   },
