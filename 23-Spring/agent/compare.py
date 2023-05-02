@@ -1,5 +1,6 @@
 import json
 from sink import *
+import ipaddress
 
 def compareEndpoints(old, new, db_url, db_name):
     sink = DeviceSink(db_url, db_name)
@@ -18,14 +19,15 @@ def compareEndpoints(old, new, db_url, db_name):
     newCnames = [x for x in domains if x['_id']['name'] == new]
 
     for endpoint in oldEndpoints:
-        if endpoint not in newEndpoints:
-            output['Endpoints'][f'{old}_extra'].append(endpoint['_id']['ip'])
-        else:
-            newEndpoint = [x for x in newEndpoints if x['_id']['ip'] == endpoint['_id']['ip']][0]
-            # output all differences
-            for key in endpoint:
-                if key != '_id' and endpoint[key] != newEndpoint[key]:
-                    output['Differences'][endpoint['_id']['ip']].append({endpoint['_id']['name']:endpoint[key], newEndpoint['_id']['name']:newEndpoint[key]})
+        if not ipaddress.ip_address(endpoint['_id']['ip']).is_private:
+            if endpoint not in newEndpoints:
+                output['Endpoints'][f'{old}_extra'].append(endpoint['_id']['ip'])
+            else:
+                newEndpoint = [x for x in newEndpoints if x['_id']['ip'] == endpoint['_id']['ip']][0]
+                # output all differences
+                for key in endpoint:
+                    if key != '_id' and endpoint[key] != newEndpoint[key]:
+                        output['Differences'][endpoint['_id']['ip']].append({endpoint['_id']['name']:endpoint[key], newEndpoint['_id']['name']:newEndpoint[key]})
 
     for endpoint in newEndpoints:
         if endpoint not in oldEndpoints:
