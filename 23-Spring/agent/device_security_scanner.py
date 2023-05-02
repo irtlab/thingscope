@@ -24,7 +24,7 @@ import threading
 #
 
 class SecurityAnalyzer:
-    def __init__(self, device_mac_address="", device_title="", sink=None, sink_interval=10, is_save_pcap=False, iface_mac_addr=None, ignore_mac_addrs=""):
+    def __init__(self, device_mac_address="", device_title="", sink=None, sink_interval=10, is_save_pcap=False, iface_mac_addr=None, ignore_mac_addrs="", source_location="Unknown"):
         self.domains = set()
         self.sink = sink
         self.device_title = device_title
@@ -51,6 +51,7 @@ class SecurityAnalyzer:
         self.pktq = queue.Queue()
         # list of devices seen right now
         self.devices = set()
+        self.source_location = source_location
 
         self.port_protocol_map = {
             '80/tcp' : 'http',
@@ -335,7 +336,7 @@ class SecurityAnalyzer:
     def sink_domain_maps(self):
         for d in self.domain_cnames.keys():
             cnames = self.domain_cnames.get(d)
-            self.sink.save_domain_map(self.device_title, d, list(cnames))
+            self.sink.save_domain_map(self.device_title, d, list(cnames), self.source_location)
 
     def postProcess(self):
         logging.debug(f'Sink Started')
@@ -386,7 +387,7 @@ class SecurityAnalyzer:
                         endpoints_map[ip]['location'] = location_data
 
                     if self.sink:
-                        self.sink.save_endpoint(device_mac, self.device_title, endpoints_map[ip])
+                        self.sink.save_endpoint(device_mac, self.device_title, endpoints_map[ip], self.source_location)
 
                 except Exception as e:
                     logging.error(f'post processing exception for {ip} {e}')
@@ -394,7 +395,7 @@ class SecurityAnalyzer:
 
         if self.sink and not self.sink.is_device_exist(self.device_title):
             name = self.device_title if self.device_title else self.device_mac_address
-            self.sink.save_device(self.device_mac_address, name)
+            self.sink.save_device(self.device_mac_address, name, self.source_location)
         if self.sink:
             self.sink_domain_maps()
         
@@ -553,12 +554,12 @@ def process_pcap_interactive(pcapf):
         report[mac] = security_analyzer.postProcess()
     return report
 
-def process_pcap_sink(pcapf, title, db_url, db_name):
+def process_pcap_sink(pcapf, title, db_url, db_name, source_location="Unknown"):
     packets = scapy.rdpcap(pcapf)
     unique_macs = list(set([x.src for x in packets]))
     # TODO: have user select the mac address
     mac = unique_macs[0]
-    security_analyzer = SecurityAnalyzer(device_mac_address=mac, device_title=title, sink = DeviceSink(db_url=db_url, db_name=db_name))
+    security_analyzer = SecurityAnalyzer(device_mac_address=mac, device_title=title, sink = DeviceSink(db_url=db_url, db_name=db_name), source_location=source_location)
     for pkt in packets:
         security_analyzer.pktHandler(pkt)
     return security_analyzer.postProcess()

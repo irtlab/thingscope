@@ -56,10 +56,11 @@ class DeviceSink:
             logging.error(f'is_endpoint_exist processing exception for {name} {e}')
             return False
 
-    def save_device(self, device, name):
+    def save_device(self, device, name, source_location):
         device_info = {
             '_id': name,
-            'mac_addr': device
+            'mac_addr': device,
+            'source_location': source_location
         }
         try:
             if self.save:
@@ -69,20 +70,21 @@ class DeviceSink:
         except Exception as e:
             logging.error(f'save_device exception for {name} {e}')
 
-    def save_endpoint(self, device_mac, name, endpoint_info):
+    def save_endpoint(self, device_mac, name, endpoint_info, source_location):
         try:
             endpoint_info['device_mac'] = device_mac
             endpoint_info['_id'] = {'ip': endpoint_info['ip'], 'name': name}
+            endpoint_info['source_location'] = source_location
             if self.save:
                 result = self.endpoints_coll.insert_one(endpoint_info)
             logging.info(f'Saved {self.save} {endpoint_info}')
         except Exception as e:
             logging.error(f'save_endpoints exception for {name} {e}')
 
-    def save_domain_map(self, name, domain, cnames):
+    def save_domain_map(self, name, domain, cnames, source_location):
         try:
             if self.save:
-                result = self.domain_coll.update_one({"_id":{'name': name, 'domain': domain}}, {'$set': {'cnames': cnames}}, upsert=True)
+                result = self.domain_coll.update_one({"_id":{'name': name, 'domain': domain}}, {'$set': {'cnames': cnames}, 'source_location': source_location}, upsert=True)
             logging.info(f'Saved {self.save} {name}/{domain} {cnames}')
         except Exception as e:
             logging.error(f'save_domain_map exception for {name}/{domain} {e}')

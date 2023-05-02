@@ -1,6 +1,9 @@
 # Introduction
 The thingscope 23-Spring project turned the previous versions of the code into a dockerized container which could be easily distributed to students at Columbia and other universities such that dependency management would not be required to spin up the systems. 
 
+# Known Issues
+- Nginx server times out after 60 seconds. For processing large files, access the python agent directly using localhost:5000/agent
+
 # Infrastructure Changes
 - Introduction of docker-compose and docker files to manage the automated building and deploying of each individual image
 - Combine the agent, database, and web client into a single stack. Instead of local processing by an agent and a cloud based database and web client, one stack deployed in the cloud allows for the upload, processing, and display of a pcap file and its analysis
@@ -97,6 +100,6 @@ Using AWS Serverless Application Model (SAM), the agent can be deployed to AWS L
 This can be helpful when trying to process extremely large files
 
 ## Full Stack as Elastic Container Services
-TBD, may not be helpful
+Writeup TODO
 - ECR URL
 - Deploy the VPC first, then the EC2, then the services
