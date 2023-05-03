@@ -1,14 +1,14 @@
 import debug from 'debug';
 import http from 'http';
-import app from './app';
-import abort from './abort';
+import app from './app.js';
+import abort from './abort.js';
 
 const dbg = debug('thingscope:server');
 process.env.UV_THREADPOOL_SIZE = '128';
 
 
 (async () => {
-  const port = 3001;
+  const port = process.env.PORT || 3001;
   const server = http.createServer(app);
 
   const mode = process.env.NODE_ENV === 'development';

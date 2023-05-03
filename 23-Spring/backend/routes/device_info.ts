@@ -1,7 +1,7 @@
 import express from 'express';
-import { BadRequestError } from '../utils/errors';
-import { jsonify, hasKey } from '../utils/utils';
-import { devices_coll_str } from '../constants';
+import { BadRequestError } from '../utils/errors.js';
+import { jsonify, hasKey } from '../utils/utils.js';
+import { devices_coll_str } from '../constants.js';
 
 
 export default async function device_info_api(db: any) {

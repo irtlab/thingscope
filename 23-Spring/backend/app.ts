@@ -3,11 +3,11 @@ import cors from 'cors';
 import helmet from 'helmet';
 import path from 'path';
 import logger from 'morgan';
-import { getAmazonDocumentDB } from './db';
+import { getAmazonDocumentDB } from './db.js';
 
-import device_api  from './routes/device';
-import device_info_api from './routes/device_info';
-import agent_api from './routes/agent';
+import device_api  from './routes/device.js';
+import device_info_api from './routes/device_info.js';
+import agent_api from './routes/agent.js';
 
 const app = express();
 

@@ -1,12 +1,12 @@
 import jwt from 'jsonwebtoken';
 import mongodb from 'mongodb';
 import crypto from 'crypto';
-import { BadRequestError } from './utils/errors';
+import { BadRequestError } from './utils/errors.js';
 import {
   auth_agents_coll_str,
   jwt_access_secret_key,
   jwt_refresh_secret_key
-} from './constants';
+} from './constants.js';
 
 const { ObjectID } = mongodb;
 

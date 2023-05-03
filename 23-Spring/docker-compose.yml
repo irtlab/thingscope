@@ -18,7 +18,7 @@ services:
     ports:
       - 5000:5000
     volumes:
-      - ./agent:/app
+      - ./data:/data
     environment:
       - ATLAS_URI=mongodb://mongodb:27017
       - IOT_DB_NAME=iot
@@ -26,7 +26,7 @@ services:
      - mongodb
 
   webapp_server:
-    build: ./webapp
+    build: ./backend
     container_name: webapp_server
     #restart: always
     ports:
@@ -35,13 +35,17 @@ services:
       - mongodb
     environment:
       - PORT=3000
+      - MONGODB_URL=mongodb://mongodb:27017
+      - NODE_ENV=development
 
   webapp_client:
-    build: ./webapp/client
+    build: ./ui
     container_name: webapp_client
     #restart: always
     ports:
       - 4000:4000
+    volumes:
+      - ./data:/data
     environment:
       - PORT=4000
       - REACT_APP_API_URL=http://localhost
