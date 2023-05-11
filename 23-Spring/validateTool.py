@@ -14,6 +14,7 @@ for root, dirs, files in os.walk("../../pankaj/data"):
         with open(os.path.join(root, name, "endpoints.json")) as f:
             data = json.load(f)
             for endpoint in data:
+                anyFound = False
                 ip = endpoint['ip']
                 if ipaddress.ip_address(ip).is_private:
                     continue
@@ -24,4 +25,7 @@ for root, dirs, files in os.walk("../../pankaj/data"):
                     pass
                     #print(f"\t{ip} exists in {deviceName}")
                 else:
+                    anyFound = True
                     print(f"\t{ip} does not exist in {deviceName}")
+            if not anyFound:
+                print(f"\tAll endpoints exist in mongodb")

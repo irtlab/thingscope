@@ -5,6 +5,7 @@ import json
 import os
 from sink import *
 from compare import *
+import pandas
 
 app = Flask(__name__)
 
@@ -33,7 +34,13 @@ def compare():
     #try:
         old = request.args.get('old')
         new = request.args.get('new')
-        return compareEndpoints(old, new, os.environ['ATLAS_URI'], os.environ['IOT_DB_NAME'])
+        comparison = compareEndpoints(old, new, os.environ['ATLAS_URI'], os.environ['IOT_DB_NAME'])
+        df  = pandas.DataFrame()
+        for key, value in comparison.items():
+            if key != 'Differences':
+                for subkey, subvalue in value.items():
+                    df.loc[key, subkey] = '\\n'.join(subvalue)
+        return df.to_html().replace("\\n","<br>"), 200
     #except Exception as e:
     #    return str(e), 500
 
@@ -79,6 +86,20 @@ def output_db_domains():
     for domain in domains:
         domain['_id'] = str(domain['_id'])
     return domains, 200
+
+# given a name, return all endpoints with that name in {}
+@app.route("/agent/db/endpoints/<name>")
+def output_db_endpoints_name(name):
+    db = DeviceSink(db_url=os.environ['ATLAS_URI'], db_name=os.environ['IOT_DB_NAME'])
+    endpoints = [x for x in db.endpoints_coll.find({'_id.name': name})]
+    return endpoints, 200
+
+# given a name, return all devices with that name in {}
+@app.route("/agent/db/domains/<name>")
+def output_db_devices_name(name):
+    db = DeviceSink(db_url=os.environ['ATLAS_URI'], db_name=os.environ['IOT_DB_NAME'])
+    devices = [x for x in db.domain_coll.find({'_id.name': name})]
+    return devices, 200
 
 # return hello world at root
 @app.route("/")

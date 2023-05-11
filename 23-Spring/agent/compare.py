@@ -41,5 +41,5 @@ def compareEndpoints(old, new, db_url, db_name):
         if cname not in oldCnames:
             output['Domains'][f'{new}_extra'].append(cname['_id']['domain'])
 
-    return json.dumps(output)
+    return output
     
