@@ -3,6 +3,7 @@ The thingscope 23-Spring project turned the previous versions of the code into a
 
 # Known Issues
 - Nginx server times out after 60 seconds. For processing large files, access the python agent directly using localhost:5000/agent
+- Schema changes that were made to support different endpoints per run were only made to the python agent, they still need to be made to the web client controller. Additional FE changes will likely be required to the web client in parallel
 
 # Infrastructure Changes
 - Introduction of docker-compose and docker files to manage the automated building and deploying of each individual image
@@ -17,7 +18,7 @@ The thingscope 23-Spring project turned the previous versions of the code into a
 - Modifying sink schema to support composite keys made up of the device and the individual pcap run, allowing a programmatic comparison of two different semester's analysis in the same system
 
 ## Web Client Changes
-TBD
+- The Spring 2021 web client is built as part of this docker image. It does not currently have the ability to read the database's new schema, this is needed work
 
 # Schema Updates
 In this version of thingscope, multiple pcap files for the same device are stored separately, this allows for independent runs from different times to be compared. While no formal schema exists, the python agent and web server that interface with the database do so under the following structure:
@@ -78,10 +79,8 @@ The mongodb image, which operates entirely from the docker-compose file (there a
 ## Web Client
 This react application uses the controllers in the Web Server application to pull data from mongodb and display it neatly to end users. See https://thingscope.cs.columbia.edu for a live version of the web client. 
 
-TBD on updates until we know how far we get
-
 ## Web Server
-This react application provides the controllers between the Web Client and Mongo DB. The only  change to this application this semester is the schema modification around separating multiple pcap runs on the same device
+This react application provides the controllers between the Web Client and Mongo DB. It was copied from the Spring 2021 folder and only modified slightly to work with Docker
 
 ## Nginx
 All applications are provided behind a single URL. Nginx allows for multiple images to all be served at the same domain and have URL patterns determine which image gets the request.
@@ -94,12 +93,17 @@ This version of thingscope is designed to operate without installing anything ot
 - Step 3. Access the web client at localhost:80. To access the api methods directly, access localhost:80/agent and use the file at agent/flask_handler.py to see what methods are available
 
 # Deploying to AWS
-While not part of the original deliverables, multiple templates were built to deploy these images to AWS. There are two ways to deploy
+While not part of the original deliverables, multiple templates were built to deploy these images to AWS. There are two ways to deploy (scripts for deployment also exist in the agent/scripts folder)
 ## Agent only in Lambda
 Using AWS Serverless Application Model (SAM), the agent can be deployed to AWS Lambda. 
 This can be helpful when trying to process extremely large files
+```console
+sam build --skip-pull-image -t lambda_template.yaml
+sam deploy --no-progressbar
+```
 
 ## Full Stack as Elastic Container Services
-Writeup TODO
-- ECR URL
-- Deploy the VPC first, then the EC2, then the services
+Deploy using cloudformation to have a running EC2 instance
+```console
+aws cloudformation deploy --template docker_template.yml --capabilities CAPABILITY_NAMED_IAM --stack-name thingscope
+```
