@@ -30,8 +30,9 @@ def compareEndpoints(old, new, db_url, db_name):
                         output['Differences'][endpoint['_id']['ip']].append({endpoint['_id']['name']:endpoint[key], newEndpoint['_id']['name']:newEndpoint[key]})
 
     for endpoint in newEndpoints:
-        if endpoint not in oldEndpoints:
-            output['Endpoints'][f'{new}_extra'].append(endpoint['_id']['ip'])
+        if not ipaddress.ip_address(endpoint['_id']['ip']).is_private:
+            if endpoint not in oldEndpoints:
+                output['Endpoints'][f'{new}_extra'].append(endpoint['_id']['ip'])
 
     for cname in oldCnames:
         if cname not in newCnames:
