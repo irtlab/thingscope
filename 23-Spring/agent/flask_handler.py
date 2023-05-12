@@ -24,6 +24,16 @@ def agent():
     
 @app.route("/agent/legacy")
 def agentLegacy():
+   try:
+       path = request.args.get('path')
+       return process_pcap_interactive(f"../data/files/{path}")
+   except Exception as e:
+        print(e)
+        return 'Internal Server Error', 500
+
+
+@app.route("/agent/drive")
+def agentDrive():
     try:
         return handlerFromDrive({'queryStringParameters' : {'id': request.args.get('id')}}, None)
     except Exception as e:
