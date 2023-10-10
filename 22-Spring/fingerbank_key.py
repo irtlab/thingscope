@@ -1,0 +1,1 @@
+fingerbank_key_val = 'd01ff9d8b65c939fea59a3c2ec19e52921a1ab49'

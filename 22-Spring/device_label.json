@@ -1,0 +1,25 @@
+{ 
+"lables" :[
+    {"1": "switch"},
+    {"2": "homemini"},
+    {"3": "camera"},
+    {"4": "washer"},
+    {"5": "doorbell"},
+    {"6": "bulb"},
+    {"7": "microwave"},
+    {"8": "hub"},
+    {"9": "microseven camera"},
+    {"10": "dryer"},
+    {"11": "fridge"},
+    {"12": "ikettle"},
+    {"13": "ricecooker"},
+    {"14": "echospot"},
+    {"15": "strip"},
+    {"16": "Baby Monitor"},
+    {"17": "Printer"},
+    {"18": "Speaker"},
+    {"19": "iHome"},
+    {"20": "amazon Echo"}
+    ]
+}
+
