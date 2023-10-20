@@ -1,0 +1,36 @@
+# Total packets: 219
+# Total bytes: 66689 (66.69 K)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0001	                   1 [  0.46%]	                  20 [  0.03%]	
+0x0800	                 200 [ 91.32%]	               65375 [ 98.03%]	Internet Protocol version 4 (IPv4)
+0x0806	                  10 [  4.57%]	                 438 [  0.66%]	Address Resolution Protocol (ARP)
+0x86dd	                   4 [  1.83%]	                 360 [  0.54%]	Internet Protocol version 6 (IPv6)
+0x888e	                   4 [  1.83%]	                 496 [  0.74%]	EAP over LAN (IEEE 802.1X)
+
+
+# Total IPv4 packets: 200 [91.32%]
+# Total IPv6 packets: 4 [1.83%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  1	                   7 [  3.20%]	                 778 [  1.17%]	Internet Control Message Protocol (ICMP)
+  2	                   2 [  0.91%]	                 108 [  0.16%]	Internet Group Management Protocol (IGMP)
+  6	                  95 [ 43.38%]	               36151 [ 54.21%]	Transmission Control Protocol (TCP)
+ 17	                  96 [ 43.84%]	               28338 [ 42.49%]	User Datagram Protocol (UDP)
+ 58	                   4 [  1.83%]	                 360 [  0.54%]	Internet Control Message Protocol for IPv6 (ICMPv6)
+
+
+# Total TCP packets: 95 [43.38%]
+# Total TCP bytes: 36151 (36.15 K) [54.21%]
+# TCP Port	                       Packets	                         Bytes	Description
+  443	                  17 [ 17.89%]	                1258 [  3.48%]	HTTP protocol over TLS/SSL
+ 3475	                  10 [ 10.53%]	                1039 [  2.87%]	Genisar Comm Port
+ 5228	                   5 [  5.26%]	                 370 [  1.02%]	HP Virtual Room Service
+ 8443	                  63 [ 66.32%]	               33484 [ 92.62%]	PCsync HTTPS
+
+
+# Total UDP packets: 96 [43.84%]
+# Total UDP bytes: 28338 (28.34 K) [42.49%]
+# UDP Port	                       Packets	                         Bytes	Description
+   53	                  36 [ 37.50%]	                5102 [ 18.00%]	Domain Name Server (DNS)
+   67	                   5 [  5.21%]	                2950 [ 10.41%]	Bootstrap Protocol Server
+  123	                  15 [ 15.63%]	                1350 [  4.76%]	Network Time Protocol
+ 1900	                  40 [ 41.67%]	               18936 [ 66.82%]	Simple Service Discovery Protocol

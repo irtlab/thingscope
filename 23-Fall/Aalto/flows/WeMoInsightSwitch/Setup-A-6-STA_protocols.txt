@@ -1,0 +1,38 @@
+# Total packets: 413
+# Total bytes: 122085 (122.08 K)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0001	                   1 [  0.24%]	                  20 [  0.02%]	
+0x0800	                 396 [ 95.88%]	              120807 [ 98.95%]	Internet Protocol version 4 (IPv4)
+0x0806	                   7 [  1.69%]	                 312 [  0.26%]	Address Resolution Protocol (ARP)
+0x86dd	                   5 [  1.21%]	                 450 [  0.37%]	Internet Protocol version 6 (IPv6)
+0x888e	                   4 [  0.97%]	                 496 [  0.41%]	EAP over LAN (IEEE 802.1X)
+
+
+# Total IPv4 packets: 396 [95.88%]
+# Total IPv6 packets: 5 [1.21%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  1	                   7 [  1.69%]	                 778 [  0.64%]	Internet Control Message Protocol (ICMP)
+  2	                   2 [  0.48%]	                 108 [  0.09%]	Internet Group Management Protocol (IGMP)
+  6	                 284 [ 68.77%]	               94648 [ 77.53%]	Transmission Control Protocol (TCP)
+ 17	                 103 [ 24.94%]	               25273 [ 20.70%]	User Datagram Protocol (UDP)
+ 58	                   5 [  1.21%]	                 450 [  0.37%]	Internet Control Message Protocol for IPv6 (ICMPv6)
+
+
+# Total TCP packets: 284 [68.77%]
+# Total TCP bytes: 94648 (94.65 K) [77.53%]
+# TCP Port	                       Packets	                         Bytes	Description
+  443	                  99 [ 34.86%]	               11730 [ 12.39%]	HTTP protocol over TLS/SSL
+ 3475	                  10 [  3.52%]	                1038 [  1.10%]	Genisar Comm Port
+ 3478	                  10 [  3.52%]	                1124 [  1.19%]	TURN over TCP
+ 4233	                   1 [  0.35%]	                  66 [  0.07%]	VRML Multi User Systems
+ 5228	                   5 [  1.76%]	                 370 [  0.39%]	HP Virtual Room Service
+ 8443	                 159 [ 55.99%]	               80320 [ 84.86%]	PCsync HTTPS
+
+
+# Total UDP packets: 103 [24.94%]
+# Total UDP bytes: 25273 (25.27 K) [20.70%]
+# UDP Port	                       Packets	                         Bytes	Description
+   53	                  56 [ 54.37%]	                8880 [ 35.14%]	Domain Name Server (DNS)
+   67	                   7 [  6.80%]	                4130 [ 16.34%]	Bootstrap Protocol Server
+  123	                  15 [ 14.56%]	                1350 [  5.34%]	Network Time Protocol
+ 1900	                  25 [ 24.27%]	               10913 [ 43.18%]	Simple Service Discovery Protocol

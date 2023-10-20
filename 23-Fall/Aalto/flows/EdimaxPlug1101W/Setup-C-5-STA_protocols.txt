@@ -1,0 +1,38 @@
+# Total packets: 155
+# Total bytes: 26090 (26.09 K)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0001	                   1 [  0.65%]	                  20 [  0.08%]	
+0x0800	                 134 [ 86.45%]	               24506 [ 93.93%]	Internet Protocol version 4 (IPv4)
+0x0806	                  12 [  7.74%]	                 504 [  1.93%]	Address Resolution Protocol (ARP)
+0x888e	                   8 [  5.16%]	                1060 [  4.06%]	EAP over LAN (IEEE 802.1X)
+
+
+# Total IPv4 packets: 134 [86.45%]
+# Total IPv6 packets: 0 [0.00%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  6	                  62 [ 40.00%]	                7250 [ 27.79%]	Transmission Control Protocol (TCP)
+ 17	                  72 [ 46.45%]	               17256 [ 66.14%]	User Datagram Protocol (UDP)
+
+
+# Total TCP packets: 62 [40.00%]
+# Total TCP bytes: 7250 (7.25 K) [27.79%]
+# TCP Port	                       Packets	                         Bytes	Description
+   80	                  12 [ 19.35%]	                 824 [ 11.37%]	World Wide Web HTTP
+ 8767	                  23 [ 37.10%]	                2962 [ 40.86%]	
+10000	                  20 [ 32.26%]	                3002 [ 41.41%]	Network Data Management Protocol
+49621	                   5 [  8.06%]	                 330 [  4.55%]	
+51725	                   2 [  3.23%]	                 132 [  1.82%]	
+
+
+# Total UDP packets: 72 [46.45%]
+# Total UDP bytes: 17256 (17.26 K) [66.14%]
+# UDP Port	                       Packets	                         Bytes	Description
+   53	                  10 [ 13.89%]	                1642 [  9.52%]	Domain Name Server (DNS)
+   67	                   4 [  5.56%]	                2360 [ 13.68%]	Bootstrap Protocol Server
+  123	                   2 [  2.78%]	                 180 [  1.04%]	Network Time Protocol
+ 8765	                  18 [ 25.00%]	                6714 [ 38.91%]	Ultraseek HTTP
+18099	                   6 [  8.33%]	                 600 [  3.48%]	
+21918	                   6 [  8.33%]	                 600 [  3.48%]	
+42562	                  10 [ 13.89%]	                2280 [ 13.21%]	
+59850	                  10 [ 13.89%]	                2280 [ 13.21%]	
+60625	                   6 [  8.33%]	                 600 [  3.48%]	

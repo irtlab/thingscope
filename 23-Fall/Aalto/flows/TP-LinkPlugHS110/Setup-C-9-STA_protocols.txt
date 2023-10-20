@@ -1,0 +1,28 @@
+# Total packets: 61
+# Total bytes: 16790 (16.79 K)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0800	                  54 [ 88.52%]	               16332 [ 97.27%]	Internet Protocol version 4 (IPv4)
+0x0806	                   5 [  8.20%]	                 210 [  1.25%]	Address Resolution Protocol (ARP)
+0x888e	                   2 [  3.28%]	                 248 [  1.48%]	EAP over LAN (IEEE 802.1X)
+
+
+# Total IPv4 packets: 54 [88.52%]
+# Total IPv6 packets: 0 [0.00%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  6	                  39 [ 63.93%]	               12284 [ 73.16%]	Transmission Control Protocol (TCP)
+ 17	                  15 [ 24.59%]	                4048 [ 24.11%]	User Datagram Protocol (UDP)
+
+
+# Total TCP packets: 39 [63.93%]
+# Total TCP bytes: 12284 (12.28 K) [73.16%]
+# TCP Port	                       Packets	                         Bytes	Description
+40041	                   2 [  5.13%]	                 157 [  1.28%]	
+50443	                  37 [ 94.87%]	               12127 [ 98.72%]	
+
+
+# Total UDP packets: 15 [24.59%]
+# Total UDP bytes: 4048 (4.05 K) [24.11%]
+# UDP Port	                       Packets	                         Bytes	Description
+   53	                   6 [ 40.00%]	                1734 [ 42.84%]	Domain Name Server (DNS)
+   67	                   4 [ 26.67%]	                1864 [ 46.05%]	Bootstrap Protocol Server
+  123	                   5 [ 33.33%]	                 450 [ 11.12%]	Network Time Protocol

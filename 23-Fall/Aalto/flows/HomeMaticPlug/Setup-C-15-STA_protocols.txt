@@ -1,0 +1,21 @@
+# Total packets: 27
+# Total bytes: 2124 (2.12 K)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0800	                  26 [ 96.30%]	                2082 [ 98.02%]	Internet Protocol version 4 (IPv4)
+0x0806	                   1 [  3.70%]	                  42 [  1.98%]	Address Resolution Protocol (ARP)
+
+
+# Total IPv4 packets: 26 [96.30%]
+# Total IPv6 packets: 0 [0.00%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  6	                  26 [ 96.30%]	                2082 [ 98.02%]	Transmission Control Protocol (TCP)
+
+
+# Total TCP packets: 26 [96.30%]
+# Total TCP bytes: 2082 (2.08 K) [98.02%]
+# TCP Port	                       Packets	                         Bytes	Description
+ 9292	                  26 [100.00%]	                2082 [100.00%]	ArmTech Daemon
+
+
+# Total UDP packets: 0 [0.00%]
+# Total UDP bytes: 0 [0.00%]

@@ -1,0 +1,35 @@
+# Total packets: 77
+# Total bytes: 14523 (14.52 K)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0001	                   1 [  1.30%]	                  20 [  0.14%]	
+0x0800	                  67 [ 87.01%]	               13797 [ 95.00%]	Internet Protocol version 4 (IPv4)
+0x0806	                   5 [  6.49%]	                 210 [  1.45%]	Address Resolution Protocol (ARP)
+0x888e	                   4 [  5.19%]	                 496 [  3.42%]	EAP over LAN (IEEE 802.1X)
+
+
+# Total IPv4 packets: 67 [87.01%]
+# Total IPv6 packets: 0 [0.00%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  1	                   1 [  1.30%]	                 590 [  4.06%]	Internet Control Message Protocol (ICMP)
+  6	                  34 [ 44.16%]	                4773 [ 32.87%]	Transmission Control Protocol (TCP)
+ 17	                  32 [ 41.56%]	                8434 [ 58.07%]	User Datagram Protocol (UDP)
+
+
+# Total TCP packets: 34 [44.16%]
+# Total TCP bytes: 4773 (4.77 K) [32.87%]
+# TCP Port	                       Packets	                         Bytes	Description
+   80	                  13 [ 38.24%]	                 890 [ 18.65%]	World Wide Web HTTP
+ 8767	                  14 [ 41.18%]	                3421 [ 71.67%]	
+35841	                   2 [  5.88%]	                 132 [  2.77%]	
+54941	                   5 [ 14.71%]	                 330 [  6.91%]	
+
+
+# Total UDP packets: 32 [41.56%]
+# Total UDP bytes: 8434 (8.43 K) [58.07%]
+# UDP Port	                       Packets	                         Bytes	Description
+   53	                   8 [ 25.00%]	                1275 [ 15.12%]	Domain Name Server (DNS)
+   67	                   3 [  9.38%]	                1770 [ 20.99%]	Bootstrap Protocol Server
+  123	                   2 [  6.25%]	                 180 [  2.13%]	Network Time Protocol
+ 8765	                  13 [ 40.62%]	                4609 [ 54.65%]	Ultraseek HTTP
+21918	                   3 [  9.38%]	                 300 [  3.56%]	
+60625	                   3 [  9.38%]	                 300 [  3.56%]	

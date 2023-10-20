@@ -1,0 +1,34 @@
+# Total packets: 72
+# Total bytes: 10672 (10.67 K)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0001	                   1 [  1.39%]	                  20 [  0.19%]	
+0x0800	                  63 [ 87.50%]	                9988 [ 93.59%]	Internet Protocol version 4 (IPv4)
+0x0806	                   4 [  5.56%]	                 168 [  1.57%]	Address Resolution Protocol (ARP)
+0x888e	                   4 [  5.56%]	                 496 [  4.65%]	EAP over LAN (IEEE 802.1X)
+
+
+# Total IPv4 packets: 63 [87.50%]
+# Total IPv6 packets: 0 [0.00%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  6	                  33 [ 45.83%]	                2948 [ 27.62%]	Transmission Control Protocol (TCP)
+ 17	                  30 [ 41.67%]	                7040 [ 65.97%]	User Datagram Protocol (UDP)
+
+
+# Total TCP packets: 33 [45.83%]
+# Total TCP bytes: 2948 (2.95 K) [27.62%]
+# TCP Port	                       Packets	                         Bytes	Description
+   80	                  13 [ 39.39%]	                 890 [ 30.19%]	World Wide Web HTTP
+ 8767	                  12 [ 36.36%]	                1514 [ 51.36%]	
+10000	                   2 [  6.06%]	                 148 [  5.02%]	Network Data Management Protocol
+55810	                   6 [ 18.18%]	                 396 [ 13.43%]	
+
+
+# Total UDP packets: 30 [41.67%]
+# Total UDP bytes: 7040 (7.04 K) [65.97%]
+# UDP Port	                       Packets	                         Bytes	Description
+   53	                   8 [ 26.67%]	                1139 [ 16.18%]	Domain Name Server (DNS)
+   67	                   2 [  6.67%]	                1180 [ 16.76%]	Bootstrap Protocol Server
+  123	                   2 [  6.67%]	                 180 [  2.56%]	Network Time Protocol
+ 1270	                   3 [ 10.00%]	                 297 [  4.22%]	Microsoft Operations Manager
+ 8765	                  12 [ 40.00%]	                3944 [ 56.02%]	Ultraseek HTTP
+35681	                   3 [ 10.00%]	                 300 [  4.26%]	

@@ -1,0 +1,27 @@
+# Total packets: 61
+# Total bytes: 10538 (10.54 K)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0800	                  52 [ 85.25%]	                9996 [ 94.86%]	Internet Protocol version 4 (IPv4)
+0x0806	                   7 [ 11.48%]	                 294 [  2.79%]	Address Resolution Protocol (ARP)
+0x888e	                   2 [  3.28%]	                 248 [  2.35%]	EAP over LAN (IEEE 802.1X)
+
+
+# Total IPv4 packets: 52 [85.25%]
+# Total IPv6 packets: 0 [0.00%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  2	                   8 [ 13.11%]	                 448 [  4.25%]	Internet Group Management Protocol (IGMP)
+ 17	                  44 [ 72.13%]	                9548 [ 90.61%]	User Datagram Protocol (UDP)
+
+
+# Total TCP packets: 0 [0.00%]
+# Total TCP bytes: 0 [0.00%]
+
+
+# Total UDP packets: 44 [72.13%]
+# Total UDP bytes: 9548 (9.55 K) [90.61%]
+# UDP Port	                       Packets	                         Bytes	Description
+   67	                   2 [  4.55%]	                1180 [ 12.36%]	Bootstrap Protocol Server
+ 1900	                  15 [ 34.09%]	                4380 [ 45.87%]	Simple Service Discovery Protocol
+ 5353	                  16 [ 36.36%]	                3178 [ 33.28%]	Multicast DNS
+12345	                   1 [  2.27%]	                 170 [  1.78%]	Italk Chat System
+62976	                  10 [ 22.73%]	                 640 [  6.70%]	

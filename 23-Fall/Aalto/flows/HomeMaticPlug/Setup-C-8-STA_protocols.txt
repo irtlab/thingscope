@@ -1,0 +1,21 @@
+# Total packets: 107
+# Total bytes: 8172 (8.17 K)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0800	                 105 [ 98.13%]	                8070 [ 98.75%]	Internet Protocol version 4 (IPv4)
+0x0806	                   2 [  1.87%]	                 102 [  1.25%]	Address Resolution Protocol (ARP)
+
+
+# Total IPv4 packets: 105 [98.13%]
+# Total IPv6 packets: 0 [0.00%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  6	                 105 [ 98.13%]	                8070 [ 98.75%]	Transmission Control Protocol (TCP)
+
+
+# Total TCP packets: 105 [98.13%]
+# Total TCP bytes: 8070 (8.07 K) [98.75%]
+# TCP Port	                       Packets	                         Bytes	Description
+50756	                 105 [100.00%]	                8070 [100.00%]	
+
+
+# Total UDP packets: 0 [0.00%]
+# Total UDP bytes: 0 [0.00%]

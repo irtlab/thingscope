@@ -1,0 +1,32 @@
+# Total packets: 641
+# Total bytes: 308140 (308.14 K)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0800	                 624 [ 97.35%]	              307014 [ 99.63%]	Internet Protocol version 4 (IPv4)
+0x0806	                   8 [  1.25%]	                 408 [  0.13%]	Address Resolution Protocol (ARP)
+0x86dd	                   9 [  1.40%]	                 718 [  0.23%]	Internet Protocol version 6 (IPv6)
+
+
+# Total IPv4 packets: 624 [97.35%]
+# Total IPv6 packets: 9 [1.40%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  2	                   5 [  0.78%]	                 302 [  0.10%]	Internet Group Management Protocol (IGMP)
+  6	                 514 [ 80.19%]	              281427 [ 91.33%]	Transmission Control Protocol (TCP)
+ 17	                 105 [ 16.38%]	               25285 [  8.21%]	User Datagram Protocol (UDP)
+ 58	                   9 [  1.40%]	                 718 [  0.23%]	Internet Control Message Protocol for IPv6 (ICMPv6)
+
+
+# Total TCP packets: 514 [80.19%]
+# Total TCP bytes: 281427 (281.43 K) [91.33%]
+# TCP Port	                       Packets	                         Bytes	Description
+   80	                 309 [ 60.12%]	              229124 [ 81.42%]	World Wide Web HTTP
+  443	                 205 [ 39.88%]	               52303 [ 18.58%]	HTTP protocol over TLS/SSL
+
+
+# Total UDP packets: 105 [16.38%]
+# Total UDP bytes: 25285 (25.29 K) [8.21%]
+# UDP Port	                       Packets	                         Bytes	Description
+   53	                  24 [ 22.86%]	                4097 [ 16.20%]	Domain Name Server (DNS)
+   67	                   4 [  3.81%]	                1404 [  5.55%]	Bootstrap Protocol Server
+  123	                   4 [  3.81%]	                 360 [  1.42%]	Network Time Protocol
+ 1900	                  16 [ 15.24%]	                5276 [ 20.87%]	Simple Service Discovery Protocol
+ 5353	                  57 [ 54.29%]	               14148 [ 55.95%]	Multicast DNS

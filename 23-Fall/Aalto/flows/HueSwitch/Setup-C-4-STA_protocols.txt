@@ -1,0 +1,25 @@
+# Total packets: 1973 (1.97 K)
+# Total bytes: 332867 (332.87 K)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0800	                1971 [ 99.90%]	              332765 [ 99.97%]	Internet Protocol version 4 (IPv4)
+0x0806	                   2 [  0.10%]	                 102 [  0.03%]	Address Resolution Protocol (ARP)
+
+
+# Total IPv4 packets: 1971 (1.97 K) [99.90%]
+# Total IPv6 packets: 0 [0.00%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  6	                1963 [ 99.49%]	              330473 [ 99.28%]	Transmission Control Protocol (TCP)
+ 17	                   8 [  0.41%]	                2292 [  0.69%]	User Datagram Protocol (UDP)
+
+
+# Total TCP packets: 1963 (1.96 K) [99.49%]
+# Total TCP bytes: 330473 (330.47 K) [99.28%]
+# TCP Port	                       Packets	                         Bytes	Description
+   80	                1963 [100.00%]	              330473 [100.00%]	World Wide Web HTTP
+
+
+# Total UDP packets: 8 [0.41%]
+# Total UDP bytes: 2292 (2.29 K) [0.69%]
+# UDP Port	                       Packets	                         Bytes	Description
+  123	                   2 [ 25.00%]	                 180 [  7.85%]	Network Time Protocol
+ 1900	                   6 [ 75.00%]	                2112 [ 92.15%]	Simple Service Discovery Protocol

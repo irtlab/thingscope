@@ -1,0 +1,11 @@
+Total number of ICMP packets: 22 [6.01%]
+
+Number of ICMP packets: 22 [6.01%]
+
+ICMP echo reply / request ratio: 1.000
+
+# ICMP Type	Code	                       Packets
+ICMP_ECHOREQUEST	-	                             5 [ 22.73%]
+ICMP_ECHOREPLY	-	                             5 [ 22.73%]
+ICMP_DEST_UNREACH	ICMP_HOST_UNREACH	                            12 [ 54.55%]
+

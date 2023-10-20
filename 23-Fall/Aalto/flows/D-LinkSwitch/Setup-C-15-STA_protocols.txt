@@ -1,0 +1,32 @@
+# Total packets: 594
+# Total bytes: 295535 (295.54 K)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0800	                 584 [ 98.32%]	              294895 [ 99.78%]	Internet Protocol version 4 (IPv4)
+0x0806	                   6 [  1.01%]	                 252 [  0.09%]	Address Resolution Protocol (ARP)
+0x86dd	                   2 [  0.34%]	                 140 [  0.05%]	Internet Protocol version 6 (IPv6)
+0x888e	                   2 [  0.34%]	                 248 [  0.08%]	EAP over LAN (IEEE 802.1X)
+
+
+# Total IPv4 packets: 584 [98.32%]
+# Total IPv6 packets: 2 [0.34%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  2	                   9 [  1.52%]	                 486 [  0.16%]	Internet Group Management Protocol (IGMP)
+  6	                 498 [ 83.84%]	              274622 [ 92.92%]	Transmission Control Protocol (TCP)
+ 17	                  77 [ 12.96%]	               19787 [  6.70%]	User Datagram Protocol (UDP)
+ 58	                   2 [  0.34%]	                 140 [  0.05%]	Internet Control Message Protocol for IPv6 (ICMPv6)
+
+
+# Total TCP packets: 498 [83.84%]
+# Total TCP bytes: 274622 (274.62 K) [92.92%]
+# TCP Port	                       Packets	                         Bytes	Description
+   80	                 259 [ 52.01%]	              213058 [ 77.58%]	World Wide Web HTTP
+  443	                 239 [ 47.99%]	               61564 [ 22.42%]	HTTP protocol over TLS/SSL
+
+
+# Total UDP packets: 77 [12.96%]
+# Total UDP bytes: 19787 (19.79 K) [6.70%]
+# UDP Port	                       Packets	                         Bytes	Description
+   53	                  24 [ 31.17%]	                3497 [ 17.67%]	Domain Name Server (DNS)
+   67	                   2 [  2.60%]	                 714 [  3.61%]	Bootstrap Protocol Server
+  123	                   4 [  5.19%]	                 360 [  1.82%]	Network Time Protocol
+ 5353	                  47 [ 61.04%]	               15216 [ 76.90%]	Multicast DNS
