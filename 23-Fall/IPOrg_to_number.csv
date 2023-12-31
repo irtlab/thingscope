@@ -1,0 +1,547 @@
+Org,Number
+"""Servers Australia Pty Ltd""",1
+"""Fluidsoft Incorporated""",2
+"""MAINT-APNIC-AP""",3
+"""Maynooth University""",4
+"""FULLSAVE-MNT""",5
+"""Canonical USA Inc""",6
+"""BLIX-MNT""",7
+"""Nine Internet Solutions AG""",8
+"""Routingnetwork of Nexellent AG""",9
+"""OVH Hosting route""",10
+"""Institute of Nuclear Physics""",11
+"""PL-MAXNET-MNT""",12
+"""ZEN-MNT""",13
+"""City of Phoenix""",14
+"""MNT-FIBIA""",15
+"""EUSKILL-HM-MNT""",16
+"""Digital United Inc""",17
+"""imported inetnum object for MO""",18
+"""NIIF-MNT""",19
+"""STREAMS-MNT""",20
+"""AAPT Limited""",21
+"""MIPT-TELECOM Network services""",22
+"""CLDIN-MNT""",23
+"""CITYTELECOM-RIPE-MNT""",24
+"""Everstream""",25
+"""Performance Technology""",26
+"""SWITCH-MNT""",27
+"""MNT-INTERNIC""",28
+"""OJSC North-West Telecom""",29
+"""NÃºcleo de Inf e Coord do Po""",30
+"""Wikstrom Telephone Company""",31
+"""Calypso Medical Technologies""",32
+"""Lemuria Communications Inc""",33
+"""OBIT-MNT""",34
+"""Vegasystems Core""",35
+"""AHRT-MNT""",36
+"""Online SAS - Dedibox""",37
+"""MNET-MNT""",38
+"""Government Service Network""",39
+"""Netsville""",40
+"""Magenta Telekom""",41
+"""FLF-FLTG-NET""",42
+"""Charite - Universitaetsmedizin""",43
+"""SKIF-MNT""",44
+"""QuickPacket""",45
+"""Condointernetnet""",46
+"""RamNode LLC""",47
+"""Rensselaer Polytechnic Institu""",48
+"""KSZ-CH-MNT""",49
+"""CDNetworks""",50
+"""Netwurx""",51
+"""Utah Education Network""",52
+"""FDCserversnet""",53
+"""BAHNHOF-NCC""",54
+"""MNT-DATACAMPUS""",55
+"""University of Leicester""",56
+"""Proxad / Free SAS""",57
+"""ColoCenter bv""",58
+"""Early registration addresses""",59
+"""WAVE DATA CENTERS""",60
+"""SAKURA Internet Inc""",61
+"""MNT-CANBY""",62
+"""SolNet PoP Zuchwil""",63
+"""VegasNAP""",64
+"""DFN Verein zur Foerderung eine""",65
+"""Washington School Information """,66
+"""fast IT Colocation""",67
+"""Exetel Corporate Customers""",68
+"""SMNT-MNT""",69
+"""Mediahub Australia Pty Ltd""",70
+"""Lirexnet PA route-object""",71
+"""KPN-MNT""",72
+"""PrAT Industrial Media Network""",73
+"""Hutchison Drei Austria GmbH""",74
+"""GTT-BACKBONE GTT""",75
+"""Microsoft Corporation""",76
+"""EASYNET-UK-MNT""",77
+"""Servergarden""",78
+"""CNH-MNT""",79
+"""Choopa""",80
+"""ACCELERATED-MNT""",81
+"""WebhostingNet""",82
+"""Gaertner Datensysteme GmbH & C""",83
+"""MNT-MODIT""",84
+"""Mass Sub Alloc""",85
+"""Vitelity""",86
+"""Colocall Ltd""",87
+"""OBSL-MNT""",88
+"""DRAVANET-MNT""",89
+"""Gustavus Adolphus College""",90
+"""WIDEOPENWEST MICHIGAN""",91
+"""MNT-MDASS""",92
+"""INOC""",93
+"""VO-NOC-MNT""",94
+"""PT Jembatan Citra Nusantara""",95
+"""DJA-MNT""",96
+"""Carnegie Mellon University""",97
+"""Hassler Communication Systems """,98
+"""VNET""",99
+"""Eurotranstelecom""",100
+"""HMon Networks""",101
+"""IPM/Iranet Block""",102
+"""UPC Ceska republika""",103
+"""Atlanticnet""",104
+"""ROSTELECOM-MNT""",105
+"""VIZAG BROADCASTING COMPANY PVT""",106
+"""FUBRA-MNT""",107
+"""Countrytell Management Pty Ltd""",108
+"""Institute for Information Tran""",109
+"""GodGame Inc""",110
+"""SuperInternet ACCESS Pte Ltd""",111
+"""OPTUS INTERNET - RETAIL""",112
+"""RADIONET""",113
+"""AT&T Services""",114
+"""TJE-MNT""",115
+"""DOMENESHOP-MNT""",116
+"""CLDR DS AU Cloud""",117
+"""Amazon Data Services Japan""",118
+"""KazNIC Organization""",119
+"""Binary Net""",120
+"""HOS-GUN""",121
+"""TSS Communications""",122
+"""SERVERUA LLC""",123
+"""Colocity Pty Ltd""",124
+"""OVH-MNT""",125
+"""LinkBG-Dobrich""",126
+"""Estonian Education and Researc""",127
+"""XMission""",128
+"""RAPIDSWITCH-MNT""",129
+"""Not allocated by APNIC""",130
+"""LVIVLAN-MNT""",131
+"""BELNET""",132
+"""SNAK-MNT""",133
+"""COPACO""",134
+"""Defender cloud international l""",135
+"""MICROBASE-MNT""",136
+"""NORDERSTEDT-MNT""",137
+"""CEDIA""",138
+"""FORTHNETGR-MNT""",139
+"""KLEIN-DATA-AS""",140
+"""MNT-EDGECAST""",141
+"""PUBLICINET-MNT""",142
+"""NCNET""",143
+"""NetStack Ltd""",144
+"""v-hobby colocated servers""",145
+"""Kursk""",146
+"""GoDaddycom""",147
+"""ITKM-MNT""",148
+"""Bluewin""",149
+"""SC""",150
+"""Contabo GmbH""",151
+"""Leaseweb USA""",152
+"""Grande Communications Networks""",153
+"""Positive Infrastructure""",154
+"""Jensen Research Corporation""",155
+"""University of Lisbon""",156
+"""Technische Universitaet Dresde""",157
+"""Hochschule fuer angewandte Wis""",158
+"""rain""",159
+"""Carematix""",160
+"""BULSATCOM-MNT""",161
+"""MNT-STARNETMD""",162
+"""Server Block""",163
+"""TransIP BV""",164
+"""NEO-MNT""",165
+"""FREETHOUGHT-MNT""",166
+"""AtlanticNet - Santa Clara""",167
+"""DCS Pacific Star""",168
+"""Scaleway Dedibox - Paris""",169
+"""Idealab""",170
+"""SKIF-AS""",171
+"""Digital Ocean""",172
+"""EPB Fiber Optics""",173
+"""Mobile TeleSystems JLLC""",174
+"""OPTAGE Inc""",175
+"""Svensk Teleutveckling & Produk""",176
+"""Asia Pacific On-line Services """,177
+"""iWeb Technologies Inc""",178
+"""PREFIXBROKER-MNT""",179
+"""ETHZ""",180
+"""Infrastructure EM - DHCP assig""",181
+"""Dreamscape Networks Inc Austra""",182
+"""Rackspace Hosting""",183
+"""Ecuadortelecom SA""",184
+"""Vultr Holdings""",185
+"""MNT-CABLECOM""",186
+"""Optus Internet Pty Ltd""",187
+"""SoftLayer Technologies Inc""",188
+"""VK Cloud Solutions""",189
+"""PROVIDER Local Registry""",190
+"""Lunanl""",191
+"""DEAC-MNT""",192
+"""LG DACOM Corporation""",193
+"""SN-LIR-MNT""",194
+"""CariNet""",195
+"""University of Minnesota""",196
+"""INTERLINK Co""",197
+"""TierPoint""",198
+"""New Dream Network""",199
+"""inexio Informationstechnologie""",200
+"""Cisco OpenDNS""",201
+"""TeleMontazh LLC""",202
+"""MNT-WAVEB""",203
+"""Kaora""",204
+"""RTU""",205
+"""MCI Communications Services""",206
+"""IELO IELO Main Network""",207
+"""Quintex Alliance Consulting""",208
+"""CORYNET-MNT""",209
+"""OFFRATEL AP""",210
+"""Thomas Jefferson High School f""",211
+"""NETSERVICES-AS""",212
+"""BLUECMD-MNT""",213
+"""Mola Preservation Society""",214
+"""TurnKey Internet Inc""",215
+"""NETVISIT-MNT""",216
+"""TelJet""",217
+"""Asia Pacific Network Informati""",218
+"""vanoppenbiz LLC""",219
+"""IQ Networks Sulaymaniyah Range""",220
+"""Biznesshosting""",221
+"""dicode - understanding interne""",222
+"""RENATER-MNT""",223
+"""ENTANET ENTANET International """,224
+"""University of Colorado""",225
+"""DigitalOcean""",226
+"""MNT-NEWSNET""",227
+"""Sprint""",228
+"""Inception Hosting Ltd""",229
+"""OnInIt""",230
+"""Queenslea Drive""",231
+"""University of Strathclyde""",232
+"""MNT-CONTABO""",233
+"""NETROUTING-MNT""",234
+"""RU-CORBINA-MNT""",235
+"""HERBST-MNT""",236
+"""EXA-MNT""",237
+"""Agence Tunisienne Internet - A""",238
+"""VIDDY NETWORKS""",239
+"""GODADDY-MNT""",240
+"""Schiele Computertechnik""",241
+"""Customer PA Network""",242
+"""BIT-MNT""",243
+"""Renome-Service: Joint Multimed""",244
+"""LEASEWEB-DE-MNT""",245
+"""Management Networks LLC""",246
+"""University of North Carolina a""",247
+"""Frantech Solutions""",248
+"""lumii-mnt""",249
+"""Weber State University""",250
+"""Trit Networks""",251
+"""MNT-HIHO-REHI""",252
+"""Amazon Data Services NoVa""",253
+"""HIVELOCITY""",254
+"""MANITU-MNT""",255
+"""BSB-SERVICE Dedicated Server H""",256
+"""STNET-MNT""",257
+"""Interoute Singapore VDC IP poo""",258
+"""On Q""",259
+"""MAVERICK""",260
+"""DSL Solcon KPN""",261
+"""ISPA SA""",262
+"""NETCUP-MNT""",263
+"""JINX-OPS""",264
+"""MNT-CWGELD""",265
+"""AA""",266
+"""SCCIS Network""",267
+"""Szatmarnet Kft""",268
+"""Fox Computers""",269
+"""Cloudflare""",270
+"""Purdue University""",271
+"""Inteliquent""",272
+"""National Institute of Standard""",273
+"""OJA-MNT""",274
+"""Aruba SpA Network""",275
+"""TUXIS-MNT""",276
+"""Cgates""",277
+"""Aliyun Computing Co""",278
+"""REDSTATION-MNT""",279
+"""Netinch infra""",280
+"""Google LLC""",281
+"""KEYWEB-MNT""",282
+"""MTELEKOM-MNT""",283
+"""SUPREMO TRIBUNAL FEDERAL""",284
+"""Hringdu ehf FTTH/Ljosleidari""",285
+"""NTT America""",286
+"""Australian Nursing Federation """,287
+"""TUNEIN""",288
+"""MNT-ON""",289
+"""Network Services Group""",290
+"""SALTOVKAMNT""",291
+"""Charter Communications""",292
+"""Think Technology Pty Ltd""",293
+"""Signal Bredband AS""",294
+"""PorubaNET infrastructure and s""",295
+"""EEF-MNT""",296
+"""This network range is not full""",297
+"""Brno""",298
+"""JiffyBox Servers""",299
+"""BIGFATCLOUD-MNT""",300
+"""REDIRIS-NMC""",301
+"""Psychz Networks""",302
+"""Lomonosov Moscow State Academy""",303
+"""Raw Bandwidth Communications""",304
+"""Cox Communications Inc""",305
+"""Great Works Internet""",306
+"""Telekom Slovenije dd""",307
+"""MNT-PETE""",308
+"""DeVry University""",309
+"""Regional IT Newcastle Pty Ltd""",310
+"""Joe's Datacenter""",311
+"""NÃÂºcleo de Inf. e Coord.""",312
+"""TRUESERVER-MNT""",313
+"""Information Technology Service""",314
+"""ARCOR-MNT""",315
+"""SURIS/RHnet Iceland University""",316
+"""TVPLUS PTY LTD""",317
+"""PROVIDER""",318
+"""TNT Online""",319
+"""Goce Delcev University in Stip""",320
+"""JAYNET""",321
+"""BINERO-MNT""",322
+"""prgmrcom""",323
+"""Orange Slovensko""",324
+"""Rajamangala University of Tech""",325
+"""Init Seven AG""",326
+"""Hostway Deutschland GmbH""",327
+"""Telesmart Limited""",328
+"""TALKTALK-MNT""",329
+"""Microsoft Corp""",330
+"""The Edinburgh University""",331
+"""YOUR-ORG block E""",332
+"""AboveNet Communications Taiwan""",333
+"""GD MASS Network""",334
+"""cablecom GmbH""",335
+"""CZFree-Net - Praha""",336
+"""TDF""",337
+"""WESTELE-UA-AS""",338
+"""Amazoncom""",339
+"""DigitalOcean Amsterdam""",340
+"""Akamai Technologies""",341
+"""Straylight UG""",342
+"""PlusServer GmbH""",343
+"""MNT-DUOCAST""",344
+"""Thessaloniki""",345
+"""Source Cable Ltd""",346
+"""StarHub Cable Vision Ltd""",347
+"""inexio-mnt""",348
+"""FONIRA""",349
+"""INFOMEDIAUA-MNT""",350
+"""NORIS-MNT""",351
+"""Aplitt Network""",352
+"""Scaleway Dedibox IPFO""",353
+"""MNT-DELTA-TELESYSTEMS""",354
+"""CHINANET Beijing province netw""",355
+"""Investment and technology grou""",356
+"""digitalocean""",357
+"""Hewlett-Packard Company""",358
+"""GANDI-NOC""",359
+"""ACONET-LIR-MNT""",360
+"""Internet Service Provider""",361
+"""DFN-LIR-MNT""",362
+"""MYLOC-AS IP Backbone of myLoc """,363
+"""WAYCOM-MNT""",364
+"""Strato Rechenzentrum""",365
+"""FNUTT-NETWORK""",366
+"""Kaunas Technological Universit""",367
+"""NEXELLENT-MNT""",368
+"""CenturyLink Communications""",369
+"""NETCUP-GMBH""",370
+"""PPNET-AS Ukrainian esale compa""",371
+"""MNT-TISCALIFR""",372
+"""Verizon UK Limited""",373
+"""SOLCON INTERNETDIENSTEN Datace""",374
+"""PORTLANE www.portlane.com""",375
+"""ASDA-MNT""",376
+"""Host-IT Internet Solutions""",377
+"""TRABIA-MNT""",378
+"""epixtech""",379
+"""CONNEXIN""",380
+"""Amazon Web Services""",381
+"""BOXED-IT-MNT""",382
+"""ARNES-MNT""",383
+"""SOLCON-NL-MNT""",384
+"""Spintel Pty Ltd""",385
+"""Southern Phone Company Ltd""",386
+"""Trabia""",387
+"""WIREHIVE CUSTOMER""",388
+"""Greek Research and Technology """,389
+"""linode-mnt""",390
+"""SERVETHEWORLD-MNT""",391
+"""Izhsvyazinform customer's conn""",392
+"""Comcast Cable Communications""",393
+"""Scaleway Dedibox""",394
+"""ETH/UNIZH Camp Net""",395
+"""Arachnitec""",396
+"""ISPPRO-NOC-MNT""",397
+"""Internap Corporation""",398
+"""UniGE""",399
+"""TRANSIP-AS Amsterdam, the Neth""",400
+"""TPG Internet Pty Ltd""",401
+"""SWAN-MNT""",402
+"""MNT-KABELDEUTSCHLAND""",403
+"""Scaleway""",404
+"""OOOSET-MNT""",405
+"""SolNet""",406
+"""PROD IAD""",407
+"""Schweitzer Engineering Laborat""",408
+"""TDS Baja Broadband""",409
+"""MNT-THOMASKRUSE""",410
+"""DHH-HR-MNT""",411
+"""NBL-MNT""",412
+"""WEDOS-MNT""",413
+"""INTACTO-AS""",414
+"""MNT-HAWE""",415
+"""NINE-MNT""",416
+"""AJA Video Systems""",417
+"""LYSE-MNT""",418
+"""Univerza v Ljubljani""",419
+"""Hetzner Online AG""",420
+"""ARP NETWORKS""",421
+"""IPFFM Internet Provider Frankf""",422
+"""Advanced Computer Solutions""",423
+"""TOV TRK Briz""",424
+"""FUNKFEUER-MNT""",425
+"""MNF Data customers""",426
+"""MNT-WORLDSTREAM""",427
+"""INFONET-MNT""",428
+"""Amazon Asia-Pacific Resources """,429
+"""LEASEWEB-NL-MNT""",430
+"""Hurricane Electric LLC""",431
+"""GMO Internet Group""",432
+"""ABSO-MNT""",433
+"""ICM""",434
+"""SOHO Customers""",435
+"""Universidad de Chile""",436
+"""iiNet Limited""",437
+"""LU-MNT""",438
+"""XL-AS""",439
+"""Toronto Internet Exchange Comm""",440
+"""QuadraNet Enterprises LLC""",441
+"""Erlangen""",442
+"""FIBIA Broadband DHCP Static""",443
+"""SKNIC-MNT""",444
+"""Leaseweb Deutschland GmbH""",445
+"""eonicom""",446
+"""Charter Communications Inc""",447
+"""RASMUSSKAARUP-MNT""",448
+"""SURF BV""",449
+"""Angola IXP""",450
+"""Infolink Global Corporation""",451
+"""EM-MNT""",452
+"""True North Systems""",453
+"""Net Access Corporation""",454
+"""Liquid Web""",455
+"""NEXCESSNET LLC""",456
+"""ADSL SUBNET""",457
+"""MNT-EXATEL""",458
+"""ITSJEFEN-LIR""",459
+"""Public Enterprise of BH Teleco""",460
+"""Campus Networks""",461
+"""Static IP Services""",462
+"""E-GATE Networks""",463
+"""Gandi US Inc""",464
+"""Linode""",465
+"""RIPN-""",466
+"""serverius-mnt""",467
+"""DigitalOcean London""",468
+"""Infomir""",469
+"""OVH SAS""",470
+"""HOSTINGDE-MNT""",471
+"""PS-Net""",472
+"""MNT-SYN""",473
+"""Nexum BP IP Network""",474
+"""HGC Global Communications Limi""",475
+"""OBOX-NETWORKS""",476
+"""Netrouting Telecom""",477
+"""DH-INF""",478
+"""NETIA-MNT""",479
+"""LG DACOM KIDC""",480
+"""HEANET-NOC""",481
+"""txrxcomms""",482
+"""Aruba SpA - CLoud Services UK""",483
+"""COMPLEX-MNT""",484
+"""BSOCOM-MNT""",485
+"""Improware AG""",486
+"""ISU SUMMERIZATIONS""",487
+"""Uljanovsk CSC of Privolgsky ma""",488
+"""KDDI CORPORATION""",489
+"""American Registry for Internet""",490
+"""Servers hosted by Enternet""",491
+"""Scaleway Dedibox Customers""",492
+"""AARNet""",493
+"""Arista Networks""",494
+"""Steadfast""",495
+"""PSINet""",496
+"""TELEWEB-MNT""",497
+"""ASN-ROUTELABEL""",498
+"""ColoCrossing""",499
+"""Data Communication Business Gr""",500
+"""Dhivehi Raajjeyge Gulhun""",501
+"""Globonet network Moscow""",502
+"""zColo""",503
+"""TNTU-AS""",504
+"""RESILANS-MNT""",505
+"""ROKABEAR LLC""",506
+"""GGA Maur""",507
+"""PLUTEX GmbH Infrastruktur""",508
+"""netcup GmbH""",509
+"""MT-HOSTING""",510
+"""infrastructur""",511
+"""Telia Lietuva""",512
+"""BSB-Service GmbH""",513
+"""ARCADE-CH-MNT""",514
+"""BITFOLK-MNT""",515
+"""StarVision""",516
+"""Telstra""",517
+"""Allstream Business US""",518
+"""FLTG-NET""",519
+"""TMT-MNT""",520
+"""Magnet Networks""",521
+"""SOTACONNECT-MNT""",522
+"""atjeu publishing""",523
+"""DENIT-AS Amsterdam""",524
+"""BF managed subnets""",525
+"""Red de servicios IP""",526
+"""MNT-MEGALAN""",527
+"""NbIServ-MNT""",528
+"""Customers""",529
+"""University of California""",530
+"""UP Logon""",531
+"""IP Connect AB""",532
+"""Lanka Education and Research N""",533
+"""MK-NETZDIENSTE-MNT""",534
+"""TELIANET-LIR""",535
+"""Praha""",536
+"""PDDA-AS""",537
+"""BIT BV""",538
+"""Enterprise Services Latin Amer""",539
+"""Sky Broadband""",540
+"""University of New South Wales""",541
+"""WARSAW U-TECH Campus Network""",542
+"""Amazon Technologies Inc""",543
+"""Broadcast""",544
+"""TowardEX Technologies Internat""",545
+"""CYSO-MNT""",546
