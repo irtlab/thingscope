@@ -2,7 +2,7 @@
 
 Folder for all 2023 projects.
 
-#Intrdoction
+# Intrdoction
 Internet of Things (IoT) devices have been widely implemented across different environments,
 such as smart homes, smart cities, and various business networks. Examples of IoT devices include
 smart speakers like Amazon Echo Dot, smart cameras, and smart light bulbs. They significantly
