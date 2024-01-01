@@ -13,3 +13,5 @@ range of manufacturers and operating modes, along with their low cost, resulting
 firmware. This project aims to develop a security gateway to identify IoT devices within a network
 using traffic data and Internet Protocol (IP) utilities, enabling the gateway to recognize each device
 and retrieve their corresponding Manufacturer Usage Descriptions (MUD) profiles.
+
+#File structure
