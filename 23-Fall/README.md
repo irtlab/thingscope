@@ -14,7 +14,7 @@ firmware. This project aims to develop a security gateway to identify IoT device
 using traffic data and Internet Protocol (IP) utilities, enabling the gateway to recognize each device
 and retrieve their corresponding Manufacturer Usage Descriptions (MUD) profiles.
 
-# processing overview
+# Processing Overview
 Initially, we gathered and examined data from IoT devices in the Internet Real-Time (IRT) Lab
 to understand their traffic patterns. Following this, we processed PCAP files from a public dataset,
 created flow files using Tranalyzer, and conducted necessary data cleaning to eliminate irrelevant
