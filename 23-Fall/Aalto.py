@@ -59,7 +59,7 @@ hex_features = ['flowStat', 'tcpFStat', 'ipToS', 'ipFlags', 'ethType',
                 'tcpFlags',  'tcpMPF', 'tcpMPTBF', 'tcpMPDSSF', 'tcpOptions']
 string_features = ['%dir']
 catergorial_feature=['map_IpCountry', "map_IpOrg"]+hex_features+string_features
-not_used_features = ['timeFirst', 'timeLast','dstPort', 'srcPort', 'dstIP',
+not_used_features = ['timeFirst', 'timeLast','flowInd','dstPort', 'srcPort', 'dstIP',
                       'dstMac', 'srcIP', 'srcMac', 'srcMac_dstMac_numP','ipOptCpCl_Num',
                      'icmpBFTypH_TypL_Code', 'ip6OptHH_D', 'ip6OptCntHH_D']
 
@@ -98,7 +98,6 @@ d=pd.DataFrame.dropna(d,axis=1,how='any')
 d.drop(d.columns[d.std()<0.01], axis=1, inplace=True)
 x_indices=list(d.columns.values)
 x_indices.remove('label')
-x_indices.remove('flowInd')
 x_indices.remove('%dir')
 x_indices.remove('dstPortClassN')
 print('x',len(x_indices))
@@ -121,7 +120,7 @@ plt.pie(list(norm_class_weights.values()),labels=device,radius=1,textprops={'siz
 plt.title('Aalto dataset distribution')
 plt.tight_layout()
 plt.show()
-#machine learning 
+#machine learning
 x_train = train_data[x_indices+['label']]
 x_test = test_data[x_indices+['label']]
 features = feature_name
