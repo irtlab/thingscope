@@ -43,7 +43,7 @@ hex_features = ['flowStat', 'tcpFStat', 'ipToS', 'ipFlags', 'ethType',
                 'tcpFlags',  'tcpMPF', 'tcpMPTBF', 'tcpMPDSSF', 'tcpOptions']
 string_features = ['%dir']
 catergorial_feature=['map_IpCountry', "map_IpOrg"]+hex_features+string_features
-not_used_features = ['timeFirst', 'timeLast', 'dstIP',
+not_used_features = ['timeFirst', 'timeLast','flowInd', 'dstIP',
                        'dstMac', 'srcIP', 'srcMac', 'srcMac_dstMac_numP','ipOptCpCl_Num',
                      'icmpBFTypH_TypL_Code', 'ip6OptHH_D', 'ip6OptCntHH_D']
 feature_name = ['dstPort', 'minPktSz', 'avePktSize', 'bytAsm', 'ipMinTTL', 'ipMaxTTL',
@@ -78,7 +78,6 @@ data.drop(data.columns[data.std()<0.01], axis=1, inplace=True)
 x_indices =list(data.columns)
 x_indices.remove('label')
 x_indices.remove('dstPortClassN')
-x_indices.remove('flowInd')
 x_indices=[i for i in x_indices if i not in new_feature]
 
 # feature selection
