@@ -14,6 +14,16 @@ firmware. This project aims to develop a security gateway to identify IoT device
 using traffic data and Internet Protocol (IP) utilities, enabling the gateway to recognize each device
 and retrieve their corresponding Manufacturer Usage Descriptions (MUD) profiles.
 
+# processing overview
+Initially, we gathered and examined data from IoT devices in the Internet Real-Time (IRT) Lab
+to understand their traffic patterns. Following this, we processed PCAP files from a public dataset,
+created flow files using Tranalyzer, and conducted necessary data cleaning to eliminate irrelevant
+traffic. Our initial approach was to utilize numerical flow-level features for device identification.
+However, after an in-depth analysis of IoT device traffic behaviors, we incorporated non-numerical,
+protocol-based features, a method we believe to be a novel approach in our research group. We
+then repeatedly tested the effectiveness of each feature to create a final feature vector. Ultimately,
+we trained several machine learning models using this feature vector and evaluated our model’s
+performance on both the original and additional datasets.
 # File Structure
 '''
 │  Aalto.py
