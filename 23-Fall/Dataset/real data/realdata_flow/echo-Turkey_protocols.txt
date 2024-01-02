@@ -1,0 +1,35 @@
+# Total packets: 49195 (49.20 K)
+# Total bytes: 45566681 (45.57 M)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0800	               49033 [ 99.67%]	            45526374 [ 99.91%]	Internet Protocol version 4 (IPv4)
+0x0806	                  16 [  0.03%]	                 672 [  0.00%]	Address Resolution Protocol (ARP)
+0x86dd	                 146 [  0.30%]	               39635 [  0.09%]	Internet Protocol version 6 (IPv6)
+
+
+# Total IPv4 packets: 49033 (49.03 K) [99.67%]
+# Total IPv6 packets: 146 [0.30%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  1	                  41 [  0.08%]	                4046 [  0.01%]	Internet Control Message Protocol (ICMP)
+  2	                  15 [  0.03%]	                 850 [  0.00%]	Internet Group Management Protocol (IGMP)
+  6	               48744 [ 99.08%]	            45467895 [ 99.78%]	Transmission Control Protocol (TCP)
+ 17	                 340 [  0.69%]	               89640 [  0.20%]	User Datagram Protocol (UDP)
+ 58	                  39 [  0.08%]	                3578 [  0.01%]	Internet Control Message Protocol for IPv6 (ICMPv6)
+
+
+# Total TCP packets: 48744 (48.74 K) [99.08%]
+# Total TCP bytes: 45467895 (45.47 M) [99.78%]
+# TCP Port	                       Packets	                         Bytes	Description
+   80	                  50 [  0.10%]	                5631 [  0.01%]	World Wide Web HTTP
+  443	               48694 [ 99.90%]	            45462264 [ 99.99%]	HTTP protocol over TLS/SSL
+
+
+# Total UDP packets: 340 [0.69%]
+# Total UDP bytes: 89640 (89.64 K) [0.20%]
+# UDP Port	                       Packets	                         Bytes	Description
+   53	                  41 [ 12.06%]	                4927 [  5.50%]	Domain Name Server (DNS)
+   67	                   8 [  2.35%]	                2769 [  3.09%]	Bootstrap Protocol Server
+  123	                   2 [  0.59%]	                 180 [  0.20%]	Network Time Protocol
+  137	                  27 [  7.94%]	                2970 [  3.31%]	NETBIOS Name Service
+  138	                   1 [  0.29%]	                 243 [  0.27%]	NETBIOS Datagram Service
+ 1900	                 154 [ 45.29%]	               58738 [ 65.53%]	Simple Service Discovery Protocol
+ 5353	                 107 [ 31.47%]	               19813 [ 22.10%]	Multicast DNS

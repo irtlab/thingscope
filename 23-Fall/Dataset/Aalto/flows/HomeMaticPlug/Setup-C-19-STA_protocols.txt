@@ -1,0 +1,20 @@
+# Total packets: 25
+# Total bytes: 1948 (1.95 K)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0800	                  25 [100.00%]	                1948 [100.00%]	Internet Protocol version 4 (IPv4)
+
+
+# Total IPv4 packets: 25 [100.00%]
+# Total IPv6 packets: 0 [0.00%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  6	                  25 [100.00%]	                1948 [100.00%]	Transmission Control Protocol (TCP)
+
+
+# Total TCP packets: 25 [100.00%]
+# Total TCP bytes: 1948 (1.95 K) [100.00%]
+# TCP Port	                       Packets	                         Bytes	Description
+51067	                  25 [100.00%]	                1948 [100.00%]	
+
+
+# Total UDP packets: 0 [0.00%]
+# Total UDP bytes: 0 [0.00%]

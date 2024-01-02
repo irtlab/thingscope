@@ -1,0 +1,38 @@
+# Total packets: 159
+# Total bytes: 29252 (29.25 K)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0001	                   1 [  0.63%]	                  20 [  0.07%]	
+0x0800	                 137 [ 86.16%]	               27452 [ 93.85%]	Internet Protocol version 4 (IPv4)
+0x0806	                  11 [  6.92%]	                 462 [  1.58%]	Address Resolution Protocol (ARP)
+0x888e	                  10 [  6.29%]	                1318 [  4.51%]	EAP over LAN (IEEE 802.1X)
+
+
+# Total IPv4 packets: 137 [86.16%]
+# Total IPv6 packets: 0 [0.00%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  1	                   1 [  0.63%]	                 590 [  2.02%]	Internet Control Message Protocol (ICMP)
+  6	                  69 [ 43.40%]	                9858 [ 33.70%]	Transmission Control Protocol (TCP)
+ 17	                  67 [ 42.14%]	               17004 [ 58.13%]	User Datagram Protocol (UDP)
+
+
+# Total TCP packets: 69 [43.40%]
+# Total TCP bytes: 9858 (9.86 K) [33.70%]
+# TCP Port	                       Packets	                         Bytes	Description
+   80	                  12 [ 17.39%]	                 824 [  8.36%]	World Wide Web HTTP
+ 8767	                  19 [ 27.54%]	                3814 [ 38.69%]	
+10000	                  32 [ 46.38%]	                4824 [ 48.93%]	Network Data Management Protocol
+44213	                   6 [  8.70%]	                 396 [  4.02%]	
+
+
+# Total UDP packets: 67 [42.14%]
+# Total UDP bytes: 17004 (17.00 K) [58.13%]
+# UDP Port	                       Packets	                         Bytes	Description
+   53	                   8 [ 11.94%]	                1139 [  6.70%]	Domain Name Server (DNS)
+   67	                   4 [  5.97%]	                2360 [ 13.88%]	Bootstrap Protocol Server
+  123	                   2 [  2.99%]	                 180 [  1.06%]	Network Time Protocol
+ 5336	                   6 [  8.96%]	                 594 [  3.49%]	
+ 8765	                  19 [ 28.36%]	                7371 [ 43.35%]	Ultraseek HTTP
+23660	                   6 [  8.96%]	                 600 [  3.53%]	
+53506	                   2 [  2.99%]	                 200 [  1.18%]	
+53778	                  10 [ 14.93%]	                2280 [ 13.41%]	
+57510	                  10 [ 14.93%]	                2280 [ 13.41%]	

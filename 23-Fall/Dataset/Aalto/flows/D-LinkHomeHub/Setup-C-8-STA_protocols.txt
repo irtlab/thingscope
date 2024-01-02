@@ -1,0 +1,32 @@
+# Total packets: 839
+# Total bytes: 347715 (347.71 K)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0800	                 800 [ 95.35%]	              345157 [ 99.26%]	Internet Protocol version 4 (IPv4)
+0x0806	                  19 [  2.26%]	                 942 [  0.27%]	Address Resolution Protocol (ARP)
+0x86dd	                  20 [  2.38%]	                1616 [  0.46%]	Internet Protocol version 6 (IPv6)
+
+
+# Total IPv4 packets: 800 [95.35%]
+# Total IPv6 packets: 20 [2.38%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  2	                  10 [  1.19%]	                 616 [  0.18%]	Internet Group Management Protocol (IGMP)
+  6	                 614 [ 73.18%]	              301609 [ 86.74%]	Transmission Control Protocol (TCP)
+ 17	                 176 [ 20.98%]	               42932 [ 12.35%]	User Datagram Protocol (UDP)
+ 58	                  20 [  2.38%]	                1616 [  0.46%]	Internet Control Message Protocol for IPv6 (ICMPv6)
+
+
+# Total TCP packets: 614 [73.18%]
+# Total TCP bytes: 301609 (301.61 K) [86.74%]
+# TCP Port	                       Packets	                         Bytes	Description
+   80	                 329 [ 53.58%]	              232099 [ 76.95%]	World Wide Web HTTP
+  443	                 285 [ 46.42%]	               69510 [ 23.05%]	HTTP protocol over TLS/SSL
+
+
+# Total UDP packets: 176 [20.98%]
+# Total UDP bytes: 42932 (42.93 K) [12.35%]
+# UDP Port	                       Packets	                         Bytes	Description
+   53	                  40 [ 22.73%]	                6203 [ 14.45%]	Domain Name Server (DNS)
+   67	                   8 [  4.55%]	                2802 [  6.53%]	Bootstrap Protocol Server
+  123	                   8 [  4.55%]	                 720 [  1.68%]	Network Time Protocol
+ 1900	                  40 [ 22.73%]	               12990 [ 30.26%]	Simple Service Discovery Protocol
+ 5353	                  80 [ 45.45%]	               20217 [ 47.09%]	Multicast DNS

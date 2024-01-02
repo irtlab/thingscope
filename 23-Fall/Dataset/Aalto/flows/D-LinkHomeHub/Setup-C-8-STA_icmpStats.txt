@@ -1,0 +1,9 @@
+Total number of ICMP packets: 20 [2.38%]
+
+Number of ICMPv6 packets: 20 [2.38%]
+
+
+# ICMPv6 Type	Code	                       Packets
+ICMP6_RTER_SOLICIT	-	                             8 [ 40.00%]
+ICMP6_NBOR_SOLICIT	-	                             2 [ 10.00%]
+ICMP6_MLD2	-	                            10 [ 50.00%]

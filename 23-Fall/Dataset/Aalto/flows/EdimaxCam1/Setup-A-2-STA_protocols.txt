@@ -1,0 +1,26 @@
+# Total packets: 41
+# Total bytes: 8653 (8.65 K)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0800	                  36 [ 87.80%]	                8279 [ 95.68%]	Internet Protocol version 4 (IPv4)
+0x0806	                   3 [  7.32%]	                 126 [  1.46%]	Address Resolution Protocol (ARP)
+0x888e	                   2 [  4.88%]	                 248 [  2.87%]	EAP over LAN (IEEE 802.1X)
+
+
+# Total IPv4 packets: 36 [87.80%]
+# Total IPv6 packets: 0 [0.00%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  2	                   3 [  7.32%]	                 162 [  1.87%]	Internet Group Management Protocol (IGMP)
+ 17	                  33 [ 80.49%]	                8117 [ 93.81%]	User Datagram Protocol (UDP)
+
+
+# Total TCP packets: 0 [0.00%]
+# Total TCP bytes: 0 [0.00%]
+
+
+# Total UDP packets: 33 [80.49%]
+# Total UDP bytes: 8117 (8.12 K) [93.81%]
+# UDP Port	                       Packets	                         Bytes	Description
+   67	                   2 [  6.06%]	                1180 [ 14.54%]	Bootstrap Protocol Server
+ 1900	                  19 [ 57.58%]	                4630 [ 57.04%]	Simple Service Discovery Protocol
+ 2336	                   3 [  9.09%]	                 297 [  3.66%]	Apple UG Control
+ 5353	                   9 [ 27.27%]	                2010 [ 24.76%]	Multicast DNS

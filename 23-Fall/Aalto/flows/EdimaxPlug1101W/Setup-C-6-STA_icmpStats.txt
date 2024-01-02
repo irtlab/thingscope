@@ -1,8 +1,0 @@
-Total number of ICMP packets: 1 [1.30%]
-
-Number of ICMP packets: 1 [1.30%]
-
-
-# ICMP Type	Code	                       Packets
-ICMP_DEST_UNREACH	ICMP_PORT_UNREACH	                             1 [100.00%]
-

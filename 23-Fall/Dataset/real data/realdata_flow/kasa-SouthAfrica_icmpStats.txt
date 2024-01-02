@@ -1,0 +1,16 @@
+Total number of ICMP packets: 226 [0.60%]
+
+Number of ICMP packets: 212 [0.57%]
+Number of ICMPv6 packets: 14 [0.04%]
+
+ICMP echo reply / request ratio: 1.000
+
+# ICMP Type	Code	                       Packets
+ICMP_ECHOREQUEST	-	                            97 [ 45.75%]
+ICMP_ECHOREPLY	-	                            97 [ 45.75%]
+ICMP_DEST_UNREACH	ICMP_PORT_UNREACH	                            18 [  8.49%]
+
+# ICMPv6 Type	Code	                       Packets
+ICMP6_RTER_SOLICIT	-	                             6 [ 42.86%]
+ICMP6_NBOR_SOLICIT	-	                             1 [  7.14%]
+ICMP6_MLD2	-	                             7 [ 50.00%]

@@ -1,0 +1,32 @@
+# Total packets: 1338 (1.34 K)
+# Total bytes: 223360 (223.36 K)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0800	                1303 [ 97.38%]	              216826 [ 97.07%]	Internet Protocol version 4 (IPv4)
+0x0806	                  13 [  0.97%]	                 690 [  0.31%]	Address Resolution Protocol (ARP)
+0x86dd	                  22 [  1.64%]	                5844 [  2.62%]	Internet Protocol version 6 (IPv6)
+
+
+# Total IPv4 packets: 1303 (1.30 K) [97.38%]
+# Total IPv6 packets: 22 [1.64%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  1	                   3 [  0.22%]	                1128 [  0.51%]	Internet Control Message Protocol (ICMP)
+  2	                   4 [  0.30%]	                 240 [  0.11%]	Internet Group Management Protocol (IGMP)
+  6	                1096 [ 81.91%]	              187755 [ 84.06%]	Transmission Control Protocol (TCP)
+ 17	                 212 [ 15.84%]	               32431 [ 14.52%]	User Datagram Protocol (UDP)
+ 58	                  10 [  0.75%]	                1116 [  0.50%]	Internet Control Message Protocol for IPv6 (ICMPv6)
+
+
+# Total TCP packets: 1096 (1.10 K) [81.91%]
+# Total TCP bytes: 187755 (187.75 K) [84.06%]
+# TCP Port	                       Packets	                         Bytes	Description
+   80	                1096 [100.00%]	              187755 [100.00%]	World Wide Web HTTP
+
+
+# Total UDP packets: 212 [15.84%]
+# Total UDP bytes: 32431 (32.43 K) [14.52%]
+# UDP Port	                       Packets	                         Bytes	Description
+   53	                 122 [ 57.55%]	               12968 [ 39.99%]	Domain Name Server (DNS)
+   67	                   4 [  1.89%]	                1523 [  4.70%]	Bootstrap Protocol Server
+  123	                  50 [ 23.58%]	                4500 [ 13.88%]	Network Time Protocol
+ 1900	                  12 [  5.66%]	                4224 [ 13.02%]	Simple Service Discovery Protocol
+ 5353	                  24 [ 11.32%]	                9216 [ 28.42%]	Multicast DNS

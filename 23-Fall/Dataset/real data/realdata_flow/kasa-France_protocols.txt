@@ -1,0 +1,65 @@
+# Total packets: 24040 (24.04 K)
+# Total bytes: 15462629 (15.46 M)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0800	               23707 [ 98.61%]	            15411528 [ 99.67%]	Internet Protocol version 4 (IPv4)
+0x0806	                  92 [  0.38%]	                3918 [  0.03%]	Address Resolution Protocol (ARP)
+0x86dd	                 241 [  1.00%]	               47183 [  0.31%]	Internet Protocol version 6 (IPv6)
+
+
+# Total IPv4 packets: 23707 (23.71 K) [98.61%]
+# Total IPv6 packets: 241 [1.00%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  1	                 335 [  1.39%]	               31533 [  0.20%]	Internet Control Message Protocol (ICMP)
+  2	                  31 [  0.13%]	                1706 [  0.01%]	Internet Group Management Protocol (IGMP)
+  6	               20983 [ 87.28%]	            15050542 [ 97.33%]	Transmission Control Protocol (TCP)
+ 17	                2460 [ 10.23%]	              360640 [  2.33%]	User Datagram Protocol (UDP)
+ 58	                 139 [  0.58%]	               14290 [  0.09%]	Internet Control Message Protocol for IPv6 (ICMPv6)
+
+
+# Total TCP packets: 20983 (20.98 K) [87.28%]
+# Total TCP bytes: 15050542 (15.05 M) [97.33%]
+# TCP Port	                       Packets	                         Bytes	Description
+    7	                   2 [  0.01%]	                 148 [  0.00%]	Echo
+   80	                 751 [  3.58%]	              120704 [  0.80%]	World Wide Web HTTP
+  443	               19754 [ 94.14%]	            14894458 [ 98.96%]	HTTP protocol over TLS/SSL
+  853	                   9 [  0.04%]	                 674 [  0.00%]	
+ 5222	                   5 [  0.02%]	                 370 [  0.00%]	XMPP Client Connection
+ 5228	                  10 [  0.05%]	                 740 [  0.00%]	HP Virtual Room Service
+ 5333	                  54 [  0.26%]	                3996 [  0.03%]	
+ 7000	                   6 [  0.03%]	                 444 [  0.00%]	file server itself
+ 7002	                   8 [  0.04%]	                 592 [  0.00%]	users & groups database
+ 7003	                   8 [  0.04%]	                 592 [  0.00%]	volume location database
+ 7004	                   8 [  0.04%]	                 592 [  0.00%]	AFS/Kerberos authentication service
+ 7005	                  52 [  0.25%]	                3848 [  0.03%]	volume managment server
+ 7006	                   6 [  0.03%]	                 444 [  0.00%]	error interpretation service
+ 7007	                   7 [  0.03%]	                 518 [  0.00%]	basic overseer process
+ 7008	                   8 [  0.04%]	                 592 [  0.00%]	server-to-server updater
+ 7009	                   7 [  0.03%]	                 518 [  0.00%]	remote cache manager service
+ 7824	                 150 [  0.71%]	               11100 [  0.07%]	
+ 8000	                   2 [  0.01%]	                 148 [  0.00%]	iRDMI
+ 8080	                  66 [  0.31%]	                4884 [  0.03%]	HTTP Alternate (see port 80)
+10001	                  22 [  0.10%]	                1628 [  0.01%]	SCP Configuration Port
+11762	                   5 [  0.02%]	                 370 [  0.00%]	
+50443	                  15 [  0.07%]	                1110 [  0.01%]	
+51762	                   5 [  0.02%]	                 370 [  0.00%]	
+60443	                  15 [  0.07%]	                1110 [  0.01%]	
+65000	                   8 [  0.04%]	                 592 [  0.00%]	
+
+
+# Total UDP packets: 2460 (2.46 K) [10.23%]
+# Total UDP bytes: 360640 (360.64 K) [2.33%]
+# UDP Port	                       Packets	                         Bytes	Description
+   53	                 342 [ 13.90%]	               39662 [ 11.00%]	Domain Name Server (DNS)
+   67	                 223 [  9.07%]	               77358 [ 21.45%]	Bootstrap Protocol Server
+  123	                  10 [  0.41%]	                 900 [  0.25%]	Network Time Protocol
+  137	                  33 [  1.34%]	                3630 [  1.01%]	NETBIOS Name Service
+  138	                   1 [  0.04%]	                 243 [  0.07%]	NETBIOS Datagram Service
+  443	                  63 [  2.56%]	               28390 [  7.87%]	HTTP protocol over TLS/SSL
+ 1900	                 204 [  8.29%]	               71023 [ 19.69%]	Simple Service Discovery Protocol
+ 3478	                1248 [ 50.73%]	               77376 [ 21.46%]	TURN over UDP
+ 5353	                 154 [  6.26%]	               24447 [  6.78%]	Multicast DNS
+ 8000	                   3 [  0.12%]	                2579 [  0.72%]	iRDMI
+ 8089	                   2 [  0.08%]	                 228 [  0.06%]	
+ 9999	                  49 [  1.99%]	                5603 [  1.55%]	distinct
+19000	                  27 [  1.10%]	                4428 [  1.23%]	iGrid Server
+20002	                 101 [  4.11%]	               24773 [  6.87%]	Commtact HTTP

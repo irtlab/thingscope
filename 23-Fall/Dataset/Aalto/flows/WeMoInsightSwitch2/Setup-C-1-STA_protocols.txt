@@ -1,0 +1,33 @@
+# Total packets: 574
+# Total bytes: 350351 (350.35 K)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0800	                 565 [ 98.43%]	              349791 [ 99.84%]	Internet Protocol version 4 (IPv4)
+0x0806	                   7 [  1.22%]	                 312 [  0.09%]	Address Resolution Protocol (ARP)
+0x888e	                   2 [  0.35%]	                 248 [  0.07%]	EAP over LAN (IEEE 802.1X)
+
+
+# Total IPv4 packets: 565 [98.43%]
+# Total IPv6 packets: 0 [0.00%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  1	                   5 [  0.87%]	                 454 [  0.13%]	Internet Control Message Protocol (ICMP)
+  2	                   2 [  0.35%]	                 108 [  0.03%]	Internet Group Management Protocol (IGMP)
+  6	                 507 [ 88.33%]	              331439 [ 94.60%]	Transmission Control Protocol (TCP)
+ 17	                  51 [  8.89%]	               17790 [  5.08%]	User Datagram Protocol (UDP)
+
+
+# Total TCP packets: 507 [88.33%]
+# Total TCP bytes: 331439 (331.44 K) [94.60%]
+# TCP Port	                       Packets	                         Bytes	Description
+  443	                 141 [ 27.81%]	               97731 [ 29.49%]	HTTP protocol over TLS/SSL
+ 3475	                  10 [  1.97%]	                 926 [  0.28%]	Genisar Comm Port
+ 3478	                  10 [  1.97%]	                1012 [  0.31%]	TURN over TCP
+ 8443	                 346 [ 68.24%]	              231770 [ 69.93%]	PCsync HTTPS
+
+
+# Total UDP packets: 51 [8.89%]
+# Total UDP bytes: 17790 (17.79 K) [5.08%]
+# UDP Port	                       Packets	                         Bytes	Description
+   53	                  12 [ 23.53%]	                3056 [ 17.18%]	Domain Name Server (DNS)
+   67	                   4 [  7.84%]	                1368 [  7.69%]	Bootstrap Protocol Server
+  123	                   5 [  9.80%]	                 450 [  2.53%]	Network Time Protocol
+ 1900	                  30 [ 58.82%]	               12916 [ 72.60%]	Simple Service Discovery Protocol

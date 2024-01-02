@@ -1,0 +1,38 @@
+# Total packets: 15722 (15.72 K)
+# Total bytes: 14749560 (14.75 M)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0800	               15696 [ 99.83%]	            14748195 [ 99.99%]	Internet Protocol version 4 (IPv4)
+0x0806	                  23 [  0.15%]	                 984 [  0.01%]	Address Resolution Protocol (ARP)
+0x86dd	                   3 [  0.02%]	                 381 [  0.00%]	Internet Protocol version 6 (IPv6)
+
+
+# Total IPv4 packets: 15696 (15.70 K) [99.83%]
+# Total IPv6 packets: 3 [0.02%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  1	                  54 [  0.34%]	                5292 [  0.04%]	Internet Control Message Protocol (ICMP)
+  6	               15479 [ 98.45%]	            14707211 [ 99.71%]	Transmission Control Protocol (TCP)
+ 17	                 164 [  1.04%]	               35933 [  0.24%]	User Datagram Protocol (UDP)
+ 58	                   2 [  0.01%]	                 140 [  0.00%]	Internet Control Message Protocol for IPv6 (ICMPv6)
+
+
+# Total TCP packets: 15479 (15.48 K) [98.45%]
+# Total TCP bytes: 14707211 (14.71 M) [99.71%]
+# TCP Port	                       Packets	                         Bytes	Description
+   80	                  29 [  0.19%]	                1566 [  0.01%]	World Wide Web HTTP
+  443	               15348 [ 99.15%]	            14683426 [ 99.84%]	HTTP protocol over TLS/SSL
+ 6447	                   2 [  0.01%]	                 139 [  0.00%]	
+50443	                  74 [  0.48%]	               16026 [  0.11%]	
+60443	                  26 [  0.17%]	                6054 [  0.04%]	
+
+
+# Total UDP packets: 164 [1.04%]
+# Total UDP bytes: 35933 (35.93 K) [0.24%]
+# UDP Port	                       Packets	                         Bytes	Description
+   53	                  84 [ 51.22%]	               10391 [ 28.92%]	Domain Name Server (DNS)
+   67	                   8 [  4.88%]	                2760 [  7.68%]	Bootstrap Protocol Server
+  123	                   2 [  1.22%]	                 180 [  0.50%]	Network Time Protocol
+ 1900	                  16 [  9.76%]	                3472 [  9.66%]	Simple Service Discovery Protocol
+ 5353	                  11 [  6.71%]	                 701 [  1.95%]	Multicast DNS
+ 5684	                  12 [  7.32%]	                5136 [ 14.29%]	
+ 9999	                  10 [  6.10%]	                1890 [  5.26%]	distinct
+20002	                  21 [ 12.80%]	               11403 [ 31.73%]	Commtact HTTP

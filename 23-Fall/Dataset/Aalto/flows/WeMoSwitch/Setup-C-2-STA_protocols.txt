@@ -1,0 +1,33 @@
+# Total packets: 351
+# Total bytes: 171372 (171.37 K)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0800	                 339 [ 96.58%]	              170686 [ 99.60%]	Internet Protocol version 4 (IPv4)
+0x0806	                  10 [  2.85%]	                 438 [  0.26%]	Address Resolution Protocol (ARP)
+0x888e	                   2 [  0.57%]	                 248 [  0.14%]	EAP over LAN (IEEE 802.1X)
+
+
+# Total IPv4 packets: 339 [96.58%]
+# Total IPv6 packets: 0 [0.00%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  1	                  10 [  2.85%]	                 980 [  0.57%]	Internet Control Message Protocol (ICMP)
+  2	                   2 [  0.57%]	                 108 [  0.06%]	Internet Group Management Protocol (IGMP)
+  6	                 301 [ 85.75%]	              159587 [ 93.12%]	Transmission Control Protocol (TCP)
+ 17	                  26 [  7.41%]	               10011 [  5.84%]	User Datagram Protocol (UDP)
+
+
+# Total TCP packets: 301 [85.75%]
+# Total TCP bytes: 159587 (159.59 K) [93.12%]
+# TCP Port	                       Packets	                         Bytes	Description
+ 3475	                  10 [  3.32%]	                 926 [  0.58%]	Genisar Comm Port
+ 3478	                  26 [  8.64%]	                2876 [  1.80%]	TURN over TCP
+ 3687	                   2 [  0.66%]	                 108 [  0.07%]	simple-push
+ 8443	                 217 [ 72.09%]	              133376 [ 83.58%]	PCsync HTTPS
+ 8445	                  46 [ 15.28%]	               22301 [ 13.97%]	
+
+
+# Total UDP packets: 26 [7.41%]
+# Total UDP bytes: 10011 (10.01 K) [5.84%]
+# UDP Port	                       Packets	                         Bytes	Description
+   53	                   6 [ 23.08%]	                1427 [ 14.25%]	Domain Name Server (DNS)
+   67	                   4 [ 15.38%]	                1368 [ 13.66%]	Bootstrap Protocol Server
+ 1900	                  16 [ 61.54%]	                7216 [ 72.08%]	Simple Service Discovery Protocol

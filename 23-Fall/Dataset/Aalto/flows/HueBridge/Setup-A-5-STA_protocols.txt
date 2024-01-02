@@ -1,0 +1,33 @@
+# Total packets: 1343 (1.34 K)
+# Total bytes: 237799 (237.80 K)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0800	                1299 [ 96.72%]	              229265 [ 96.41%]	Internet Protocol version 4 (IPv4)
+0x0806	                  17 [  1.27%]	                 876 [  0.37%]	Address Resolution Protocol (ARP)
+0x86dd	                  27 [  2.01%]	                7658 [  3.22%]	Internet Protocol version 6 (IPv6)
+
+
+# Total IPv4 packets: 1299 (1.30 K) [96.72%]
+# Total IPv6 packets: 27 [2.01%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  1	                   3 [  0.22%]	                1128 [  0.47%]	Internet Control Message Protocol (ICMP)
+  2	                   8 [  0.60%]	                 480 [  0.20%]	Internet Group Management Protocol (IGMP)
+  6	                1083 [ 80.64%]	              194419 [ 81.76%]	Transmission Control Protocol (TCP)
+ 17	                 220 [ 16.38%]	               39520 [ 16.62%]	User Datagram Protocol (UDP)
+ 58	                  12 [  0.89%]	                1376 [  0.58%]	Internet Control Message Protocol for IPv6 (ICMPv6)
+
+
+# Total TCP packets: 1083 (1.08 K) [80.64%]
+# Total TCP bytes: 194419 (194.42 K) [81.76%]
+# TCP Port	                       Packets	                         Bytes	Description
+   80	                1083 [100.00%]	              194419 [100.00%]	World Wide Web HTTP
+
+
+# Total UDP packets: 220 [16.38%]
+# Total UDP bytes: 39520 (39.52 K) [16.62%]
+# UDP Port	                       Packets	                         Bytes	Description
+   53	                 112 [ 50.91%]	               14435 [ 36.53%]	Domain Name Server (DNS)
+   67	                   4 [  1.82%]	                1523 [  3.85%]	Bootstrap Protocol Server
+  123	                  56 [ 25.45%]	                5040 [ 12.75%]	Network Time Protocol
+ 1900	                  12 [  5.45%]	                4224 [ 10.69%]	Simple Service Discovery Protocol
+ 1901	                   6 [  2.73%]	                2034 [  5.15%]	Fujitsu ICL Terminal Emulator Program
+ 5353	                  30 [ 13.64%]	               12264 [ 31.03%]	Multicast DNS

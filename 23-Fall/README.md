@@ -15,3 +15,22 @@ using traffic data and Internet Protocol (IP) utilities, enabling the gateway to
 and retrieve their corresponding Manufacturer Usage Descriptions (MUD) profiles.
 
 # File Structure
+'''
+│  Aalto.py
+│  Aalto_filename.pkl
+│  country_org_label.py
+│  Data Preprocessing.ipynb
+│  data.py
+│  feature encoding.py
+│  feature_selection.py
+│  IPCC_to_number.csv
+│  IPOrg_to_number.csv
+│  label.py
+│  list.txt
+│  model.py
+│  README.md
+│  UNSW List_Of_Devices.xlsx
+│  UNSW_device.pkl
+│  
+└─Aalto
+'''

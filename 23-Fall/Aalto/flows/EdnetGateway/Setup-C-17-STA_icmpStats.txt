@@ -1,9 +1,0 @@
-Total number of ICMP packets: 4 [5.71%]
-
-Number of ICMP packets: 4 [5.71%]
-
-
-# ICMP Type	Code	                       Packets
-ICMP_DEST_UNREACH	ICMP_HOST_UNREACH	                             2 [ 50.00%]
-ICMP_REDIRECT	ICMP_REDIR_HOST	                             2 [ 50.00%]
-

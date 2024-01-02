@@ -1,0 +1,49 @@
+# Total packets: 37484 (37.48 K)
+# Total bytes: 32301290 (32.30 M)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0800	               37422 [ 99.83%]	            32296968 [ 99.99%]	Internet Protocol version 4 (IPv4)
+0x0806	                  45 [  0.12%]	                1926 [  0.01%]	Address Resolution Protocol (ARP)
+0x86dd	                  17 [  0.05%]	                2396 [  0.01%]	Internet Protocol version 6 (IPv6)
+
+
+# Total IPv4 packets: 37422 (37.42 K) [99.83%]
+# Total IPv6 packets: 17 [0.05%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  1	                 212 [  0.57%]	               21087 [  0.07%]	Internet Control Message Protocol (ICMP)
+  6	               36386 [ 97.07%]	            31895393 [ 98.74%]	Transmission Control Protocol (TCP)
+ 17	                 827 [  2.21%]	              381468 [  1.18%]	User Datagram Protocol (UDP)
+ 58	                  14 [  0.04%]	                1416 [  0.00%]	Internet Control Message Protocol for IPv6 (ICMPv6)
+
+
+# Total TCP packets: 36386 (36.39 K) [97.07%]
+# Total TCP bytes: 31895393 (31.90 M) [98.74%]
+# TCP Port	                       Packets	                         Bytes	Description
+   80	                 368 [  1.01%]	               47446 [  0.15%]	World Wide Web HTTP
+  443	               35412 [ 97.32%]	            31726118 [ 99.47%]	HTTP protocol over TLS/SSL
+  853	                   5 [  0.01%]	                 374 [  0.00%]	
+ 5228	                  27 [  0.07%]	               10205 [  0.03%]	HP Virtual Room Service
+ 5333	                  64 [  0.18%]	                4748 [  0.01%]	
+ 7006	                  28 [  0.08%]	                8660 [  0.03%]	error interpretation service
+ 7824	                 177 [  0.49%]	               28693 [  0.09%]	
+ 8080	                  68 [  0.19%]	               13398 [  0.04%]	HTTP Alternate (see port 80)
+10001	                 138 [  0.38%]	               37037 [  0.12%]	SCP Configuration Port
+21003	                  15 [  0.04%]	                1904 [  0.01%]	
+50443	                  53 [  0.15%]	               10387 [  0.03%]	
+60443	                  29 [  0.08%]	                6275 [  0.02%]	
+65000	                   2 [  0.01%]	                 148 [  0.00%]	
+
+
+# Total UDP packets: 827 [2.21%]
+# Total UDP bytes: 381468 (381.47 K) [1.18%]
+# UDP Port	                       Packets	                         Bytes	Description
+   53	                 350 [ 42.32%]	               39427 [ 10.34%]	Domain Name Server (DNS)
+   67	                   8 [  0.97%]	                2770 [  0.73%]	Bootstrap Protocol Server
+  123	                   6 [  0.73%]	                 540 [  0.14%]	Network Time Protocol
+  138	                   1 [  0.12%]	                 243 [  0.06%]	NETBIOS Datagram Service
+  443	                 330 [ 39.90%]	              321863 [ 84.37%]	HTTP protocol over TLS/SSL
+ 1900	                  25 [  3.02%]	                5375 [  1.41%]	Simple Service Discovery Protocol
+ 3478	                  96 [ 11.61%]	                9280 [  2.43%]	TURN over UDP
+ 5353	                   3 [  0.36%]	                 980 [  0.26%]	Multicast DNS
+ 9999	                   2 [  0.24%]	                 142 [  0.04%]	distinct
+19000	                   2 [  0.24%]	                 616 [  0.16%]	iGrid Server
+20002	                   4 [  0.48%]	                 232 [  0.06%]	Commtact HTTP

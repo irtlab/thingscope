@@ -1,0 +1,34 @@
+# Total packets: 576
+# Total bytes: 350391 (350.39 K)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0800	                 564 [ 97.92%]	              349705 [ 99.80%]	Internet Protocol version 4 (IPv4)
+0x0806	                  10 [  1.74%]	                 438 [  0.13%]	Address Resolution Protocol (ARP)
+0x888e	                   2 [  0.35%]	                 248 [  0.07%]	EAP over LAN (IEEE 802.1X)
+
+
+# Total IPv4 packets: 564 [97.92%]
+# Total IPv6 packets: 0 [0.00%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  1	                   5 [  0.87%]	                 462 [  0.13%]	Internet Control Message Protocol (ICMP)
+  2	                   2 [  0.35%]	                 108 [  0.03%]	Internet Group Management Protocol (IGMP)
+  6	                 506 [ 87.85%]	              331345 [ 94.56%]	Transmission Control Protocol (TCP)
+ 17	                  51 [  8.85%]	               17790 [  5.08%]	User Datagram Protocol (UDP)
+
+
+# Total TCP packets: 506 [87.85%]
+# Total TCP bytes: 331345 (331.35 K) [94.56%]
+# TCP Port	                       Packets	                         Bytes	Description
+  443	                 140 [ 27.67%]	               97677 [ 29.48%]	HTTP protocol over TLS/SSL
+ 3475	                  10 [  1.98%]	                 926 [  0.28%]	Genisar Comm Port
+ 3478	                  10 [  1.98%]	                1012 [  0.31%]	TURN over TCP
+ 7275	                   2 [  0.40%]	                 148 [  0.04%]	OMA UserPlane Location
+ 8443	                 344 [ 67.98%]	              231582 [ 69.89%]	PCsync HTTPS
+
+
+# Total UDP packets: 51 [8.85%]
+# Total UDP bytes: 17790 (17.79 K) [5.08%]
+# UDP Port	                       Packets	                         Bytes	Description
+   53	                  12 [ 23.53%]	                3056 [ 17.18%]	Domain Name Server (DNS)
+   67	                   4 [  7.84%]	                1368 [  7.69%]	Bootstrap Protocol Server
+  123	                   5 [  9.80%]	                 450 [  2.53%]	Network Time Protocol
+ 1900	                  30 [ 58.82%]	               12916 [ 72.60%]	Simple Service Discovery Protocol

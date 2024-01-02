@@ -1,0 +1,32 @@
+# Total packets: 359
+# Total bytes: 149531 (149.53 K)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0800	                 347 [ 96.66%]	              148845 [ 99.54%]	Internet Protocol version 4 (IPv4)
+0x0806	                  10 [  2.79%]	                 438 [  0.29%]	Address Resolution Protocol (ARP)
+0x888e	                   2 [  0.56%]	                 248 [  0.17%]	EAP over LAN (IEEE 802.1X)
+
+
+# Total IPv4 packets: 347 [96.66%]
+# Total IPv6 packets: 0 [0.00%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  1	                  20 [  5.57%]	                1920 [  1.28%]	Internet Control Message Protocol (ICMP)
+  2	                   2 [  0.56%]	                 108 [  0.07%]	Internet Group Management Protocol (IGMP)
+  6	                 301 [ 83.84%]	              137248 [ 91.79%]	Transmission Control Protocol (TCP)
+ 17	                  24 [  6.69%]	                9569 [  6.40%]	User Datagram Protocol (UDP)
+
+
+# Total TCP packets: 301 [83.84%]
+# Total TCP bytes: 137248 (137.25 K) [91.79%]
+# TCP Port	                       Packets	                         Bytes	Description
+ 3475	                  10 [  3.32%]	                 926 [  0.67%]	Genisar Comm Port
+ 3478	                  11 [  3.65%]	                1066 [  0.78%]	TURN over TCP
+ 8059	                  66 [ 21.93%]	                4356 [  3.17%]	Senomix Timesheets Client [1 year
+ 8443	                 214 [ 71.10%]	              130900 [ 95.37%]	PCsync HTTPS
+
+
+# Total UDP packets: 24 [6.69%]
+# Total UDP bytes: 9569 (9.57 K) [6.40%]
+# UDP Port	                       Packets	                         Bytes	Description
+   53	                   4 [ 16.67%]	                 985 [ 10.29%]	Domain Name Server (DNS)
+   67	                   4 [ 16.67%]	                1368 [ 14.30%]	Bootstrap Protocol Server
+ 1900	                  16 [ 66.67%]	                7216 [ 75.41%]	Simple Service Discovery Protocol

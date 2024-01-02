@@ -1,0 +1,58 @@
+# Total packets: 4908 (4.91 K)
+# Total bytes: 1564942 (1.56 M)
+# L2/3 Protocol	                       Packets	                         Bytes	Description
+0x0800	                4882 [ 99.47%]	             1563062 [ 99.88%]	Internet Protocol version 4 (IPv4)
+0x0806	                  11 [  0.22%]	                 462 [  0.03%]	Address Resolution Protocol (ARP)
+0x86dd	                  15 [  0.31%]	                1418 [  0.09%]	Internet Protocol version 6 (IPv6)
+
+
+# Total IPv4 packets: 4882 (4.88 K) [99.47%]
+# Total IPv6 packets: 15 [0.31%]
+# L4 Protocol	                       Packets	                         Bytes	Description
+  1	                  47 [  0.96%]	                3674 [  0.23%]	Internet Control Message Protocol (ICMP)
+  2	                  10 [  0.20%]	                 540 [  0.03%]	Internet Group Management Protocol (IGMP)
+  6	                3936 [ 80.20%]	             1464647 [ 93.59%]	Transmission Control Protocol (TCP)
+ 17	                 893 [ 18.19%]	               94649 [  6.05%]	User Datagram Protocol (UDP)
+ 58	                  11 [  0.22%]	                 970 [  0.06%]	Internet Control Message Protocol for IPv6 (ICMPv6)
+
+
+# Total TCP packets: 3936 (3.94 K) [80.20%]
+# Total TCP bytes: 1464647 (1.46 M) [93.59%]
+# TCP Port	                       Packets	                         Bytes	Description
+    7	                   1 [  0.03%]	                  74 [  0.01%]	Echo
+   80	                1217 [ 30.92%]	              635494 [ 43.39%]	World Wide Web HTTP
+  443	                2468 [ 62.70%]	              809886 [ 55.30%]	HTTP protocol over TLS/SSL
+ 5333	                  21 [  0.53%]	                1554 [  0.11%]	
+ 7000	                   8 [  0.20%]	                 592 [  0.04%]	file server itself
+ 7002	                   6 [  0.15%]	                 444 [  0.03%]	users & groups database
+ 7003	                  19 [  0.48%]	                1546 [  0.11%]	volume location database
+ 7004	                   9 [  0.23%]	                 666 [  0.05%]	AFS/Kerberos authentication service
+ 7005	                  12 [  0.30%]	                 888 [  0.06%]	volume managment server
+ 7006	                   5 [  0.13%]	                 370 [  0.03%]	error interpretation service
+ 7007	                   6 [  0.15%]	                 444 [  0.03%]	basic overseer process
+ 7008	                   5 [  0.13%]	                 370 [  0.03%]	server-to-server updater
+ 7009	                   5 [  0.13%]	                 370 [  0.03%]	remote cache manager service
+ 7824	                  63 [  1.60%]	                4662 [  0.32%]	
+ 8000	                  14 [  0.36%]	                1036 [  0.07%]	iRDMI
+ 8080	                  27 [  0.69%]	                1962 [  0.13%]	HTTP Alternate (see port 80)
+ 8081	                  15 [  0.38%]	                1110 [  0.08%]	Sun Proxy Admin Service
+ 8883	                  10 [  0.25%]	                 740 [  0.05%]	Secure MQTT
+ 9870	                   6 [  0.15%]	                 444 [  0.03%]	
+10001	                   8 [  0.20%]	                1181 [  0.08%]	SCP Configuration Port
+21047	                  11 [  0.28%]	                 814 [  0.06%]	
+
+
+# Total UDP packets: 893 [18.19%]
+# Total UDP bytes: 94649 (94.65 K) [6.05%]
+# UDP Port	                       Packets	                         Bytes	Description
+   53	                 200 [ 22.40%]	               28794 [ 30.42%]	Domain Name Server (DNS)
+   67	                   4 [  0.45%]	                1400 [  1.48%]	Bootstrap Protocol Server
+  443	                  43 [  4.82%]	               15696 [ 16.58%]	HTTP protocol over TLS/SSL
+ 1900	                  25 [  2.80%]	                5075 [  5.36%]	Simple Service Discovery Protocol
+ 3478	                 535 [ 59.91%]	               33170 [ 35.05%]	TURN over UDP
+ 5332	                  10 [  1.12%]	                2040 [  2.16%]	
+ 5353	                  10 [  1.12%]	                1754 [  1.85%]	Multicast DNS
+ 8751	                   1 [  0.11%]	                  96 [  0.10%]	
+10001	                  28 [  3.14%]	                1848 [  1.95%]	SCP Configuration Port
+10240	                  19 [  2.13%]	                1824 [  1.93%]	
+19000	                  18 [  2.02%]	                2952 [  3.12%]	iGrid Server
