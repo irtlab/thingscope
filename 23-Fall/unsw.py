@@ -46,8 +46,6 @@ catergorial_feature=['map_IpCountry', "map_IpOrg"]+hex_features+string_features
 not_used_features = ['timeFirst', 'timeLast','flowInd', 'dstIP',
                        'dstMac', 'srcIP', 'srcMac', 'srcMac_dstMac_numP','ipOptCpCl_Num',
                      'icmpBFTypH_TypL_Code', 'ip6OptHH_D', 'ip6OptCntHH_D']
-feature_name = ['dstPort', 'minPktSz', 'avePktSize', 'bytAsm', 'ipMinTTL', 'ipMaxTTL',
-                'tcpInitWinSz', 'tcpMinWinSz', 'tcpRTTAckTripMin']
 new_feature = ['Number_of_endpoints',
                'Num_of_ntp_endpoints_countries',
                'Num_of_endpoints_countries',
