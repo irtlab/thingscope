@@ -27,7 +27,7 @@ performance on both the original and additional datasets.
 # File Structure
 
 1. data.py -flow generation
-2. Data Preprocessing.ipynb -data cleaning
+2. Data_Preprocessing.ipynb -data cleaning
 3. label.py -data labelling for UNSW datset
 4. feature_selection.py -feature selection methods
 5. feature encoding.py -feature encoding methods
