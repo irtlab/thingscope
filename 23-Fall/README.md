@@ -17,7 +17,7 @@ and retrieve their corresponding Manufacturer Usage Descriptions (MUD) profiles.
 # Processing Overview
 Initially, we gathered and examined data from IoT devices in the Internet Real-Time (IRT) Lab
 to understand their traffic patterns. Following this, we processed PCAP files from a public dataset,
-created flow files using Tranalyzer, and conducted necessary data cleaning to eliminate irrelevant
+created flow files using Tranalyzer(https://tranalyzer.com/about#theanteater), and conducted necessary data cleaning to eliminate irrelevant
 traffic. Our initial approach was to utilize numerical flow-level features for device identification.
 However, after an in-depth analysis of IoT device traffic behaviors, we incorporated non-numerical,
 protocol-based features, a method we believe to be a novel approach in our research group. We
