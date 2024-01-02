@@ -1,3 +1,9 @@
+'''Feature selection methods could be divided into filter methods and embedded methods. 
+In this project, we mainly use two filter methods: correlation coefficient and information gain; one embedded method: and a tree-based feature selection method.
+The third function is used for display information gain
+In the end, we do a feature vector test. The function here can recursively subtract one feature each time. If the accuracy increases compared with the previous step, 
+the corresponding feature would be dropped '''
+
 import pandas as pd
 import os
 from data import get_file
