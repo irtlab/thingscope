@@ -25,6 +25,9 @@ then repeatedly tested the effectiveness of each feature to create a final featu
 we trained several machine learning models using this feature vector and evaluated our model’s
 performance on both the original and additional datasets.
 # File Structure
+1. Aalto.py test on Aalto dataset
+2. unsw.py  test on UNSW dataset
+3. 
 '''
 │  Aalto.py
 │  Aalto_filename.pkl
