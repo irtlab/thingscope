@@ -13,6 +13,6 @@ range of manufacturers and operating modes, along with their low cost, resulting
 firmware. This project aims to develop a security gateway to identify IoT devices within a network
 using traffic data and Internet Protocol (IP) utilities, enabling the gateway to recognize each device
 and retrieve their corresponding Manufacturer Usage Descriptions (MUD) profiles.
-![image](https://github.com/irtlab/thingscope/assets/132225892/da887b72-563a-4678-87ad-31737187831c){width=200 height=100}
+![image]{width=200 height=100}(https://github.com/irtlab/thingscope/assets/132225892/da887b72-563a-4678-87ad-31737187831c)
 
 # File Structure
