@@ -25,25 +25,17 @@ then repeatedly tested the effectiveness of each feature to create a final featu
 we trained several machine learning models using this feature vector and evaluated our model’s
 performance on both the original and additional datasets.
 # File Structure
-1. Aalto.py test on Aalto dataset
-2. unsw.py  test on UNSW dataset
-3. 
-'''
-│  Aalto.py
-│  Aalto_filename.pkl
-│  country_org_label.py
-│  Data Preprocessing.ipynb
-│  data.py
-│  feature encoding.py
-│  feature_selection.py
-│  IPCC_to_number.csv
-│  IPOrg_to_number.csv
-│  label.py
-│  list.txt
-│  model.py
-│  README.md
-│  UNSW List_Of_Devices.xlsx
-│  UNSW_device.pkl
-│  
-└─Aalto
-'''
+
+1. data.py -flow generation
+2. Data Preprocessing.ipynb -data cleaning
+3. label.py -data labelling for UNSW datset
+4. feature_selection.py -feature selection methods
+5. feature encoding.py -feature encoding methods
+6. country_org_label.py -encoding IP country and IP organization
+7. IPCC_to_number.csv -encoded IP country
+8. IPOrg_to_number.csv -encoded IP organization
+9. model.py -Machine Learning models
+10. Aalto.py -test on Aalto dataset
+11. unsw.py  -test on UNSW dataset
+12. Dataset -public datasets and real data we collected
+
