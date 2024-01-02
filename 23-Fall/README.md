@@ -30,7 +30,7 @@ performance on both the original and additional datasets.
 2. Data_Preprocessing.ipynb -data cleaning
 3. label.py -data labelling for UNSW datset
 4. feature_selection.py -feature selection methods
-5. feature encoding.py -feature encoding methods
+5. feature_encoding.py -feature encoding methods
 6. country_org_label.py -encoding IP country and IP organization
 7. IPCC_to_number.csv -encoded IP country
 8. IPOrg_to_number.csv -encoded IP organization
